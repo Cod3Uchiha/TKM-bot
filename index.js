@@ -106,9 +106,12 @@ setTimeout(() => {
             }
             ///////
         };
+        store.readFromFile("store.json");
+
         const zk = (0, baileys_1.default)(sockOptions);
+
         store.bind(zk.ev);
-        setInterval(() => { store.writeToFile("store.json"); }, 3000);
+        setInterval(() => { store.writeToFile("store.json"); }, 1000);
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
@@ -253,13 +256,15 @@ function mybotpic() {
 
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {
 
-                if(ms.key.fromMe || ms.message.protocolMessage.key.fromMe) { console.log('Message supprimer me concernant') ; return }
+                if(ms.key.fromMe) { console.log('Message supprimer me concernant') ; return }
         
                                 console.log(`Message supprimer`)
                                 let key =  ms.message.protocolMessage.key ;
                                 
         
                                try {
+
+                                await (0 ,baileys_1.delay)(1000) ;
         
                                   let st = './store.json' ;
         
@@ -284,7 +289,7 @@ function mybotpic() {
         
                                   //  console.log(msg)
         
-                                    if(msg === null || !msg ||msg === 'undefined') {console.log('Message non trouver') ; return } 
+                                    if(msg === null || !msg ||msg === undefined) {console.log('Message non trouver') ; return } 
         
                                 await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        😈Anti-delete-message😈\n Message from @${msg.key.participant.split('@')[0]}​` , mentions : [msg.key.participant]},)
                                 .then( () => {
@@ -326,7 +331,29 @@ function mybotpic() {
             /** ******fin auto-status */
             if (!dev && origineMessage == "120363158701337904@g.us") {
                 return;
-            }
+            };
+
+
+            if (ms && ms.message.stickerMessage) {
+                const { addstickcmd, deleteCmd, getCmdById, inStickCmd } = require('./bdd/stickcmd');
+                let id = ms.message.stickerMessage.url;
+            
+                if (!inStickCmd(id) || !superUser) {
+                    return;
+                }
+            
+                let cmd = await getCmdById(id);
+            
+                const cd = evt.cm.find((zokou) => zokou.nomCom === (cmd));
+                if (cd) {
+                    try {
+                        reagir(origineMessage, zk, ms, cd.reaction);
+                        cd.fonction(origineMessage, zk, commandeOptions);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+            } ;
             
  //---------------------------------------rang-count--------------------------------
              if (texte && auteurMessage.endsWith("s.whatsapp.net")) {
@@ -342,7 +369,7 @@ function mybotpic() {
          
               try {
         
-                if (ms.message[mtype].contextInfo.mentionedJid && (ms.message[mtype].contextInfo.mentionedJid.includes(idBot) ||  ms.message[mtype].contextInfo.mentionedJid.includes(conf.NUMERO_OWNER + '@s.whatsapp.net'))    /*texte.includes(idBot.split('@')[0]) || texte.includes(conf.NUMERO_OWNER)*/) {
+                if (ms.message[mtype]?.contextInfo?.mentionedJid && (ms.message[mtype]?.contextInfo?.mentionedJid.includes(idBot) ||  ms.message[mtype].contextInfo.mentionedJid.includes(conf.NUMERO_OWNER + '@s.whatsapp.net'))    /*texte.includes(idBot.split('@')[0]) || texte.includes(conf.NUMERO_OWNER)*/) {
             
                     if (origineMessage == "120363158701337904@g.us") {
                         return;
