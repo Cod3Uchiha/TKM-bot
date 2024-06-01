@@ -12,13 +12,15 @@ zokou({nomCom : "igdl" , categorie : "Download"},async (dest , zk , commandeOpti
 
   try {
      
-    let igvid = await axios('https://vihangayt.me/download/instagram?url='+link)
+    let igvid = await axios('http://api.maher-zubair.tech/download/instagram?url='+link)
 
-    if (igvid.data.data.data[0].type == 'video') {
-    zk.sendMessage(dest,{video : {url : igvid.data.data.data[0].url},caption : "ig video downloader powered by *Zokou-Md*",gifPlayback : false },{quoted : ms}) 
+    try {
+      //console.log(igvid.data.result[0].url) ;
+    zk.sendMessage(dest,{video : {url : igvid.data.result[0].url},caption : "ig video downloader powered by *Zokou-Md*",gifPlayback : false },{quoted : ms}) 
     }
-    else {
-        zk.sendMessage(dest,{image : {url : igvid.data.data.data[0].url},caption : "ig image downloader powered by *Zokou-Md*"})
+    catch (e) {
+
+        zk.sendMessage(dest,{image : {url : igvid.data.result[0].url},caption : "ig image downloader powered by *Zokou-Md*"})
     }
   
   } catch (e) {repondre("erreur survenue lors du téléchargement \n " + e)}
@@ -74,18 +76,16 @@ zokou({ nomCom: "tiktok", categorie: "Download", reaction: "🎵" }, async (dest
 
   const videoUrl = arg.join(" ");
 
- let data = await axios.get('https://vihangayt.me/download/tiktok?url='+ videoUrl) ;
+ let data = await axios.get('http://api.maher-zubair.tech/download/tiktok2?url='+ videoUrl) ;
 
-  let tik = data.data.data
+  let tik = data.data.result
 
       // Envoi du message avec le thumbnail de la vidéo
       const caption = `
-Author: ${tik.author}
-Description: ${tik.desc}
-      `;
+Title: ${tik.title}`;
 
          
-      zk.sendMessage(dest, { video: { url: tik.links[0].a} , caption : caption },{quoted : ms});    
+      zk.sendMessage(dest, { video: { url: tik.video[0]} , caption : caption },{quoted : ms});    
 
   
 });

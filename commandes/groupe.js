@@ -9,6 +9,7 @@ const { search, download } = require("aptoide-scraper");
 const fs = require("fs-extra");
 const conf = require("../set");
 const { default: axios } = require('axios');
+const {generatepp} = require('../framework/mesfonctions')
 //const { uploadImageToImgur } = require('../framework/imgur');
 
 
@@ -581,12 +582,26 @@ zokou({ nomCom: "gpp", categorie: 'Group' }, async (dest, zk, commandeOptions) =
   if (msgRepondu.imageMessage) {
     const pp = await  zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
 
-    await zk.updateProfilePicture(dest, { url: pp })
-                .then( () => {
-                    zk.sendMessage(dest,{text:"Group pfp changed"})
-                    fs.unlinkSync(pp)
-                }).catch(() =>   zk.sendMessage(dest,{text:err})
-)
+    let image = await generatepp(pp) ;
+
+    console.log(image) ;
+
+      let filepath = 'monpdp.jpg' ;
+
+      fs.writeFile(filepath,image.img , async (err)=> {
+
+          if (err) {
+
+            console.log(err) ;
+          } else {
+
+            await zk.updateProfilePicture(dest, { url: filepath }) ;
+          
+            zk.sendMessage(dest,{text:"Group pfp changed"})
+             fs.unlinkSync(pp)
+          }
+
+      } ) ; 
         
   } else {
     repondre('Please mention an image')
