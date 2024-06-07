@@ -32,7 +32,7 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-╭────✧〈 *TKM md* 〉 ✧───◆
+╭────□〈 *TKM md* 〉 □───▪︎
 ┴╭─────────────™
 ⬡│▸ Theme : TKM
 ⬡│▸ User : ${s.OWNER_NAME}
@@ -44,7 +44,7 @@ const date = moment().format('DD/MM/YYYY');
 ⬡│▸ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
 ⬡│▸ Platform : ${os.platform()}
 ┬╰──────────────™
-╰─── ···▸💰LIKE A BOSS💰··──◆\n\n`;
+╰─── ··▸〘TKM bot〙··──▪︎\n\n`;
     
 let menuMsg = `
 ╭───────────────···▸▸
