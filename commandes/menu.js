@@ -32,51 +32,55 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-╭────✧${s.BOT}✧────◆
-│   *Préfix* : ${s.PREFIXE}
-│   *Owner* : ${s.OWNER_NAME}
-│   *Mode* : ${mode}
-│   *Commands* : ${cm.length}
-│   *Date* : ${date}
-│   *Hour* : ${temps}
-│   *Mémoire* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-│   *Plateforme* : ${os.platform()}
-│   *Développer* : Djalega++ 
-│  & M๏𝓷keℽ D Lบffy
-╰─────✧WA-BOT✧─────◆ \n\n`;
+╭────✧〈 *TKM md* 〉 ✧───◆
+┴╭─────────────™
+⬡│▸ Theme : TKM
+⬡│▸ User : ${s.OWNER_NAME}
+⬡│▸ Prefix : ${s.PREFIXE}
+⬡│▸ Mode : ${mode}
+⬡│▸ Commands : ${cm.length}
+⬡│▸ Date : ${date}
+⬡│▸ Time : ${temps}
+⬡│▸ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+⬡│▸ Platform : ${os.platform()}
+┬╰──────────────™
+╰─── ···▸💰LIKE A BOSS💰··──◆\n\n`;
     
 let menuMsg = `
-👋 Hello ${nomAuteurMessage} 👋
+╭───────────────···▸▸
+┃  〘 TKM md 〙 ⬡⬡⬡⬡⬡
+┃  〘 powered by ⬡⬡⬡⬡
+┃  -Cod3Uchiha 〙 ⬡⬡⬡
+┃  〘 Takudzwa-TKM〙⬡⬡
+╰───────────────···▸▸
 
-*List of commands :*
-◇                             ◇
+◇ *TKM md COMMANDS* ◇
 `;
 
     for (const cat in coms) {
-        menuMsg += `╭────❏ ${cat} ❏`;
+        menuMsg += `╭──────☹︎ ${cat} ☹︎`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-│ ${cmd}`;
+⬡│▸ ${cmd}`;
         }
         menuMsg += `
-╰═════════════⊷ \n`
+╰────────────···▸▸ \n`
     }
 
     menuMsg += `
 ◇            ◇
-*»»————— ★ —————««*
-"To use a command, insert ${prefixe} followed by the command_name."
- 
-    Powered by Zokou-MD
-                                                
-*»»————— ★ —————««*
+*»»————————— ★ ——————————««*
+|⏣BELTAH-MD CREATED BY BELTAH TECH TEAM
+
+|⏣THANK YOU FOR CHOOSING *𝗕𝗘𝗟𝗧𝗔𝗛 𝗠𝗗*
+*»»—————————— ★ ——————————««*
 `;
 
    var lien = mybotpic();
 
    if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Zokou-MD*, développé par Djalega++" , gifPlayback : true }, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Beltahmd*, déveloper Beltah Tech" , gifPlayback : true }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
@@ -86,7 +90,7 @@ let menuMsg = `
 // Vérification pour .jpeg ou .png
 else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
     try {
-        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Zokou-MD*, développé par Djalega++" }, { quoted: ms });
+        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Beltahmd*, déveloper Beltah Tech" }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
