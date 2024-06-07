@@ -69,11 +69,13 @@ let menuMsg = `
 
     menuMsg += `
 ◇            ◇
-*»»————————— ★ ——————————««*
-|TKM bot
+▪︎——————————————————————▪︎
+|TKM bot,the bot for you
 
-|Thanks for choosing TKM bot
-*»»—————————— ★ ——————————««*
+   Thanks for choosing
+
+|       *TKM bot*
+▪︎——————————————————————▪︎
 `;
 
    var lien = mybotpic();
