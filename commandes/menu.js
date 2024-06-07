@@ -32,7 +32,7 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-╭────□〈 *TKM md* 〉 □───▪︎
+╭────⬡〘*TKM md*〙⬡───▪︎
 ┴╭─────────────™
 ⬡│▸ Theme : TKM
 ⬡│▸ User : ${s.OWNER_NAME}
@@ -44,7 +44,7 @@ const date = moment().format('DD/MM/YYYY');
 ⬡│▸ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
 ⬡│▸ Platform : ${os.platform()}
 ┬╰──────────────™
-╰─── ··▸〘TKM bot〙··──▪︎\n\n`;
+╰────⬡〘*TKM md*〙⬡───▪︎\n\n`;
     
 let menuMsg = `
 ╭───────────────···▸▸
@@ -54,11 +54,11 @@ let menuMsg = `
 ┃  〘 Takudzwa-TKM〙⬡⬡
 ╰───────────────···▸▸
 
-◇ *TKM md COMMANDS* ◇
+⬡ *TKM md COMMANDS* ⬡
 `;
 
     for (const cat in coms) {
-        menuMsg += `╭──────☹︎ ${cat} ☹︎`;
+        menuMsg += `╭──────⬡ ${cat} ⬡`;
         for (const cmd of coms[cat]) {
             menuMsg += `
 ⬡│▸ ${cmd}`;
@@ -68,14 +68,16 @@ let menuMsg = `
     }
 
     menuMsg += `
-◇            ◇
-▪︎——————————————————————▪︎
+⬡            ⬡
+⬡▪︎——————————————————————▪︎⬡
 |TKM bot,the bot for you
 
    Thanks for choosing
 
-|       *TKM bot*
-▪︎——————————————————————▪︎
+        *TKM bot*
+
+|https://github.com/Cod3Uchiha/TKM-bot
+⬡▪︎——————————————————————▪︎⬡
 `;
 
    var lien = mybotpic();
