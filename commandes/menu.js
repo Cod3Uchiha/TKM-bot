@@ -70,9 +70,9 @@ let menuMsg = `
     menuMsg += `
 ◇            ◇
 *»»————————— ★ ——————————««*
-|⏣BELTAH-MD CREATED BY BELTAH TECH TEAM
+|TKM bot
 
-|⏣THANK YOU FOR CHOOSING *𝗕𝗘𝗟𝗧𝗔𝗛 𝗠𝗗*
+|Thanks for choosing TKM bot
 *»»—————————— ★ ——————————««*
 `;
 
