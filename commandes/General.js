@@ -10,7 +10,7 @@ zokou({ nomCom: "mods", categorie: "General", reaction: "💞" }, async (dest, z
   if (thsudo) {
      let msg = `*My Super-User*\n
      *Owner Number\n* :
-- 🌟 @${conf.NUMERO_OWNER}
+- ✨ @${conf.NUMERO_OWNER}
 
 ------ *other sudos* -----\n`
      
@@ -51,18 +51,20 @@ zokou({ nomCom: "mods", categorie: "General", reaction: "💞" }, async (dest, z
   }
 });
 
-zokou({ nomCom: "dev", categorie: "General", reaction: "💞" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "dev", categorie: "General", reaction: "⛑️" }, async (dest, zk, commandeOptions) => {
     const { ms, mybotpic } = commandeOptions;
 
     const devs = [
-      { nom: "Cod3Uchiha-TKM", numero: "263775571820" },
-      { nom: "Takudzwa-TKM", numero: "263785028126" },
+      { nom: "Cod3Uchiha-TKM", numero: "263775571820" }, 
+      { nom: "TAKUDZWA-TKM", numero: "263785028126" }, 
+      { nom: "BELTAH TECH", numero: "254114141192" },
+      { nom: "BELTAH KE", numero: "254737681758" },
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
-    let message = "Hello! here is the TKM bot DEV :\n\n";
+    let message = "HELLO👋!,WELCOME TO TKM bot HELP CENTER,ASK FOR HELP FROM ANY OF THE DEVELOPERS BELOW:\n\n";
     for (const dev of devs) {
-      message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
+      message += `----------------\n⬡ ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }
   var lien = mybotpic()
     if (lien.match(/\.(mp4|gif)$/i)) {
@@ -94,8 +96,7 @@ else {
 zokou({ nomCom: "support", categorie: "General" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, auteurMessage, } = commandeOptions; 
  
-  repondre("look on pm sir ")
-  await zk.sendMessage(auteurMessage,{text : `https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g`},{quoted :ms})
+  repondre("THANK YOU FOR CHOOSING TKM bot, Support me \n\n ⬡ Join my whatsapp channel ⬡ \n\n⬡⁠[https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g] \n\n ☉ GROUP LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://chat.whatsapp.com/CQvUnqaDK4fBjgMXvFEAsI] \n\n ☉YOUTUBE LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://www.youtube.com/@Beltahtech2024] \n\n\n★𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 © 𝙱𝚎𝚕𝚝𝚊𝚑-𝚃𝚎𝚌𝚑-𝚃𝚎𝚊𝚖") 
+  await zk.sendMessage(auteurMessage,{text : `THANK YOU FOR CHOOSING BELTAH-MD, HERE ARE OUR SUPPORTIVE LINKS\n\n ☉ CHANNEL LINK IS HERE ☉ \n\n❒⁠⁠⁠⁠[https://whatsapp.com/channel/0029VaRHDBKKmCPKp9B2uH2F] \n\n ☉ GROUP LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://chat.whatsapp.com/CQvUnqaDK4fBjgMXvFEAsI] \n\n ☉YOUTUBE LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://www.youtube.com/@Beltahtech2024] \n\n\n★𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 © 𝙱𝚎𝚕𝚝𝚊𝚑-𝚃𝚎𝚌𝚑-𝚃𝚎𝚊𝚖`},{quoted :ms})
 
 })
-
