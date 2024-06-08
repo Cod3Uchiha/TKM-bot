@@ -10,7 +10,7 @@ zokou({ nomCom: "lyrics",
         
    try {
 
-    if (!arg || arg.length === 0) return repondre("Where is the name of musique");
+    if (!arg || arg.length === 0) return repondre("Where is the name of music");
 
     let  result  = await axios.get(`http://api.maher-zubair.tech/search/lyrics?q=${arg.join(' ')}`);
 
@@ -18,7 +18,7 @@ zokou({ nomCom: "lyrics",
 
     if (lyrics.error) return repondre("no lyrics found");
 
-    let msg = `---------ZK-lyrics-finder--------
+    let msg = `---------⬡┃TKM bot┃⬡--------
 
 * *Artist :* ${lyrics.artist}
 
