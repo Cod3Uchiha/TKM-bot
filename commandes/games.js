@@ -5,7 +5,7 @@ const traduire = require('../framework/traduction')
 
 
 zokou({
-    nomCom: "chifumi",
+    nomCom: "rps",
     categorie: "Games",
     reaction: "📺"
   },
@@ -150,7 +150,7 @@ zokou(
          let quizz = await axios.get("https://quizzapi.jomoreschi.fr/api/v1/quiz?limit=1&difficulty=facile") ;
 
          
-   let msg = `     Zokou-Quizz-Games
+   let msg = `     ┃⬡TKM bot⬡quiz games┃
 
 *Category :* ${ await traduire(quizz.data.quizzes[0].category , {to : 'en'})}
 *Question :* ${ await traduire(quizz.data.quizzes[0].question, {to : 'en'})}\n\n*Answers :*\n`
@@ -183,7 +183,7 @@ let Answers =[] ;
 
 
      msg+= `
-Send the number off right answers`
+Send the number of right answers`
              
        repondre(msg) ;
 
