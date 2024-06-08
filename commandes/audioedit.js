@@ -241,7 +241,7 @@ zokou(
     }
   );
   
-  // Cas pour l'effet "nightcore"
+  // Cas pour l'effet "nigtcore"
   zokou(
     {
       nomCom: 'nightcore',
