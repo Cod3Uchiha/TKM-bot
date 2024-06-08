@@ -16,11 +16,11 @@ zokou({nomCom : "igdl" , categorie : "Download"},async (dest , zk , commandeOpti
 
     try {
       //console.log(igvid.data.result[0].url) ;
-    zk.sendMessage(dest,{video : {url : igvid.data.result[0].url},caption : "ig video downloader powered by *Zokou-Md*",gifPlayback : false },{quoted : ms}) 
+    zk.sendMessage(dest,{video : {url : igvid.data.result[0].url},caption : "ig video downloader powered by ⬡┃TKM bot┃⬡",gifPlayback : false },{quoted : ms}) 
     }
     catch (e) {
 
-        zk.sendMessage(dest,{image : {url : igvid.data.result[0].url},caption : "ig image downloader powered by *Zokou-Md*"})
+        zk.sendMessage(dest,{image : {url : igvid.data.result[0].url},caption : "ig image downloader powered by ⬡┃TKM bot┃⬡"})
     }
   
   } catch (e) {repondre("erreur survenue lors du téléchargement \n " + e)}
@@ -51,7 +51,7 @@ async (dest, zk, commandeOptions) => {
         Lien: ${result.url}
       `;
        zk.sendMessage(dest,{image : { url : result.thumbnail}, caption : caption},{quoted : ms}) ;
-       zk.sendMessage(dest, { video: { url: result.hd  }, caption: 'facebook video downloader powered by *zokou-MD*' }, { quoted: ms });
+       zk.sendMessage(dest, { video: { url: result.hd  }, caption: 'facebook video downloader powered by ⬡┃TKM bot┃⬡' }, { quoted: ms });
       
     })
     .catch((error) => {console.log("Error:", error)
@@ -113,7 +113,7 @@ async (dest, zk, commandeOptions) => {
         Lien: ${result.url}
       `;
        zk.sendMessage(dest,{image : { url : result.thumbnail}, caption : caption},{quoted : ms}) ;
-       zk.sendMessage(dest, { video: { url: result.sd  }, caption: 'facebook video downloader powered by *zokou-MD*' }, { quoted: ms });
+       zk.sendMessage(dest, { video: { url: result.sd  }, caption: 'facebook video downloader powered by ⬡┃TKM bot┃⬡' }, { quoted: ms });
       
     })
     .catch((error) => {console.log("Error:", error)
