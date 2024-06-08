@@ -35,7 +35,7 @@ function createCanvacordCommand(commandName, canvacordFunction) {
   });
 }
 
-// Créer des commandes avec différentes fonctions canvacord
+// Créer des commandes avec différentes fonctions cavacord
 createCanvacordCommand("shit", canvacord.Canvacord.shit);
 createCanvacordCommand("wasted", canvacord.Canvacord.wasted);
 createCanvacordCommand("wanted", canvacord.Canvacord.wanted);
