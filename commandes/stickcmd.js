@@ -12,11 +12,11 @@ zokou(
 
    const {ms , arg, repondre,superUser , msgRepondu} = commandeOptions;
 
-    if (!superUser) { repondre('you can\'t use this command') ; return} ;
+    if (!superUser) { repondre('you can\'t use this cmd') ; return} ;
 
       if(msgRepondu && msgRepondu.stickerMessage )  {
   
-         if(!arg || !arg[0]) { repondre('put the name of the command') ; return} ;
+         if(!arg || !arg[0]) { repondre('put the name of the cmd') ; return} ;
           
         
          await addstickcmd(arg[0].toLowerCase() , msgRepondu.stickerMessage.url ) ;
@@ -40,12 +40,12 @@ zokou(
           const { ms, arg, repondre, superUser } = commandeOptions;
   
           if (!superUser) {
-              repondre('only Mods can use this command');
+              repondre('only Mods can use this cmd');
               return;
           }
   
           if (!arg || !arg[0]) {
-              repondre('put the name of the command that you want to delete');
+              repondre('put the name of the cmd you want to delete');
               return;
           }
   
@@ -54,9 +54,9 @@ zokou(
   
           try {
               await deleteCmd(cmdToDelete.toLowerCase());
-              repondre(`the commande ${cmdToDelete} is deleted successfully.`);
+              repondre(`the cmd ${cmdToDelete} is deleted successfully.`);
           } catch {
-              repondre(`the command ${cmdToDelete} don't existe`);
+              repondre(`the cmd ${cmdToDelete} don't exist`);
           }
       }
   );
@@ -71,7 +71,7 @@ zokou(
         const { repondre, superUser } = commandeOptions;
 
         if (!superUser) {
-            repondre('only Mods can use this command');
+            repondre('only Mods can use this cmd');
             return;
         }
 
