@@ -7,7 +7,7 @@ zokou({nomCom:"vv",categorie:"General",reaction:"🤲🏿"},async(dest,zk,comman
 const {ms,msgRepondu,repondre}=commandeOptions;
 
 
-if(!msgRepondu){return repondre("*Mentionne a view once media* .");}
+if(!msgRepondu){return repondre("Mentionne a view once media .");}
 
 
 if(msgRepondu.viewOnceMessageV2)
