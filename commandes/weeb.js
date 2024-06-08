@@ -3,7 +3,7 @@ const fs = require('fs');
 const { zokou } = require("../framework/zokou");
 const { writeFile } = require('fs/promises')
 
-// Commande waifu
+// Commande waif
 zokou({
   nomCom: "waifu",
   categorie: "Weeb",
