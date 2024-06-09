@@ -68,16 +68,14 @@ let menuMsg = `
     }
 
     menuMsg += `
-⬡            ⬡
-⬡▪︎——————————————————————▪︎⬡
-|TKM bot,the bot for you
+            
+⬡▪︎───────────────▪︎⬡
+|Thanks for choosing
 
-   Thanks for choosing
-
-        *TKM bot*
+     *TKM bot*
 
 |https://github.com/Cod3Uchiha/TKM-bot
-⬡▪︎——————————————————————▪︎⬡
+⬡▪︎───────────────▪︎⬡
 `;
 
    var lien = mybotpic();
