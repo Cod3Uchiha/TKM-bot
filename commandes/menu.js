@@ -34,7 +34,7 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
 ╭────⬡〘*TKM md*〙⬡───▪︎
 ┴╭─────────────™
-⬡│▸ Theme : TKM
+⬡│▸ Theme : TKM⬡bot
 ⬡│▸ User : ${s.OWNER_NAME}
 ⬡│▸ Prefix : ${s.PREFIXE}
 ⬡│▸ Mode : ${mode}
@@ -43,6 +43,7 @@ const date = moment().format('DD/MM/YYYY');
 ⬡│▸ Time : ${temps}
 ⬡│▸ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
 ⬡│▸ Platform : ${os.platform()}
+⬡│▸ Creator: Cod3Uchiha
 ┬╰──────────────™
 ╰────⬡〘*TKM md*〙⬡───▪︎\n\n`;
     
