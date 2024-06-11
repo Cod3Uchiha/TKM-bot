@@ -91,7 +91,7 @@ setTimeout(() => {
             keepAliveIntervalMs: 30_000,
             /* auth: state*/ auth: {
                 creds: state.creds,
-                /** caching makes the store faster to send/recv messages */
+                /** caching makes the stor faster to send/recv messages */
                 keys: (0, baileys_1.makeCacheableSignalKeyStore)(state.keys, logger),
             },
             //////////
