@@ -51,3 +51,20 @@ Thank you for using TKM-bot
 **Thanks for supporting the repo**
 
 ---
+
+# Cod3Uchiha
+
+---------
+
+## Repo Stats 🔭
+
+![github card](https://github-readme-stats.vercel.app/api/pin/?username=Cod3Uchiha&repo=TKM-bot&theme=chartreuse-dark)
+
+---------
+
+## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" alt="Github" width="44" height="44"> Github Stats
+
+![github stats](https://github-readme-stats.vercel.app/api?username=Cod3Uchiha&show_icons=true&theme=chartreuse-dark)
+![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=Cod3Uchiha&layout=compact&theme=chartreuse-dark)
+
+---------
