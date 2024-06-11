@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const { Pool } = require("pg");
 
-// Utilisez le module 'set' pour obtenir la valeur de DATABASE_URL depuis vos configurations
+// Utilisez le module 'set' pour obtenir la valeur e DATABASE_URL depuis vos configurations
 const s = require("../set");
 
 // Récupérez l'URL de la base de données de la variable s.DATABASE_URL
