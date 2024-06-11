@@ -1,6 +1,6 @@
 {
   "name":"TKM bot",
-  "description":"Deploy now your TKM bot, TKM bot was developed by COD3UCHIHA.Make sure you fill all valuables to avoid bot from sleeping. ",
+  "description":"Deploy now your TKM bot,Note-This is not Beltah md TKM bot was developed by COD3UCHIHA.Make sure you fill all valuables to avoid bot from sleeping. ",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://telegra.ph/file/626e7105422c8908f723d.jpg",
   "repository":"https://github.com/Cod3Uchiha/TKM-bot",
@@ -34,7 +34,7 @@
     ,
     "BOT_NAME" : {
        
-      "description":"put A name for your bot",
+      "description":"put A name for your bot/session website sponsored by Beltah tech",
       "value":"TKM bot",
       "required":false
 
