@@ -34,3 +34,9 @@
 # *_DEVELOPER_*
 <a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" width="250" height="250" alt="Cod3Uchiha"/></a>
 # _=> • [Cod3Uchiha](https://github.com/Cod3Uchiha) • <=_
+
+# _Session Credits to Beltah Tech_•Thanks for allowing the use of your session website
+
+#  _Thanks to those of you who are using the bot
+
+# Thanks for starting the repo
