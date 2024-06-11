@@ -32,7 +32,7 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-╭────⬡〘*TKM md*〙⬡───▪︎
+╭────⬡〘 TKM md 〙⬡───▪︎
 ┴╭─────────────™
 ⬡│▸ Theme : TKM⬡bot
 ⬡│▸ User : ${s.OWNER_NAME}
@@ -45,7 +45,7 @@ const date = moment().format('DD/MM/YYYY');
 ⬡│▸ Platform : ${os.platform()}
 ⬡│▸ Creator: Cod3Uchiha
 ┬╰──────────────™
-╰────⬡〘*TKM md*〙⬡───▪︎\n\n`;
+╰────⬡〘 TKM md 〙⬡───▪︎\n\n`;
     
 let menuMsg = `
 ╭───────────────···▸▸
@@ -53,6 +53,24 @@ let menuMsg = `
 ┃  〘 powered by ⬡⬡⬡⬡
 ┃  -Cod3Uchiha 〙 ⬡⬡⬡
 ┃  〘 Takudzwa-TKM〙⬡⬡
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
+┃
 ╰───────────────···▸▸
 
 ⬡ *TKM md COMMANDS* ⬡
