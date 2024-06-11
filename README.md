@@ -1,4 +1,4 @@
-# TKM bot
+*TKM Bot*
 
 <p align="center">
   <a href="https://github.com/Cod3Uchiha">
@@ -6,37 +6,31 @@
   </a>
 </p>
 
-***
+__*
+
 <p align="center">
 <a href="https://github.com/Cod3Uchiha?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Cod3Uchiha?label=Followers&style=social"></a>
 <a href="https://github.com/Cod3Uchiha/TKM-bot/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/Cod3Uchiha/TKM-bot?&style=social"></a>
 <a href="https://github.com/Cod3Uchiha/TKM-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Cod3Uchiha/TKM-bot?style=social"></a>
 <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>
-  
-***
+</p>
 
-# *_GET • [SESSION ID](https://beltahmd-sessions-ce114587ed6a.herokuapp.com) • FOR now use this for pairing,tkm bot pairing is under maintenance*
+__*
 
-***
+*To make the best use of the TKM bot, you can follow these steps:*
 
-# thank you for using TKM-bot
+1. *Pairing the Bot*: Obtain the session ID from here • https://beltahmd-sessions-ce114587ed6a.herokuapp.com for pairing. Please note that the bot pairing feature is currently under maintenance.
 
-***
+2. *Deployment*: Deploy the TKM bot on Heroku by clicking here • https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot. If you don't have a Heroku account, you can create one here • https://signup.heroku.com/.
 
-# *_NOW • [DEPLOY](https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot) • TKM bot ON HEROKU_*
+3. *Stay Updated*: Follow the WhatsApp channel • https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g for the latest updates and announcements related to the TKM bot.
 
-***
+4. *Developer Information*: Learn more about the developer, Cod3Uchiha, by visiting their GitHub profile • https://github.com/Cod3Uchiha.
 
-# *_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_*
+5. *Acknowledgments*: Special thanks to Beltah Tech for allowing the use of their session website, and to all the users who are supporting the bot.
 
-***
+6. *Profile Views*: The TKM bot has been viewed by !Profile Views • https://komarev.com/ghpvc/?username=Cod3Uchiha users.
 
-# *_DEVELOPER_*
-<a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" width="250" height="250" alt="Cod3Uchiha"/></a>
-# _=> • [Cod3Uchiha](https://github.com/Cod3Uchiha) • <=_
+Remember, the TKM bot is designed to provide a seamless experience, and your support is greatly appreciated.
 
-# _Session Credits to Beltah Tech_•Thanks for allowing the use of your session website
-
-#  _Thanks to those of you who are using the bot
-
-# Thanks for starting the repo
+__*
