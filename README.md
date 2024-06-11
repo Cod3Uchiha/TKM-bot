@@ -32,11 +32,15 @@ Thank you for using TKM-bot
 ---
 
 *DEVELOPER*
-<a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" width="250" height="250" alt="Cod3Uchiha"/></a>
+<a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" height="400" alt="Cod3Uchiha"/></a>
 **=> • [Cod3Uchiha] • (https://github.com/Cod3Uchiha) • <=**
+
+---
 
 **_Session Credits to Beltah Tech • Thanks for allowing the use of your session website_**
 
 **Thanks to those of you who are using the bot**
 
 **Thanks for supporting the repo**
+
+---
