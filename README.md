@@ -42,6 +42,10 @@ Thank you for using TKM-bot
 
 **_Session Credits to Beltah Tech • Thanks for allowing the use of your session website_**
 
+**_app.json and session site Sponsored by Beltah tech_**
+
+---
+
 **Thanks to those of you who are using the bot**
 
 **Thanks for supporting the repo**
