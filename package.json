@@ -1,6 +1,6 @@
 {
-  "name": "zokou-2.0",
-  "version": "2.0.0",
+  "name": "TKM bot",
+  "version": "1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,13 +12,16 @@
   "keywords": [
     "bot",
     "Baileys",
-    "Zokou",
+    "TKM-BOT",
     "whatsapp",
     "whatsapp-bot",
-    "Faouz995"
+    "Cod3Uchiha",
+    "Manjiro-Sano-md",
+    "Tkm bot",
+    "CodeUchiha"
   ],
-  "author": "Faouz995",
-  "license": "ISC",
+  "author": "Cod3Uchiha",
+  "license": "MIT",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^10.0.1",
