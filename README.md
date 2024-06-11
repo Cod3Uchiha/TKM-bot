@@ -17,17 +17,17 @@
 
 ---
 
-*GET* • SESSION ID • https://beltahmd-sessions-ce114587ed6a.herokuapp.com • FOR now use this for pairing, tkm bot pairing is under maintenance
+**_GET • [SESSION ID](https://beltahmd-sessions-ce114587ed6a.herokuapp.com) • FOR now use this for pairing,tkm bot pairing is under maintenance**
 
 Thank you for using TKM-bot
 
 ---
 
-*NOW* • DEPLOY • https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot • TKM bot ON HEROKU
+**_NOW • [DEPLOY](https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot) • TKM bot ON HEROKU_**
 
-*FOLLOW* • WHATSAPP CHANNEL • https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g •
+**_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
 
-*CREATE HEROKU ACCOUNT* • Get started on Heroku today • https://www.heroku.com/
+**_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
 
 ---
 
@@ -39,4 +39,4 @@ Session Credits to Beltah Tech • Thanks for allowing the use of your session w
 
 Thanks to those of you who are using the bot
 
-Thanks for starting the repo
+Thanks for supporting the repo
