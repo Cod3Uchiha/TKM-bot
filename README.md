@@ -33,7 +33,9 @@ Thank you for using TKM-bot
 
 **DEVELOPER**
 
+<p align="center">
 <a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" height="400" alt="Cod3Uchiha"/></a>
+  
 **=> • [Cod3Uchiha] • (https://github.com/Cod3Uchiha) • <=**
 
 ---
