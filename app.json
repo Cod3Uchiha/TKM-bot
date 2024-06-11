@@ -1,6 +1,6 @@
 {
   "name":"TKM bot",
-  "description":"Deploy now your TKM bot,Note-This is not Beltah md TKM bot was developed by COD3UCHIHA.Make sure you fill all valuables to avoid bot from sleeping. ",
+  "description":"whatsappbot developed by Cod3Uchiha",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://telegra.ph/file/626e7105422c8908f723d.jpg",
   "repository":"https://github.com/Cod3Uchiha/TKM-bot",
@@ -10,7 +10,7 @@
     "PREFIX":
     {
       "description":"choose your prefix of bot",
-      "value":".",
+      "value":"#",
       "required":true
     },
     "AUTO_READ_STATUS":
@@ -21,7 +21,7 @@
     }, "AUTO_DOWNLOAD_STATUS":
     {
       "description":"Your contact status will be download automatically and send to you(type yes to active or no to deactive ; don't write in capital letter)",
-      "value":"no",
+      "value":"yes",
       "required":false
     }
     ,
@@ -34,7 +34,7 @@
     ,
     "BOT_NAME" : {
        
-      "description":"put A name for your bot/session website sponsored by Beltah tech",
+      "description":"put A name for your bot",
       "value":"TKM bot",
       "required":false
 
@@ -64,8 +64,8 @@
 	  ,
     "SESSION_ID":
     {
-      "description":"put your session ID here after BELTAH-MD;;; , the code you receive after pairing code",   
-      "value":"BELTAH-MD;;;",
+      "description":"put your session ID , the code you receive after scanning Qr code",   
+      "value":"",
       "required":true
       
     },
@@ -74,20 +74,20 @@
     
     "desc": "Your Name",
     "required": false,
-    "value": "Beltah Ke"
+    "value": "Cod3Uchiha"
   },
     "NUMERO_OWNER":
   {
     
-    "desc": "Your number , dont put '+' and put you area code(exemple of togo '228')",
+    "desc": "Your number , dont put '+' and put you area code(exemple of togo '263')",
     "required":false,
-    "value": "254114141192,254737681758"
+    "value": "263775571820"
   },
     "WARN_COUNT":
   {
     "desc": "this is the limit of warn for warning commandes",
     "required": false,
-    "value": "5"
+    "value": "3"
   },
   "STARTING_BOT_MESSAGE":
   {
@@ -97,7 +97,7 @@
   },
   "PRESENCE":{
     "description":"Mark your presence: 1 to indicate that you are online even if you are not. 2 to indicate that you are currently typing a message. 3 to indicate that you are currently recording an audio. Or leave the field blank to indicate your real state.",
-    "value":"",  
+    "value":"",
     "required": false
   },
   "ANTI_DELETE_MESSAGE" : {
@@ -119,4 +119,4 @@
       "plan":"heroku-postgresql:essential-0"
     }
   ]
-  }
+     }
