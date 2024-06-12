@@ -17,7 +17,7 @@
 
 ---
 
-**_GET • [SESSION ID](https://beltahmd-sessions-ce114587ed6a.herokuapp.com) • FOR now use this for pairing,tkm bot pairing is under maintenance**
+**_GET • [SESSION ID](https://beltah-session-d0e2ce19228b.herokuapp.com/pair) • FOR now use this for pairing,tkm bot pairing is under maintenance**
 
 Thank you for using TKM-bot
 
