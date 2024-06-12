@@ -2,7 +2,7 @@
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +TKM-bot;MULTI+DEVICE+WHATSAPP+BOT" alt="Typing SVG" /></a>
   </p>
-
+  
 ---
 
 <p align="center">
@@ -11,6 +11,7 @@
   </a>
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
 ---
 
 <p align="center">
@@ -20,13 +21,14 @@
   <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
 ---
 
 **_GET • [SESSION ID](https://beltah-session-d0e2ce19228b.herokuapp.com/pair) • FOR now use this for pairing,tkm bot pairing is under maintenance**
 
 Thank you for using TKM-bot
-
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
 ---
 
 **_NOW • [DEPLOY](https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot) • TKM bot ON HEROKU_**
@@ -34,8 +36,8 @@ Thank you for using TKM-bot
 **_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
 
 **_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
-
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
 ---
 
 **DEVELOPER**
@@ -50,14 +52,12 @@ Thank you for using TKM-bot
 **_Session Credits to Beltah Tech • Thanks for allowing the use of your session website_**
 
 **_app.json and session site Sponsored by Beltah tech_**
-
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 **Thanks to those of you who are using the bot**
 
 **Thanks for supporting the repo**
-
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
@@ -68,7 +68,6 @@ Thank you for using TKM-bot
 ## Repo Stats 🔭
 
 ![github card](https://github-readme-stats.vercel.app/api/pin/?username=Cod3Uchiha&repo=TKM-bot&theme=chartreuse-dark)
-
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---------
 
