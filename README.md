@@ -10,7 +10,7 @@
     <img alt="TKM bot logo" height="400" src="https://telegra.ph/file/626e7105422c8908f723d.jpg">
   </a>
 </p>
-
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 <p align="center">
@@ -19,13 +19,14 @@
   <a href="https://github.com/Cod3Uchiha/TKM-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Cod3Uchiha/TKM-bot?style=social"></a>
   <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>
 </p>
-
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 **_GET • [SESSION ID](https://beltah-session-d0e2ce19228b.herokuapp.com/pair) • FOR now use this for pairing,tkm bot pairing is under maintenance**
 
 Thank you for using TKM-bot
 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 **_NOW • [DEPLOY](https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot) • TKM bot ON HEROKU_**
@@ -34,27 +35,30 @@ Thank you for using TKM-bot
 
 **_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 **DEVELOPER**
 
 <p align="center">
 <a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" height="400" alt="Cod3Uchiha"/></a>
-  
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 **=> • [Cod3Uchiha] • (https://github.com/Cod3Uchiha) • <=**
-
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 **_Session Credits to Beltah Tech • Thanks for allowing the use of your session website_**
 
 **_app.json and session site Sponsored by Beltah tech_**
 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 **Thanks to those of you who are using the bot**
 
 **Thanks for supporting the repo**
 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
 
 # Cod3Uchiha
@@ -65,6 +69,7 @@ Thank you for using TKM-bot
 
 ![github card](https://github-readme-stats.vercel.app/api/pin/?username=Cod3Uchiha&repo=TKM-bot&theme=chartreuse-dark)
 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---------
 
 ## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" alt="Github" width="44" height="44"> Github Stats
@@ -72,4 +77,5 @@ Thank you for using TKM-bot
 ![github stats](https://github-readme-stats.vercel.app/api?username=Cod3Uchiha&show_icons=true&theme=chartreuse-dark)
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=Cod3Uchiha&layout=compact&theme=chartreuse-dark)
 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---------
