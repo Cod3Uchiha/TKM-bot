@@ -789,7 +789,7 @@ ${metadata.desc}`;
                   zk.sendMessage(crons[i].group_id, { image : { url : './media/chrono.webp'} , caption: "Hello, it's time to close the group; sayonara." });
 
                 }, {
-                    timezone: "Africa/Abidjan"
+                    timezone: "Africa/Harare"
                   });
               }
         
@@ -806,7 +806,7 @@ ${metadata.desc}`;
 
                  
                 },{
-                    timezone: "Africa/Abidjan"
+                    timezone: "Africa/Harare"
                   });
               }
         
@@ -880,20 +880,20 @@ ${metadata.desc}`;
                 await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `╔════◇
-║ 『𝐙𝐨𝐤𝐨𝐮-𝐌𝐃』
-║    Prefix : [ ${prefixe} ]
-║    Mode :${md}
-║    Total Commandes : ${evt.cm.length}︎
-╚══════════════════╝
+                let cmsg = `╔───⬡
+┃ ┃⬡TKM bot⬡┃
+┃    Prefix : [ ${prefixe} ]
+┃    Mode :${md}
+┃    Total Commandes : ${evt.cm.length}︎
+╚─────────────────···▸▸
 
-╔═════◇
+╔───⬡
 
 
- if there are somes error you can tell us :) 
- thanks you for choosing zokou MD
-
-╚══════════════════╝`;
+ report any. problems to the devs:)
+ Thanks for supporting
+ this project
+╚─────────────────···▸▸`;
                 await zk.sendMessage(zk.user.id, { text: cmsg });
                 }
             }
