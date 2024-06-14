@@ -7,7 +7,7 @@ zokou({ nomCom: "tkminc", reaction: "😌", nomFichier: __filename }, async (des
     let z = 'Hello 👋\n\nClick The link below to Join ⬡┃TKM inc┃⬡ WhatsApp channel\n\n';
     let d = 'https://whatsapp.com/channel/0029VadFn9M545v25zjEWI3I';
     let varmess = z + d;
-    var img = 'https://telegra.ph/file/626e7105422c8908f723d.jpg';
+    var img = 'https://telegra.ph/file/ac2455ec2c1ffac391772.jpg';
     await zk.sendMessage(dest, { image: { url: img }, caption: varmess });
     //console.log("montest")
 });
@@ -18,7 +18,7 @@ zokou({ nomCom: "channel", reaction: "😌", nomFichier: __filename }, async (de
     let z = 'Hello 👋\n\nClick The link below to Join ⬡┃Cod3Uchiha┃⬡ WhatsApp Channel\n\n';
     let d = 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g';
     let varmess = z + d;
-    var img = 'https://telegra.ph/file/626e7105422c8908f723d.jpg';
+    var img = 'https://telegra.ph/file/ac2455ec2c1ffac391772.jpg';
     await zk.sendMessage(dest, { image: { url: img }, caption: varmess });
     //console.log("montest")
 });
