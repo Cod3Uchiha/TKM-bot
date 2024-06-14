@@ -24,7 +24,7 @@
 
 ---
 
-**_GET • [SESSION ID](https://beltah-session-d0e2ce19228b.herokuapp.com/pair) • FOR now use this for pairing,tkm bot pairing is under maintenance**
+**_GET • [SESSION ID](https://cod3session-00187e8a3f27.herokuapp.com/) • FOR now use this for pairing,tkm bot pairing is under maintenance**
 
 Thank you for using TKM-bot
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
@@ -45,6 +45,7 @@ Thank you for using TKM-bot
 <p align="center">
 <a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" height="400" alt="Cod3Uchiha"/></a>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+  
 **=> • [Cod3Uchiha] • (https://github.com/Cod3Uchiha) • <=**
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
