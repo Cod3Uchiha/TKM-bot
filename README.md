@@ -48,13 +48,7 @@ Thank you for using TKM-bot
 **=> • [Cod3Uchiha] • (https://github.com/Cod3Uchiha) • <=**
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---
-
-**_Session Credits to Beltah Tech • Thanks for allowing the use of your session website_**
-
-**_app.json and session site Sponsored by Beltah tech_**
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
----
-
+  
 **Thanks to those of you who are using the bot**
 
 **Thanks for supporting the repo**
