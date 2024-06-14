@@ -60,7 +60,7 @@ zokou({ nomCom: "dev", categorie: "General", reaction: "⛑️" }, async (dest, 
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
-    let message = "HELLO👋!,WELCOME TO TKM bot HELP CENTER,ASK FOR HELP FROM ANY OF THE DEVELOPERS BELOW:\n\n";
+    let message = "HELLO👋!,WELCOME TO TKM bot HELP CENTER,ASK FOR HELP FROM THE DEVELOPER:\n\n";
     for (const dev of devs) {
       message += `----------------\n⬡ ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }
