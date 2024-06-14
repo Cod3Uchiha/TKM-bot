@@ -57,8 +57,6 @@ zokou({ nomCom: "dev", categorie: "General", reaction: "⛑️" }, async (dest, 
     const devs = [
       { nom: "Cod3Uchiha-TKM", numero: "263775571820" }, 
       { nom: "TAKUDZWA-TKM", numero: "263785028126" }, 
-      { nom: "BELTAH TECH", numero: "254114141192" },
-      { nom: "BELTAH KE", numero: "254737681758" },
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
