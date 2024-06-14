@@ -6,7 +6,7 @@ const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
 
-zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "menu2", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../framework//zokou");
     var coms = {};
@@ -32,58 +32,49 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-╭────⬡┃TKM bot┃⬡───▪︎
+╭────▫️│TKM bot│▫️───▹
 ┴╭─────────────™
-⬡│▸ Theme : TKM⬡bot
-⬡│▸ User : ${s.OWNER_NAME}
-⬡│▸ Prefix : ${s.PREFIXE}
-⬡│▸ Mode : ${mode}
-⬡│▸ Commands : ${cm.length}
-⬡│▸ Date : ${date}
-⬡│▸ Time : ${temps}
-⬡│▸ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-⬡│▸ Platform : ${os.platform()}
-⬡│▸ Creator: Cod3Uchiha
+▫️│▹ Theme : TKM²
+▫️│▹ User : ${s.OWNER_NAME}
+▫️│▹ Prefix : ${s.PREFIXE}
+▫️│▹ Mode : ${mode}
+▫️│▹ Commands : ${cm.length}
+▫️│▹ Date : ${date}
+▫️│▹ Time : ${temps}
+▫️│▹ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+▫️│▹ Platform : ${os.platform()}
+▫️│▹ Creator: Cod3Uchiha
 ┬╰──────────────™
-╰────⬡┃TKM bot┃⬡───▪︎\n\n`;
+╰────▫️│TKM bot│▫️───▹\n\n`;
     
 let menuMsg = `
-╭─────────────────➳
-┃  〘 TKM md 〙 ⬡⬡⬡⬡⬡
-┃  〘 powered by ⬡⬡⬡⬡
-┃  -Cod3Uchiha 〙 ⬡⬡⬡
-┃  〘 Takudzwa-TKM〙⬡⬡
-┃  █████████
-┃  █▄█████▄█
-┃  █▼▼▼▼▼
-┃  █
-┃  █▲▲▲▲▲
-┃  █████████
-┃  ██ ██  𝕿𝕶𝕸 𝖇𝖔𝖙
-╰─────────────────➳
+╭─────────────────▹
+▫️│▹TKM bot
+▫️│▹By The Cod3Uchiha  
+╰─────────────────▹
 
-⬡ *TKM bot COMMANDS* ⬡
+▫️TKM bot COMMANDS▫️
 `;
 
     for (const cat in coms) {
-        menuMsg += `╭──────⬡ ${cat} ⬡`;
+        menuMsg += `╭──────「 ${cat} 」`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-⬡│▸ ${cmd}`;
+▫️│▹ ${cmd}`;
         }
         menuMsg += `
-╰───────────────➳\n`
+╰───────────────▹\n`
     }
 
     menuMsg += `
             
-⬡▪︎───────────────▪︎⬡
-|Thanks for choosing
-
-     *TKM bot*
-
-|https://github.com/Cod3Uchiha/TKM-bot
-⬡▪︎───────────────▪︎⬡
+︎╭───────────────▹
+▫️|▹Keep Using
+▫️|
+▫️|▹▫️┃TKM bot┃▫️
+▫️|
+▫️|▹https://github.com/Cod3Uchiha/TKM-bot
+╰───────────────▹
 `;
 
    var lien = mybotpic();
