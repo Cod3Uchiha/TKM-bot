@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/Cod3Uchiha">
-    <img alt="TKM bot logo" height="400" src="https://telegra.ph/file/626e7105422c8908f723d.jpg">
+    <img alt="TKM bot logo" height="400" src="https://telegra.ph/file/ac2455ec2c1ffac391772.jpg">
   </a>
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
