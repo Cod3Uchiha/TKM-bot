@@ -893,6 +893,10 @@ ${metadata.desc}`;
  report any. problems to the devs:)
  Thanks for supporting
  this project
+ property of Cod3Uchiha
+ property of Takudzwa Mlambo
+ © Cod3Uchiha 
+ © Takudzwa Mlambo
 ╚─────────────────···▸▸`;
                 await zk.sendMessage(zk.user.id, { text: cmsg });
                 }
