@@ -1,39 +1,133 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const { zokou } = require("../framework/zokou");
-zokou({ nomCom: "tkminc", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
-    console.log("Commande saisie !!!s");
-    let z = 'Hello 👋\n\nClick The link below to Join ⬡┃TKM inc┃⬡ WhatsApp channel\n\n';
-    let d = 'https://whatsapp.com/channel/0029VadFn9M545v25zjEWI3I';
-    let varmess = z + d;
-    var img = 'https://telegra.ph/file/ac2455ec2c1ffac391772.jpg';
-    await zk.sendMessage(dest, { image: { url: img }, caption: varmess });
-    //console.log("montest")
-});
-console.log("mon test");
-
-zokou({ nomCom: "channel", reaction: "😌", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
-    console.log("Commande saisie !!!s");
-    let z = 'Hello 👋\n\nClick The link below to Join ⬡┃Cod3Uchiha┃⬡ WhatsApp Channel\n\n';
-    let d = 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g';
-    let varmess = z + d;
-    var img = 'https://telegra.ph/file/ac2455ec2c1ffac391772.jpg';
-    await zk.sendMessage(dest, { image: { url: img }, caption: varmess });
-    //console.log("montest")
-});
-console.log("mon test");
-/*module.exports.commande = () => {
-  var nomCom = ["test","t"]
-  var reaction="☺️"
-  return { nomCom, execute,reaction }
-};
-
-async function  execute  (origineMessage,zok) {
-  console.log("Commande saisie !!!s")
-   let z ='Salut je m\'appelle *Zokou* \n\n '+'je suis un bot Whatsapp Multi-appareil '
-      let d =' developpé par *Djalega++*'
-      let varmess=z+d
-      var img='https://wallpapercave.com/uwp/uwp3842939.jpeg'
-await  zok.sendMessage(origineMessage,  { image:{url:img},caption:varmess});
-}  */ 
+'use strict';
+function _0x701b() {
+    const _0x12f5cc = [
+        '5995759NNaZgL',
+        'DsFdH',
+        'p\x20Channel\x0a',
+        'mon\x20test',
+        '┃⬡\x20WhatsAp',
+        '4205211bwmrjI',
+        '170pPWalT',
+        'VkAxs',
+        'defineProp',
+        'hannel\x0a\x0a',
+        '224112IJSJZj',
+        'atsapp.com',
+        '62973jHPlLW',
+        'erty',
+        'zRANo',
+        '3397410lrrlAZ',
+        'aisie\x20!!!s',
+        'channel',
+        'tkminc',
+        'log',
+        '91772.jpg',
+        'legra.ph/f',
+        '9WtC0kuJqv',
+        '12HnGUQQ',
+        'ink\x20below\x20',
+        'I3I',
+        '029VaKjSra',
+        'laixl',
+        'Cod3Uchiha',
+        'ZzrIH',
+        'https://te',
+        '545v25zjEW',
+        'l0g',
+        'WhatsApp\x20c',
+        'lick\x20The\x20l',
+        'to\x20Join\x20⬡┃',
+        'rk/zokou',
+        'ec2c1ffac3',
+        'https://wh',
+        '029VadFn9M',
+        'MeuJH',
+        '../framewo',
+        'WugZy',
+        '/channel/0',
+        'RkqHa',
+        '1677203HQcqDy',
+        'Hello\x20👋\x0a\x0aC',
+        '501310YebaAB',
+        '2EPrmOx',
+        '__esModule',
+        'gzVzG',
+        'sendMessag',
+        'ECzIF',
+        'ile/ac2455',
+        'Commande\x20s',
+        'TKM\x20inc┃⬡\x20'
+    ];
+    _0x701b = function () {
+        return _0x12f5cc;
+    };
+    return _0x701b();
+}
+const _0x43a21b = _0x1042;
+(function (_0x4fef87, _0x2eb3f8) {
+    const _0x2d7793 = _0x1042, _0x53300d = _0x4fef87();
+    while (!![]) {
+        try {
+            const _0x543107 = parseInt(_0x2d7793(0x11f)) / (0x3f1 * -0x5 + -0x2b * -0x3f + 0x921) * (-parseInt(_0x2d7793(0x122)) / (-0x66 * 0x25 + -0x190e + -0x3fb * -0xa)) + parseInt(_0x2d7793(0x12f)) / (-0x1ef4 * 0x1 + 0x1 * 0xa2d + -0x2 * -0xa65) + -parseInt(_0x2d7793(0x141)) / (0x1 * -0x647 + -0x1259 + 0x18a4) * (parseInt(_0x2d7793(0x121)) / (-0x6 * -0x39b + 0x290 + -0x182d)) + parseInt(_0x2d7793(0x139)) / (-0x10 * 0x23b + 0xe39 + 0x1 * 0x157d) + parseInt(_0x2d7793(0x12a)) / (-0x89b * -0x1 + -0x164f + -0xdbb * -0x1) + -parseInt(_0x2d7793(0x134)) / (-0xde9 + -0x1123 + 0x1f14) + parseInt(_0x2d7793(0x136)) / (-0x2f3 * -0x2 + 0xa85 * -0x1 + 0x4a8) * (parseInt(_0x2d7793(0x130)) / (0x2 * 0xf10 + -0x1 * 0x1d75 + -0xa1));
+            if (_0x543107 === _0x2eb3f8)
+                break;
+            else
+                _0x53300d['push'](_0x53300d['shift']());
+        } catch (_0x58bf91) {
+            _0x53300d['push'](_0x53300d['shift']());
+        }
+    }
+}(_0x701b, 0x2825f + -0x119 * -0x119 + -0xa971f * -0x1));
+function _0x1042(_0x299ee6, _0x54cff8) {
+    const _0x3b3b4c = _0x701b();
+    return _0x1042 = function (_0x1547b0, _0x31a592) {
+        _0x1547b0 = _0x1547b0 - (-0x4bb + -0x154c + 0x1b23);
+        let _0x1b8198 = _0x3b3b4c[_0x1547b0];
+        return _0x1b8198;
+    }, _0x1042(_0x299ee6, _0x54cff8);
+}
+Object[_0x43a21b(0x132) + _0x43a21b(0x137)](exports, _0x43a21b(0x123), { 'value': !![] });
+const {zokou} = require(_0x43a21b(0x153) + _0x43a21b(0x14e));
+zokou({
+    'nomCom': _0x43a21b(0x13c),
+    'reaction': '😌',
+    'nomFichier': __filename
+}, async (_0x9fd5a3, _0x4804e0, _0x1d6971) => {
+    const _0x225b64 = _0x43a21b, _0x24bb47 = {
+            'ECzIF': _0x225b64(0x128) + _0x225b64(0x13a),
+            'gzVzG': _0x225b64(0x120) + _0x225b64(0x14c) + _0x225b64(0x142) + _0x225b64(0x14d) + _0x225b64(0x129) + _0x225b64(0x14b) + _0x225b64(0x133),
+            'laixl': _0x225b64(0x150) + _0x225b64(0x135) + _0x225b64(0x11d) + _0x225b64(0x151) + _0x225b64(0x149) + _0x225b64(0x143),
+            'VkAxs': function (_0x2ed3b6, _0x361cbc) {
+                return _0x2ed3b6 + _0x361cbc;
+            },
+            'MeuJH': _0x225b64(0x148) + _0x225b64(0x13f) + _0x225b64(0x127) + _0x225b64(0x14f) + _0x225b64(0x13e)
+        };
+    console[_0x225b64(0x13d)](_0x24bb47[_0x225b64(0x126)]);
+    let _0xd929cf = _0x24bb47[_0x225b64(0x124)], _0x370e49 = _0x24bb47[_0x225b64(0x145)], _0x161193 = _0x24bb47[_0x225b64(0x131)](_0xd929cf, _0x370e49);
+    var _0x3f5e8f = _0x24bb47[_0x225b64(0x152)];
+    await _0x4804e0[_0x225b64(0x125) + 'e'](_0x9fd5a3, {
+        'image': { 'url': _0x3f5e8f },
+        'caption': _0x161193
+    });
+}), console[_0x43a21b(0x13d)](_0x43a21b(0x12d)), zokou({
+    'nomCom': _0x43a21b(0x13b),
+    'reaction': '😌',
+    'nomFichier': __filename
+}, async (_0xb8fed0, _0x1caae0, _0x5ebe1e) => {
+    const _0xb10864 = _0x43a21b, _0x29a81a = {
+            'zRANo': _0xb10864(0x128) + _0xb10864(0x13a),
+            'WugZy': _0xb10864(0x120) + _0xb10864(0x14c) + _0xb10864(0x142) + _0xb10864(0x14d) + _0xb10864(0x146) + _0xb10864(0x12e) + _0xb10864(0x12c) + '\x0a',
+            'RkqHa': _0xb10864(0x150) + _0xb10864(0x135) + _0xb10864(0x11d) + _0xb10864(0x144) + _0xb10864(0x140) + _0xb10864(0x14a),
+            'DsFdH': function (_0x3a6fe4, _0x52d0f9) {
+                return _0x3a6fe4 + _0x52d0f9;
+            },
+            'ZzrIH': _0xb10864(0x148) + _0xb10864(0x13f) + _0xb10864(0x127) + _0xb10864(0x14f) + _0xb10864(0x13e)
+        };
+    console[_0xb10864(0x13d)](_0x29a81a[_0xb10864(0x138)]);
+    let _0x1131df = _0x29a81a[_0xb10864(0x11c)], _0x266892 = _0x29a81a[_0xb10864(0x11e)], _0x1c435e = _0x29a81a[_0xb10864(0x12b)](_0x1131df, _0x266892);
+    var _0x167579 = _0x29a81a[_0xb10864(0x147)];
+    await _0x1caae0[_0xb10864(0x125) + 'e'](_0xb8fed0, {
+        'image': { 'url': _0x167579 },
+        'caption': _0x1c435e
+    });
+}), console[_0x43a21b(0x13d)](_0x43a21b(0x12d));
