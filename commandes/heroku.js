@@ -4,14 +4,14 @@ const s = require('../set')
 
 zokou(
     {
-        nomCom : "svar",
-        categorie : "TKM bot Vars"
+        nomCom : "setvar",
+        categorie : "TKM-bot vars"
     }, async (dest , zk , commandeOptions) =>{
 
        const {ms,repondre,superUser , arg} = commandeOptions ;
        
        if(!superUser){repondre('only Mods can use this commande');return};
-       if(!arg[0] || !(arg.join('').split('='))) {repondre('Bad format ; Exemple of using :\nSetvar OWNER_NAME=TKM');return};
+       if(!arg[0] || !(arg.join('').split('='))) {repondre('Bad format ; Exemple of using :\nSetvar OWNER_NAME=Beltah');return};
      
     const text = arg.join(" ")
      const Heroku = require("heroku-client");
@@ -26,14 +26,14 @@ zokou(
                   [text.split('=')[0]]: text.split('=')[1],
           },
         });
-        await repondre('TKM bot var changes , rebootings....')
+        await repondre('Heroku var changes , rebootings....')
     }
 );
 
 zokou(
     {
-        nomCom : "gallvar",
-        categorie : "TKM bot Vars"
+        nomCom : "getallvar",
+        categorie : "TKM-bot vars"
     }, async (dest , zk , commandeOptions) =>{
 
        const {ms,repondre,superUser , arg} = commandeOptions ;
@@ -48,9 +48,9 @@ zokou(
 			let baseURI = "/apps/" + s.HEROKU_APP_NAME;
 
             let h = await heroku.get(baseURI+'/config-vars')
-let str = 'TKM bot Vars list \n\n'
+let str = '*TKM-bot all vars*\n\n'
 for (vr in h) {
-str+= '🍁 *'+vr+'* '+'= '+h[vr]+'\n'
+str+= '☉ *'+vr+'* '+'= '+h[vr]+'\n'
 }
  repondre(str)
 
@@ -62,8 +62,8 @@ str+= '🍁 *'+vr+'* '+'= '+h[vr]+'\n'
 
     zokou(
         {
-            nomCom : "gvar",
-            categorie : "TKM bot Vars"
+            nomCom : "getvar",
+            categorie : "TKM-bot vars"
         }, async (dest , zk , commandeOptions) =>{
     
            const {ms,repondre,superUser , arg} = commandeOptions ;
@@ -86,4 +86,3 @@ str+= '🍁 *'+vr+'* '+'= '+h[vr]+'\n'
         } catch(e) {repondre('Error' + e)}
    
         });
-
