@@ -5,7 +5,7 @@ const s = require(__dirname + "/../set");
 
 zokou(
     {
-        nomCom : 'alive',
+        nomCom : 'awake',
         categorie : 'General'
         
     },async (dest,zk,commandeOptions) => {
@@ -43,7 +43,7 @@ const date = moment().format('DD/MM/YYYY');
  ${message}
  
  
- ┃TKM bot┃`
+ _TKM-bot_`
 
  if (lien.match(/\.(mp4|gif)$/i)) {
     try {
@@ -88,7 +88,7 @@ else {
     
 await addOrUpdateDataInAlive(texte , tlien)
 
-repondre('message alive refresh successfully')
+repondre(' _TKM-bot_ is running on server 99. ')
 
 }
     });
