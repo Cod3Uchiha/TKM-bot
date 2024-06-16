@@ -42,11 +42,12 @@ Time : ${temps}
 Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
 Platform : ${os.platform()}
 Creator: Cod3Uchiha
-TKM botn\n`;
+*TKM bot*\n`;
     
 let menuMsg = `
-TKM-BOT
-_Cod3Uchiha_
+*TKM-BOT*
+
+*_Cod3Uchiha_*
   █████████
   █▄█████▄█
   █▼▼▼▼▼
@@ -59,7 +60,7 @@ _Cod3Uchiha_
 `;
 
     for (const cat in coms) {
-        menuMsg += ` ${cat} `;
+        menuMsg += `*${cat}*`;
         for (const cmd of coms[cat]) {
             menuMsg += `
  ${cmd}`;
@@ -69,13 +70,7 @@ _Cod3Uchiha_
     }
 
     menuMsg += `
-            
-
-Thanks for choosing
-
-     *TKM bot*
-
-https://github.com/Cod3Uchiha/TKM-bot
+TKM-bot
 `;
 
    var lien = mybotpic();
