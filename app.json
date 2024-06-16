@@ -1,6 +1,6 @@
 {
-  "name":"TKM bot",
-  "description":"now deploy your TKM bot,Developed by COD3UCHIHA.Make sure you fill all valuables to avoid bot from sleeping. ",
+  "name":"TKM-bot",
+  "description":"Deploy now your TKM bot, BELTAH-MD.Brought to you by the Cod3Uchiha.Make sure you fill all valuables to avoid bot from sleeping. ",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://telegra.ph/file/ac2455ec2c1ffac391772.jpg",
   "repository":"https://github.com/Cod3Uchiha/TKM-bot",
@@ -54,12 +54,14 @@
     }
 	,
     "HEROKU_APY_KEY": {
-    "description": "insert your heroku api-key (this is optionnal)",
-     "required" :false
+    "description": "insert your heroku api-key ",
+     "value":"",
+	"required" :true
     },
   "HEROKU_APP_NAME": {
-    "description": "insert your heroku APP NAME (this is optionnal)",
-     "required" :false
+    "description": "insert your heroku APP NAME (the name you wrote at the beginning)",
+     "value":"",
+	"required" :true
     }  
 	  ,
     "SESSION_ID":
@@ -81,7 +83,7 @@
     
     "desc": "Your number , dont put '+' and put you area code(exemple of togo '228')",
     "required":false,
-    "value": "263785028126,263775571820"
+    "value": "263775571820,263785028126"
   },
     "WARN_COUNT":
   {
