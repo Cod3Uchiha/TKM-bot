@@ -34,7 +34,8 @@ zokou(
 
           if (!arg[0] || !arg[1]){
 
-            repondre("error wrong format \n> try: .boom 10 'hey' ");
+            repondre(`error wrong format 
+            > try: ${conf.PREFIXE}boom 10 hey `);
 
               return;
 
@@ -56,7 +57,7 @@ zokou(
 
                   setTimeout(function() {
 
-                    respondre(arg.slice(1).join(" "));
+                    repondre(arg.slice(1).join(" "));
 
                     resolve();
 
