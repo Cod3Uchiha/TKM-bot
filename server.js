@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require("path");
 
-const page = path.join(__dirname, "media", "site", "assets")
+const page = path.join(__dirname, "media", "site")
 
 
 function server(req,res) {
@@ -17,7 +17,7 @@ function server(req,res) {
       }
     });
   } else if (req.url === '/style.css'){
-    fs.readFile(path.join(page, "style.css"), (err,data) => {
+    fs.readFile(path.join(page,"assets", "style.css"), (err,data) => {
       if (err) {
         res.writeHead(404, {'Content-Type': 'text/plain'});
         res.end('Not Found');
