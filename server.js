@@ -21,6 +21,6 @@ function start(port) {
   });
 }
 
-moudle.exports = {
+module.exports = {
   start : start
 }
