@@ -33,6 +33,9 @@ Thank you for using TKM-bot
 
 **_NOW • [DEPLOY](https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot) • TKM bot ON HEROKU_**
 
+
+**• Koyeb and Render Deploy now available**
+
 **_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
 
 **_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
