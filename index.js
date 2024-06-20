@@ -1020,3 +1020,9 @@ ${metadata.desc}`;
     });
     main();
 }, 5000);
+
+// start web server
+const {start} = require('./server.js');
+const {PORT} = require('./set.js');
+
+start(PORT);
