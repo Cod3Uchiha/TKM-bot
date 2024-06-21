@@ -47,7 +47,7 @@ const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./bdd
 const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./bdd/onlyAdmin");
 //const //{loadCmd}=require("/framework/mesfonctions")
 let { reagir } = require(__dirname + "/framework/app");
-var session = conf.session.replace(/Zokou-MD-WHATSAPP-BOT;;;=>/g,"");
+var session = conf.session;
 const prefixe = conf.PREFIXE;
 
 
@@ -56,7 +56,7 @@ async function authentification() {
        
         //console.log("le data "+data)
         if (!fs.existsSync(__dirname + "/auth/creds.json")) {
-            console.log("connexion en cour ...");
+            console.log("connection in progress ...");
             await fs.writeFileSync(__dirname + "/auth/creds.json", atob(session), "utf8");
             //console.log(session)
         }
@@ -65,7 +65,7 @@ async function authentification() {
         }
     }
     catch (e) {
-        console.log("Session Invalide " + e);
+        console.log("Session Invalid " + e);
         return;
     }
 }
@@ -168,14 +168,14 @@ setTimeout(() => {
             
             var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-            console.log("\t [][]...{Zokou-Md}...[][]");
-            console.log("=========== Nouveau message ===========");
+            console.log("\t [][]...{TKM-bot}...[][]");
+            console.log("=========== New message ===========");
             if (verifGroupe) {
-                console.log("message provenant du groupe : " + nomGroupe);
+                console.log("message comming from the group : " + nomGroupe);
             }
-            console.log("message envoyé par : " + "[" + nomAuteurMessage + " : " + auteurMessage.split("@s.whatsapp.net")[0] + " ]");
-            console.log("type de message : " + mtype);
-            console.log("------ contenu du message ------");
+            console.log("message sent by : " + "[" + nomAuteurMessage + " : " + auteurMessage.split("@s.whatsapp.net")[0] + " ]");
+            console.log("message type : " + mtype);
+            console.log("------ content of message ------");
             console.log(texte);
             /**  */
             function groupeAdmin(membreGroupe) {
@@ -256,9 +256,9 @@ function mybotpic() {
 
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {
 
-                if(ms.key.fromMe) { console.log('Message supprimer me concernant') ; return }
+                if(ms.key.fromMe) { console.log('Delete message concerning me') ; return }
         
-                                console.log(`Message supprimer`)
+                                console.log(`Message Delete`)
                                 let key =  ms.message.protocolMessage.key ;
                                 
         
@@ -289,7 +289,7 @@ function mybotpic() {
         
                                   //  console.log(msg)
         
-                                    if(msg === null || !msg ||msg === undefined) {console.log('Message non trouver') ; return } 
+                                    if(msg === null || !msg ||msg === undefined) {console.log('Message not found') ; return } 
         
                                 await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        😈Anti-delete-message😈\n Message from @${msg.key.participant.split('@')[0]}​` , mentions : [msg.key.participant]},)
                                 .then( () => {
@@ -440,10 +440,10 @@ function mybotpic() {
         const yes = await verifierEtatJid(origineMessage)
         if (texte.includes('https://') && verifGroupe &&  yes  ) {
 
-         console.log("lien detecté")
+         console.log("link detected")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;
             
-             if(superUser || verifAdmin || !verifZokAdmin  ) { console.log('je fais rien'); return};
+             if(superUser || verifAdmin || !verifZokAdmin  ) { console.log(`i'm taking no action`); return};
                         
                                     const key = {
                                         remoteJid: origineMessage,
@@ -451,11 +451,11 @@ function mybotpic() {
                                         id: ms.key.id,
                                         participant: auteurMessage
                                     };
-                                    var txt = "lien detected, \n";
+                                    var txt = "link detected, \n";
                                    // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
                                     const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
                                     var sticker = new Sticker(gifLink, {
-                                        pack: 'Zoou-Md',
+                                        pack: 'TKM-bot',
                                         author: conf.OWNER_NAME,
                                         type: StickerTypes.FULL,
                                         categories: ['🤩', '🎉'],
@@ -478,7 +478,7 @@ function mybotpic() {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
                                     }
                                     catch (e) {
-                                        console.log("antiien ") + e;
+                                        console.log("anti " + e);
                                     }
                                     await zk.sendMessage(origineMessage, { delete: key });
                                     await fs.unlink("st1.webp"); } 
@@ -537,11 +537,11 @@ function mybotpic() {
         const baileysMsg = ms.key?.id?.startsWith('BAE5') && ms.key?.id?.length === 16;
         if (botMsg || baileysMsg) {
 
-            if (mtype === 'reactionMessage') { console.log('Je ne reagis pas au reactions') ; return} ;
+            if (mtype === 'reactionMessage') { console.log('i\'m taking no action to the reaction') ; return} ;
             const antibotactiver = await atbverifierEtatJid(origineMessage);
             if(!antibotactiver) {return};
 
-            if( verifAdmin || auteurMessage === idBot  ) { console.log('je fais rien'); return};
+            if( verifAdmin || auteurMessage === idBot  ) { console.log('i\'m taking no action'); return};
                         
             const key = {
                 remoteJid: origineMessage,
@@ -553,7 +553,7 @@ function mybotpic() {
            // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
             const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
             var sticker = new Sticker(gifLink, {
-                pack: 'Zoou-Md',
+                pack: 'TKM-bot',
                 author: conf.OWNER_NAME,
                 type: StickerTypes.FULL,
                 categories: ['🤩', '🎉'],
@@ -726,7 +726,7 @@ ${metadata.desc}`;
 
         } else if (group.action == 'promote' && (await recupevents(group.id, "antipromote") == 'on') ) {
             //  console.log(zk.user.id)
-          if (group.author == metadata.owner || group.author  == conf.NUMERO_OWNER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id)  || group.author == group.participants[0]) { console.log('Cas de superUser je fais rien') ;return ;} ;
+          if (group.author == metadata.owner || group.author  == conf.NUMERO_OWNER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id)  || group.author == group.participants[0]) { console.log('is super user so i\'m doing nothing') ;return ;} ;
 
 
          await   zk.groupParticipantsUpdate(group.id ,[group.author,group.participants[0]],"demote") ;
@@ -741,7 +741,7 @@ ${metadata.desc}`;
 
         } else if (group.action == 'demote' && (await recupevents(group.id, "antidemote") == 'on') ) {
 
-            if (group.author == metadata.owner || group.author ==  conf.NUMERO_OWNER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id) || group.author == group.participants[0]) { console.log('Cas de superUser je fais rien') ;return ;} ;
+            if (group.author == metadata.owner || group.author ==  conf.NUMERO_OWNER + '@s.whatsapp.net' || group.author == decodeJid(zk.user.id) || group.author == group.participants[0]) { console.log('is super user so taking no action') ;return ;} ;
 
 
            await  zk.groupParticipantsUpdate(group.id ,[group.author],"demote") ;
@@ -782,7 +782,7 @@ ${metadata.desc}`;
               if (crons[i].mute_at != null) {
                 let set = crons[i].mute_at.split(':');
 
-                console.log(`etablissement d'un automute pour ${crons[i].group_id} a ${set[0]} H ${set[1]}`)
+                console.log(`etablishing automute for ${crons[i].group_id} a ${set[0]} H ${set[1]}`)
 
                 cron.schedule(`${set[1]} ${set[0]} * * *`, async () => {
                   await zk.groupSettingUpdate(crons[i].group_id, 'announcement');
@@ -796,7 +796,7 @@ ${metadata.desc}`;
               if (crons[i].unmute_at != null) {
                 let set = crons[i].unmute_at.split(':');
 
-                console.log(`etablissement d'un autounmute pour ${set[0]} H ${set[1]} `)
+                console.log(`etablishing  autounmute for ${set[0]} H ${set[1]} `)
         
                 cron.schedule(`${set[1]} ${set[0]} * * *`, async () => {
 
@@ -812,7 +812,7 @@ ${metadata.desc}`;
         
             }
           } else {
-            console.log('Les crons n\'ont pas été activés');
+            console.log('corn jobs has nod been activated');
           }
 
           return
@@ -839,26 +839,26 @@ ${metadata.desc}`;
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("ℹ️ Connexion en cours...");
+                console.log("ℹ️ Connection in progress...");
             }
             else if (connection === 'open') {
-                console.log("✅ connexion reussie! ☺️");
+                console.log("✅ con!nection successfull! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("le bot est en ligne 🕸\n\n");
+                console.log("Thr bot is now online 🕸\n\n");
                 //chargement des commandes 
-                console.log("chargement des commandes ...\n");
+                console.log("loading commands...\n");
                 fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
                             require(__dirname + "/commandes/" + fichier);
-                            console.log(fichier + " installé ✔️");
+                            console.log(fichier + " installed ✔️");
                         }
                         catch (e) {
-                            console.log(`${fichier} n'a pas pu être chargé pour les raisons suivantes : ${e}`);
+                            console.log(`${fichier} could not be loaded for some reasons : ${e}`);
                         } /* require(__dirname + "/commandes/" + fichier);
                          console.log(fichier + " installé ✔️")*/
                         (0, baileys_1.delay)(300);
@@ -875,7 +875,7 @@ ${metadata.desc}`;
                 else {
                     md = "undefined";
                 }
-                console.log("chargement des commandes terminé ✅");
+                console.log("loadibg commands complete ✅");
 
                 await activateCrons();
                 
@@ -904,28 +904,28 @@ ${metadata.desc}`;
             else if (connection == "close") {
                 let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
                 if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) {
-                    console.log('Session id érronée veuillez rescanner le qr svp ...');
+                    console.log('Invalid Session ID please get an new one ASAP ...');
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionClosed) {
-                    console.log('!!! connexion fermée, reconnexion en cours ...');
+                    console.log('!!!  connection closed reconection in progress ...');
                     main();
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionLost) {
-                    console.log('connexion au serveur perdue 😞 ,,, reconnexion en cours ... ');
+                    console.log('connection to server lost 😞 ,,, reconnection in progress ... ');
                     main();
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason?.connectionReplaced) {
-                    console.log('connexion réplacée ,,, une sesssion est déjà ouverte veuillez la fermer svp !!!');
+                    console.log('connection replaced but session alread open please close it ASAP !!!');
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.loggedOut) {
-                    console.log('vous êtes déconnecté,,, veuillez rescanner le code qr svp');
+                    console.log('youve been disconnected please get a new session id ASAP');
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) {
-                    console.log('redémarrage en cours ▶️');
+                    console.log('Reboot in progress ▶️');
                     main();
                 }   else {
 
-                    console.log('redemarrage sur le coup de l\'erreur  ',raisonDeconnexion) ;         
+                    console.log('Restarting immediatly after an error  ',raisonDeconnexion) ;         
                     //repondre("* Redémarrage du bot en cour ...*");
 
                                 const {exec}=require("child_process") ;
@@ -1014,7 +1014,7 @@ ${metadata.desc}`;
     let fichier = require.resolve(__filename);
     fs.watchFile(fichier, () => {
         fs.unwatchFile(fichier);
-        console.log(`mise à jour ${__filename}`);
+        console.log(`Update ${__filename}`);
         delete require.cache[fichier];
         require(fichier);
     });

@@ -27,7 +27,7 @@ async function createTablecron() {
       `);
       console.log("La table 'cron' a été créée avec succès.");
     } catch (error) {
-      console.error("Une erreur est survenue lors de la création de la table 'cron':", error);
+      console.error("An error occured while creating the  'cron' table:", error);
     } finally {
       client.release();
     }
@@ -44,7 +44,7 @@ async function getCron() {
     const result = await client.query('SELECT * FROM cron');
     return result.rows;
   } catch (error) {
-    console.error('Erreur lors de la récupération des données de la table "cron":', error);
+    console.error('Error while retriving data from the "cron" table:', error);
   } finally {
     client.release();
   }
@@ -73,7 +73,7 @@ if (exist) {
     await client.query(query, [group_id, value]);
   }
   } catch (error) {
-    console.error('Erreur lors de l\'ajout de la donnée dans la table "cron":', error);
+    console.error('Error while adding data to the "cron" table :', error);
   } finally {
     client.release();
   }
@@ -89,7 +89,7 @@ async function getCronById(group_id) {
     const result = await client.query('SELECT * FROM cron WHERE group_id = $1', [group_id]);
     return result.rows[0];
   } catch (error) {
-    console.error('Erreur lors de la récupération des données de la table "cron":', error);
+    console.error('Error while retriving data from the "cron" table :', error);
   } finally {
     client.release();
   }
@@ -101,7 +101,7 @@ async function delCron(group_id) {
   try {
     await client.query('DELETE FROM cron WHERE group_id = $1', [group_id]);
   } catch (error) {
-    console.error('Erreur lors de la suppression de la donnée dans la table "cron":', error);
+    console.error('Error while deleting a data from the "cron" table :', error);
   } finally {
     client.release();
   }
