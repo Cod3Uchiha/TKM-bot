@@ -24,7 +24,7 @@
 
 ---
 
-**_GET • [SESSION ID](https://cod3session-00187e8a3f27.herokuapp.com/) • Use this for pairing,tkm bot**
+**_GET • [SESSION ID](https://cod3uchiha1-bfca01cac304.herokuapp.com/) • Use this for pairing,tkm bot**
 
 Thank you for using TKM-bot
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
