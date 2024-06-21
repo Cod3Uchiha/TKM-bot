@@ -6,7 +6,7 @@ const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
 
-zokou({ nomCom: "menu3", categorie: "General" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "listmenu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../framework//zokou");
     var coms = {};
@@ -32,45 +32,28 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-Theme : TKMbot
-User : ${s.OWNER_NAME}
-Prefix : ${s.PREFIXE}
-Mode : ${mode}
-Commands : ${cm.length}
-Date : ${date}
-Time : ${temps}
-Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-Platform : ${os.platform()}
-Creator: Cod3Uchiha
-*TKM bot*\n`;
+➳ ${s.PREFIXE} :Prefix
+➳ ${mode} mode
+➳ ${cm.length} commands
+
+➠ *TKM bot*\n`;
     
 let menuMsg = `
-*TKM-BOT*
-
-*_Cod3Uchiha_*
-  █████████
-  █▄█████▄█
-  █▼▼▼▼▼
-  █
-  █▲▲▲▲▲
-  █████████
-  ██ ██  𝕿𝕶𝕸 𝖇𝖔𝖙
-
- *TKM bot COMMANDS* 
+➥ *List-menu*
 `;
 
     for (const cat in coms) {
-        menuMsg += `*${cat}*`;
+        menuMsg += `➥ *${cat}*`;
         for (const cmd of coms[cat]) {
             menuMsg += `
- ${cmd}`;
+➠${cmd}`;
         }
         menuMsg += `
 \n`
     }
 
     menuMsg += `
-TKM-bot
+  ➠TKM-bot
 `;
 
    var lien = mybotpic();
