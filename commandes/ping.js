@@ -12,6 +12,6 @@ zokou(
     const msg = await repondre('Pinging...');
     const ping = Date.now() - ms.createdTimeStamp;
     await repondre(`Pong! ${ping}ms 🏓`);
-    repondre.reaction('👊');
+    repondre.reaction = '👊';
   }
   );
