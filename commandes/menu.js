@@ -32,63 +32,65 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-┏━━━━▓TKM━bot▓━━━━┓
+┏━━━━▓TKM-bot▓━━━━┓
 ▓━━━━━━━━━━━━━━➠
 ┃
-┃➠ Theme : TKM *v²*
-┃➠ User : ${s.OWNER_NAME}
+┃➠Theme : TKM *v²*
+┃➠User : ${s.OWNER_NAME}
 ┃
-┣━━▓TKM━Bot info
+┣━━▓TKM-Bot info
 ┃
-️┃➠ Prefix : ${s.PREFIXE}
-️┃➠ Mode : ${mode}
-┃➠ Commands : ${cm.length}
-┃➠ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-┃➠ Platform : ${os.platform()}
-┃➠ Repo : https://github.com/Cod3Uchiha/TKM-bot
+️┃➠Prefix : ${s.PREFIXE}
+️┃➠Mode : ${mode}
+┃➠Commands : ${cm.length}
+┃➠Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+┃➠Platform : ${os.platform()}
 ┃
 ┣━━▓Time/Date
 ┃
-️┃➠ Date : ${date}
-┃➠ Time : ${temps}
+️┃➠Date : ${date}
+┃➠Time : ${temps}
 ┃ 
-┣━━▓Dev━info
+ຸຸຸຸຸຸຸຸ┣━━▓Dev-info
 ┃
 ┃➠Name : Takudzwa
-┃➠AKA : Cod3Uchiha
 ┃➠Surname : Mlambo
-┃➠Nationality : Zimbabwean
+┃➠AKA : Cod3Uchiha
+┃➠Country : 🇿🇼 
 ┃➠Sex : Male
-┃➠Age : 1****
 ┃
 ▓━━━━━━━━━━━━━━➠
-┗━━━━▓TKM━bot▓━━━━┛\n\n`;
+ຸຸຸຸຸຸຸຸ┣━━━━▓TKM-bot▓━━━➠
+┗━━━━▓version-2▓━━━━━┛\n\n`;
     
 let menuMsg = `
-┏━━━━━━━━━━━━━━━━━┓
-┣▓TKM━bot *v²*
+┏━━━━━━━━━━━━━━┓
+┣▓TKM-bot *v²*
 ┣▓©Cod3Uchiha▓  
-┗━━━━━━━━━━━━━━━━━┛
+┗━━━━━━━━━━━━━━┛
 
-░TKM bot COMMANDS░
+▓TKM bot COMMANDS▓
 `;
 
     for (const cat in coms) {
-        menuMsg += `┏━━━━━━▓ ${cat} ▓`;
+        menuMsg += `┏━━━━━▓ ${cat} ▓`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-▫┃▹ ${cmd}`;
+┃➠ ${cmd}`;
         }
         menuMsg += `
-┗━━━━━━━━━━━━━━━\n`
+┗━━━━━━━━━━━━━━┛\n`
     }
 
     menuMsg += `
             
-︎┏━━━━━━━━━━━━━━━━
-️┣▓TKM━bot v²▓➠
+︎┏━━━━━━━━━━━━━━┓
+️┣▓TKM-bot▓➠
 ┣▓©Cod3Uchiha▓➠
-┗━━━━━━━━━━━━━━━━
+┗━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━┓
+┃➠Repo: https://Github.com/Cod3Uchiha/TKM-bot
+┗━━━━━━━━━━━━━━┛
 `;
 
    var lien = mybotpic();
