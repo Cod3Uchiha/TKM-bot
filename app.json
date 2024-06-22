@@ -2,7 +2,7 @@
   "name":"TKM-bot",
   "description":"Deploy your TKM bot now.Brought to you by the Cod3Uchiha.Make sure you fill all valuables to avoid bot from sleeping. ",
   "keywords":["bot","node","baileys","whatsapp"],
-  "logo":"https://telegra.ph/file/ac2455ec2c1ffac391772.jpg",
+  "logo":"https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg",
   "repository":"https://github.com/Cod3Uchiha/TKM-bot",
   "succes_url":"/",
   "stack":"container",
@@ -42,7 +42,7 @@
      "BOT_MENU_LINKS" : {
     
       "description":"add one or many link for your bot menu  ; eg : url1,url2,url3.....",
-      "value":"https://telegra.ph/file/ac2455ec2c1ffac391772.jpg",
+      "value":"https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg",
       "required":false
        
      },
