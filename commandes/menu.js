@@ -45,6 +45,7 @@ const date = moment().format('DD/MM/YYYY');
 ┃➠ Commands : ${cm.length}
 ┃➠ Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
 ┃➠ Platform : ${os.platform()}
+┃➠ Repo : https://github.com/Cod3Uchiha/TKM-bot
 ┃
 ┣━━▓Time/Date
 ┃
