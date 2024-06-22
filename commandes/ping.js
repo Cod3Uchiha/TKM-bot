@@ -9,9 +9,9 @@ zokou(
   
   async (dest,zk,commandOptions) => {
     const {ms,arg,repondre} = commandOptions;
-    await repondre('Pinging...');
+    const msg = await zk.sendMessage(dest, 'Pinging...');
     const ping = Date.now() - ms.createdTimestamp;
-    await zk.updateMessage(dest, `Pong! ${ping}ms 🏓`);
-    zk.updateRraction(dest, '👊');
+    await msg.edit(dest, `Pong! ${ping}ms 🏓`);
+    await msg.updateReaction(dest, '👊');
   }
   );
