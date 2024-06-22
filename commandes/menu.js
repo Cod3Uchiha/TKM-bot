@@ -50,8 +50,8 @@ const date = moment().format('DD/MM/YYYY');
 ┃
 ️┃➠Date : ${date}
 ┃➠Time : ${temps}
-┃ 
-ຸຸຸຸຸຸຸຸ┣━━▓Dev-info
+┃
+┣━━▓Dev-info
 ┃
 ┃➠Name : Takudzwa
 ┃➠Surname : Mlambo
@@ -60,7 +60,7 @@ const date = moment().format('DD/MM/YYYY');
 ┃➠Sex : Male
 ┃
 ▓━━━━━━━━━━━━━━➠
-ຸຸຸຸຸຸຸຸ┣━━━━▓TKM-bot▓━━━➠
+┣━━━━▓TKM-bot▓━━━➠
 ┗━━━━▓version-2▓━━━━━┛\n\n`;
     
 let menuMsg = `
