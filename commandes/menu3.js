@@ -34,7 +34,8 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
 ➳ ${s.PREFIXE} :Prefix
 ➳ ${mode} mode
-➳ ${cm.length} commands
+➳ ${cm.length} :commands
+➳ Lib :baileys
 
 ➠ *TKM bot*\n`;
     
@@ -54,6 +55,7 @@ let menuMsg = `
 
     menuMsg += `
   ➠TKM-bot
+  ➠©Cod3Uchiha
 `;
 
    var lien = mybotpic();
