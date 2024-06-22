@@ -6,6 +6,7 @@ const page = path.join(__dirname, "media", "site")
 
 
 function server(req,res) {
+  console.log('---')
   console.log(`server: GET '${req.url}'`);
   if (req.url === '/') {
     fs.readFile(path.join(page, 'index.html'), (err,data) => {
@@ -36,7 +37,7 @@ function server(req,res) {
 
 function start(port) {
   http.createServer(server).listen(port, () => {
-    console.log(`server started at port ${port}`)
+    console.log(`ℹ️ server started at port: ${port}`)
   });
 }
 
