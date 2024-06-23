@@ -80,7 +80,7 @@ setTimeout(() => {
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Zokou-Md', "safari", "1.0.0"],
+            browser: ['TKM-bot', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
@@ -842,7 +842,7 @@ ${metadata.desc}`;
                 console.log("ℹ️ Connection in progress...");
             }
             else if (connection === 'open') {
-                console.log("✅ con!nection successfull! ☺️");
+                console.log("✅ connection successfull! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
