@@ -12,8 +12,8 @@ zokou(
     const start = new Date().getTime();
     const msg = await zk.sendMessage(dest, {text: 'Pinging...',},{quoted: ms});
     const end = new Date().getTime();
-    const ping = start - end ;
+    const ping = end - start ;
     await zk.sendMessage(dest, {text: `Pong! ${ping}ms 🏓`, edit: {id: msg.key.id, remoteJid: dest }});
-    await repondre(zk)
+    await zk.sendMessage(dest, {react: {text: "⚡️", key: ms.key}})
   }
 )
