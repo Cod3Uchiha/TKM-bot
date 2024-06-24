@@ -56,8 +56,7 @@ const date = moment().format('DD/MM/YYYY');
 ┃➠Name : Takudzwa
 ┃➠Surname : Mlambo
 ┃➠AKA : Cod3Uchiha
-┃➠Country : 🇿🇼 
-┃➠Sex : Male
+┃➠From : Earth
 ┃
 ▓━━━━━━━━━━━━━━➠
 ┣━━━━▓TKM-bot▓━━━➠
