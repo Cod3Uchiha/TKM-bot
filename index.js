@@ -50,8 +50,20 @@ let { reagir } = require(__dirname + "/framework/app");
 var session = conf.session;
 const prefixe = conf.PREFIXE;
 
+function delay(ms) {
+  connection.log(`⏱️ delay for ${ms}ms`)
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 async function authentification() {
+  const now = Date.now();
+  const delay = 1000; // 1 second
+
+  if (now - lastApiCall < delay) {
+    await new Promise(resolve => setTimeout(resolve, delay - (now - lastApiCall)));
+    }
+
+    lastApiCall = now;
     try {
        
         //console.log("le data "+data)
@@ -75,8 +87,11 @@ const store = (0, baileys_1.makeInMemoryStore)({
 });
 setTimeout(() => {
     async function main() {
+      await delay(500);
         const { version, isLatest } = await (0, baileys_1.fetchLatestBaileysVersion)();
+        await delay(500);
         const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/auth");
+        await delay(500);
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
@@ -107,11 +122,11 @@ setTimeout(() => {
             ///////
         };
         store.readFromFile("store.json");
-
+        await delay(1000);
         const zk = (0, baileys_1.default)(sockOptions);
 
         store.bind(zk.ev);
-        setInterval(() => { store.writeToFile("store.json"); }, 1000);
+        setInterval(() => { store.writeToFile("store.json"); }, 3000);
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
@@ -188,7 +203,7 @@ setTimeout(() => {
                 // else{admin= false;}
                 return admin;
             }
-
+            await delay(500)
             var etat =conf.ETAT;
             if(etat==1)
             {await zk.sendPresenceUpdate("available",origineMessage);}
@@ -253,7 +268,7 @@ function mybotpic() {
 
 
             /************************ anti-delete-message */
-
+            await delay(500);
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {
 
                 if(ms.key.fromMe) { console.log('Delete message concerning me') ; return }
@@ -328,6 +343,7 @@ function mybotpic() {
                 /** *************** */
                 // console.log("*nouveau status* ");
             }
+            await delay(500);
             /** ******fin auto-status */
             if (!dev && origineMessage == "120363158701337904@g.us") {
                 return;
@@ -356,6 +372,7 @@ function mybotpic() {
             } ;
             
  //---------------------------------------rang-count--------------------------------
+              await delay(500);
              if (texte && auteurMessage.endsWith("s.whatsapp.net")) {
   const { ajouterOuMettreAJourUserData } = require("./bdd/level"); 
   try {
@@ -383,7 +400,7 @@ function mybotpic() {
             
                         let data = alldata[0] ;
             
-                    if ( data.status === 'non') { console.log('mention pas actifs') ; return ;}
+                    if ( data.status === 'non') { console.log('passive mentions') ; return ;}
             
                     let msg ;
             
@@ -476,33 +493,41 @@ function mybotpic() {
                                     await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
                                     try {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
+                      await delay(500);
                                     }
                                     catch (e) {
                                         console.log("anti " + e);
                                     }
                                     await zk.sendMessage(origineMessage, { delete: key });
+                    await delay(500);
                                     await fs.unlink("st1.webp"); } 
                                         
                                        else if (action === 'delete') {
                                         txt += `message deleted \n @${auteurMessage.split("@")[0]} avoid sending link.`;
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
+                    await delay(500);
                                        await zk.sendMessage(origineMessage, { delete: key });
+                    await delay(500);
                                        await fs.unlink("st1.webp");
 
                                     } else if(action === 'warn') {
                                         const {getWarnCountByJID ,ajouterUtilisateurAvecWarnCount} = require('./bdd/warn') ;
 
-                            let warn = await getWarnCountByJID(auteurMessage) ; 
+                            let warn = await getWarnCountByJID(auteurMessage) ;
+                    await delay(500);
                             let warnlimit = conf.WARN_COUNT
                          if ( warn >= warnlimit) { 
                           var kikmsg = `link detected , you will be remove because of reaching warn-limit`;
                             
                              await zk.sendMessage(origineMessage, { text: kikmsg , mentions: [auteurMessage] }, { quoted: ms }) ;
+                    await delay(500);
 
 
                              await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
+                            await delay(500);
                              await zk.sendMessage(origineMessage, { delete: key });
+                            await delay(500)
 
 
                             } else {
@@ -510,9 +535,11 @@ function mybotpic() {
                               var  msg = `Link detected , your warn_count was upgrade ;\n rest : ${rest} `;
 
                               await ajouterUtilisateurAvecWarnCount(auteurMessage)
-
+                              await delay(500);
                               await zk.sendMessage(origineMessage, { text: msg , mentions: [auteurMessage] }, { quoted: ms }) ;
+                              await delay(500);
                               await zk.sendMessage(origineMessage, { delete: key });
+                              await delay(500);
 
                             }
                                     }
@@ -571,36 +598,45 @@ function mybotpic() {
 
             await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") });
             (0, baileys_1.delay)(800);
+            await delay(500);
             await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
+            await delay(500);
             try {
                 await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
+                await delay(500);
             }
             catch (e) {
                 console.log("antibot ") + e;
             }
             await zk.sendMessage(origineMessage, { delete: key });
+            await delay(500);
             await fs.unlink("st1.webp"); } 
                 
                else if (action === 'delete') {
                 txt += `message delete \n @${auteurMessage.split("@")[0]} Avoid sending link.`;
                 //await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
+               await delay(500);
                await zk.sendMessage(origineMessage, { delete: key });
+              await delay(500);
                await fs.unlink("st1.webp");
 
             } else if(action === 'warn') {
                 const {getWarnCountByJID ,ajouterUtilisateurAvecWarnCount} = require('./bdd/warn') ;
 
     let warn = await getWarnCountByJID(auteurMessage) ; 
+    await delay(500);
     let warnlimit = conf.WARN_COUNT
  if ( warn >= warnlimit) { 
   var kikmsg = `bot detected ;you will be remove because of reaching warn-limit`;
     
      await zk.sendMessage(origineMessage, { text: kikmsg , mentions: [auteurMessage] }, { quoted: ms }) ;
-
+    await delay(500);
 
      await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
+     await delay(500);
      await zk.sendMessage(origineMessage, { delete: key });
+     await delay(500);
 
 
     } else {
@@ -608,6 +644,7 @@ function mybotpic() {
       var  msg = `bot detected , your warn_count was upgrade ;\n rest : ${rest} `;
 
       await ajouterUtilisateurAvecWarnCount(auteurMessage)
+      await delay(500);
 
       await zk.sendMessage(origineMessage, { text: msg , mentions: [auteurMessage] }, { quoted: ms }) ;
       await zk.sendMessage(origineMessage, { delete: key });
