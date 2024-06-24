@@ -32,7 +32,7 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-┏━━━━▓TKM-bot▓━━━━┓
+┏━━━━▓TKM-bot▓━━━━━┓
 ▓━━━━━━━━━━━━━━➠
 ┃
 ┃➠Theme : TKM *v²*
@@ -56,8 +56,7 @@ const date = moment().format('DD/MM/YYYY');
 ┃➠Name : Takudzwa
 ┃➠Surname : Mlambo
 ┃➠AKA : Cod3Uchiha
-┃➠Country : 🇿🇼 
-┃➠Sex : Male
+┃➠From : Earth
 ┃
 ▓━━━━━━━━━━━━━━➠
 ┣━━━━▓TKM-bot▓━━━➠
