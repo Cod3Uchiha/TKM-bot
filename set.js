@@ -10,7 +10,7 @@ const DATABASE_URL = process.env.DATABASE_URL === undefined
 module.exports = { session: process.env.SESSION_ID || 'zokk',
     PREFIXE: process.env.PREFIX || "~",
     OWNER_NAME: process.env.OWNER_NAME || "Cod3Uchiha",
-    NUMERO_OWNER : process.env.NUMERO_OWNER || "263......",              
+    NUMERO_OWNER : process.env.OWNER_NUM || "263......",              
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "non",
     AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || 'non',
     BOT : process.env.BOT_NAME || 'TKM bot',
@@ -48,7 +48,7 @@ module.exports = { session: process.env.SESSION_ID || 'zokk',
 let fichier = require.resolve(__filename);
 fs.watchFile(fichier, () => {
     fs.unwatchFile(fichier);
-    console.log(`mise à jour ${__filename}`);
+    console.log(`update ${__filename}`);
     delete require.cache[fichier];
     require(fichier);
 });

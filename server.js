@@ -36,9 +36,23 @@ function server(req,res) {
 }
 
 function start(port) {
-  http.createServer(server).listen(port, () => {
-    console.log(`ℹ️ server started at port: ${port}`)
-  });
+  port = parseInt(port);
+  if isNaN(port){
+    console.log('⚠️ ERROR PORT must be an integer !!! \n`ℹ️ using port 8000');
+    port = 8000;
+  }
+  
+  try {
+    const s = http.createServer(server).listen(port, () => {
+      console.log(`ℹ️ server started at port: ${port}`)
+    });
+    process.on('SIGINT',() => {
+      console.log('👋 server shutting down...');
+      s.close(() => process.exit(0));
+    });
+  } catch (e){
+    console.log(`⚠️ ERROR starting server at port: ${port} error: ${e.message}`)
+  }
 }
 
 module.exports = {
