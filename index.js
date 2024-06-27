@@ -54,7 +54,7 @@ function delay(ms) {
   connection.log(`⏱️ delay for ${ms}ms`)
   return new Promise(resolve => setTimeout(resolve, ms))
 }
-
+let lastApiCall = 0;
 async function authentification() {
   const now = Date.now();
   const delay = 1000; // 1 second
