@@ -79,9 +79,12 @@ docugcbug <grouplink>${mono}`;
         externalAdReply:
           {
             showAdAttribution: true,
+            containsAutoReply: true,
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
             AbhinailUrl: tumbUrl,
+            Abhinail: tumbUrl,
+            previewType: 'PHOTO',
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
             renderLargerAbhinail: false
