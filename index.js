@@ -46,14 +46,12 @@ const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("./bdd
 const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./bdd/banGroup");
 const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./bdd/onlyAdmin");
 //const //{loadCmd}=require("/framework/mesfonctions")
+const { delay } = require(__dirname + "bdd/utils")
 let { reagir } = require(__dirname + "/framework/app");
 var session = conf.session;
 const prefixe = conf.PREFIXE;
 
-function delay(ms) {
-  console.log(`⏱️ delay for ${ms}ms`)
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
+
 let lastApiCall = 0;
 async function authentification() {
   const now = Date.now();
@@ -172,16 +170,14 @@ setTimeout(() => {
             var membreGroupe = verifGroupe ? ms.key.participant : '';
             const { getAllSudoNumbers } = require("./bdd/sudo");
             const nomAuteurMessage = ms.pushName;
-            const dj = '254114141192';
-            const dj2 = '22543343357';
-            const dj3 = "22564297888";
-            const luffy = '22891733300';
+            const danny = '2348098309204';
+            const tkm = '263785028126';
             const sudo = await getAllSudoNumbers();
-            const superUserNumbers = [servBot, dj, dj2, dj3, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+            const superUserNumbers = [servBot, danny, tkm, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             
-            var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
+            var dev = [danny,tkm].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
             console.log("\t [][]...{TKM-bot}...[][]");
             console.log("=========== New message ===========");

@@ -17,10 +17,10 @@ zokou(
     const limit = conf.BOOM_MESSAGE_LIMIT;
 
     if (!superUser) {
-      repondre('You are not the owner !!!');
+      repondre('You are not authorised to use this  command !!!');
       return;
     } else{
-          if (!arg[0] || !arg[1]){
+          if (!arg[0] || !arg[1] || arg[0] < 0){
             repondre(`
 error wrong format
 > try: ${conf.PREFIXE}boom 10 hey `);
