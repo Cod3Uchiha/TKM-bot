@@ -26,7 +26,7 @@ const timewisher = (time) => {
   else if(time < "11:00:00"){
     return `Good Morning 🌄`
   }
-  else if(time "05:00:00"){
+  else if(time < "05:00:00"){
     return `Good Morning 🌄`
   } 
 }
