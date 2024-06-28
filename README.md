@@ -10,7 +10,6 @@
     <img alt="TKM bot logo" height="200" src="https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg">
   </a>
 </p>
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
 ---
 
@@ -20,14 +19,12 @@
   <a href="https://github.com/Cod3Uchiha/TKM-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Cod3Uchiha/TKM-bot?style=social"></a>
   <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>
 </p>
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
 ---
 
 **_GET • [SESSION ID](https://cod3uchiha1-bfca01cac304.herokuapp.com/) • Use this for pairing,tkm bot**
 
 Thank you for using TKM-bot
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
 ---
 
@@ -41,7 +38,6 @@ Thank you for using TKM-bot
 **_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
 
 **_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
 ---
 
