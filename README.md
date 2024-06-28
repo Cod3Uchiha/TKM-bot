@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/Cod3Uchiha">
-    <img alt="TKM bot logo" height="400" src="https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg">
+    <img alt="TKM bot logo" height="200" src="https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg">
   </a>
 </p>
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
@@ -54,6 +54,6 @@ Thank you for using TKM-bot
   </tr>
   <tr>
     <td><a href="https://github.com/DannyAkintunde"><img src="https://avatars.githubusercontent.com/u/142972494?v=4" width="180"</td>
-    <td><a href="https://github.com/Cod3Uchiha"><img src="https://avatars.githubusercontent.com/u/142972494?v=4" width="180"</td>
+    <td><a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" width="180"</td>
   </tr>
 </table>
