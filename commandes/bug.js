@@ -66,13 +66,16 @@ laggcbug <grouplink>
 bomgcbug <grouplink>
 unlimitedgcbug <grouplink>
 docugcbug <grouplink>${mono}`;
-  if (version === 'v1'){
-    zk.sendMessage(dest, {
+  switch (version) {
+    case 'v1': {
+      zk.sendMessage(dest, {
       image: menuImage,
       caption: menu
-      }, { quoted: ms });   
-  } else if (version === 'v2') {
-    zk.sendMessage(dest, {
+      }, { quoted: ms });
+    }
+    break;
+    case 'v2': {
+      zk.sendMessage(dest, {
       image: menuImage,
       caption: menu,
       contextInfo: {
@@ -83,7 +86,8 @@ docugcbug <grouplink>${mono}`;
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
             AbhinailUrl: tumbUrl,
-            Abhinail: tumbUrl,
+            Abhinail: fs.readFileSync(tumbUrl),
+            image: fs.readFileSync(tumbUrl),
             previewType: 'PHOTO',
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
@@ -91,6 +95,8 @@ docugcbug <grouplink>${mono}`;
           }
         }
       }, { quoted: ms });
+    }
+    break;
   }
   }
   );
