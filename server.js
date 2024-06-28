@@ -37,7 +37,7 @@ function server(req,res) {
 
 function start(port) {
   port = parseInt(port);
-  if isNaN(port){
+  if (isNaN(port)){
     console.log('⚠️ ERROR PORT must be an integer !!! \n`ℹ️ using port 8000');
     port = 8000;
   }
