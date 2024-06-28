@@ -65,7 +65,7 @@ unlimitedgcbug <grouplink>
 docugcbug <grouplink>${mono}`;
   if (version === 'v1'){
     zk.sendMessage(dest, {
-      image: fs.readFileSync('../media/chrono.webp'),
+      image: fs.readFileSync('../media/deleted-message.jpg'),
       caption: menu
       }, { quoted: ms });   
   } else if (version === 'v2') {
@@ -77,7 +77,7 @@ docugcbug <grouplink>${mono}`;
             showAdAttribution: true,
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
-            Abhinail: fs.readFileSync('../media/chrono.webp'),
+            Abhinail: fs.readFileSync('../media/deleted-message.jpg'),
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
             renderLargerAbhinail: true
