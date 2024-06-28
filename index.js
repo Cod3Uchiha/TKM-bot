@@ -51,7 +51,7 @@ var session = conf.session;
 const prefixe = conf.PREFIXE;
 
 function delay(ms) {
-  connection.log(`⏱️ delay for ${ms}ms`)
+  console.log(`⏱️ delay for ${ms}ms`)
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 let lastApiCall = 0;
