@@ -43,7 +43,7 @@ zokou(
     const mono = '```';
     const time = moment().tz(conf.TZ).format('HH:mm:ss');
     const versions = ['v1','v2'];
-    const version = versions[Math.floor(Math.random() * versions.length)];
+    const version = 'v1';
     let menu = `${mono}Hello ${ms.pushName}
 ${timewisher(time)}
 
@@ -69,7 +69,7 @@ docugcbug <grouplink>${mono}`
       caption: menu
       }, { quoted: ms });   
   } else if (version === 'v2') {
-    zk.sendMessage(m.chat, {
+    zk.sendMessage(dest, {
       text: menu,
       contextInfo: {
         externalAdReply:
