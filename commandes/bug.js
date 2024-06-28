@@ -3,33 +3,33 @@ const moment = require('moment-timezone');
 const conf = require('../set.js');
 const fs = require('fs');
 // bug database
-const { bugtext1 } = require('../framework/bugs/bugtext1')
-const { bugtext2 } = require('../framework/bug/bugtext2')
-const { bugtext3 } = require('../framework/bug/bugtext3')
-const { bugtext4 } = require('../framework/bug/bugtext4')
-const { bugtext5 } = require('../framework/bug/bugtext5')
+const { bugtext1 } = require('../framework/bugs/bugtext1');
+const { bugtext2 } = require('../framework/bug/bugtext2');
+const { bugtext3 } = require('../framework/bug/bugtext3');
+const { bugtext4 } = require('../framework/bug/bugtext4');
+const { bugtext5 } = require('../framework/bug/bugtext5');
 
 
 const timewisher = (time) => {
   if(time < "23:59:00"){
-    return `Good Night 🌆`
+    return `Good Night 🌆`;
   }
   else if(time < "19:00:00"){
-    return `Good Evening 🌆`
+    return `Good Evening 🌆`;
   }
   else if(time < "18:00:00"){
-    return `Good Evening 🌆`
+    return `Good Evening 🌆`;
   }
   else if(time < "15:00:00"){
-    return `Good Afternoon 🌅`
+    return `Good Afternoon 🌅`;
   }
   else if(time < "11:00:00"){
-    return `Good Morning 🌄`
+    return `Good Morning 🌄`;
   }
   else if(time < "05:00:00"){
-    return `Good Morning 🌄`
+    return `Good Morning 🌄`;
   } 
-}
+};
 
 zokou(
   {
@@ -38,7 +38,7 @@ zokou(
     reaction: '😈'
   },
   
-  async (dest, zk, commandOptions) {
+  async (dest, zk, commandOptions) => {
     const {ms,arg,repondre} = commandOptions;
     const mono = '```';
     const time = moment().tz(conf.TZ).format('HH:mm:ss');
@@ -62,7 +62,7 @@ trollygcbug <grouplink>
 laggcbug <grouplink>
 bomgcbug <grouplink>
 unlimitedgcbug <grouplink>
-docugcbug <grouplink>${mono}`
+docugcbug <grouplink>${mono}`;
   if (version === 'v1'){
     zk.sendMessage(dest, {
       image: fs.readFileSync('../media/chrono.webp'),
