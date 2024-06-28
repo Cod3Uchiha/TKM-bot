@@ -2,6 +2,7 @@ const { zokou } = require('../framework/zokou');
 const moment = require('moment-timezone');
 const conf = require('../set.js');
 const fs = require('fs');
+const path = require('path');
 // bug database
 const { bugtext1 } = require('../framework/bugs/bugtext1');
 const { bugtext2 } = require('../framework/bugs/bugtext2');
@@ -44,6 +45,7 @@ zokou(
     const time = moment().tz(conf.TZ).format('HH:mm:ss');
     const versions = ['v1','v2'];
     const version = versions[Math.floor(Math.random() * versions.length)];
+    const menuImage = fs.readFileSync(path.resolve(path.join(__dirname,'..','media','deleted-message.jpg')))
     let menu = `${mono}Hello ${ms.pushName}
 ${timewisher(time)}
 
@@ -65,7 +67,7 @@ unlimitedgcbug <grouplink>
 docugcbug <grouplink>${mono}`;
   if (version === 'v1'){
     zk.sendMessage(dest, {
-      image: fs.readFileSync('../media/deleted-message.jpg'),
+      image: menuImage,
       caption: menu
       }, { quoted: ms });   
   } else if (version === 'v2') {
@@ -77,7 +79,7 @@ docugcbug <grouplink>${mono}`;
             showAdAttribution: true,
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
-            Abhinail: fs.readFileSync('../media/deleted-message.jpg'),
+            Abhinail: menuImage,
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
             renderLargerAbhinail: true
