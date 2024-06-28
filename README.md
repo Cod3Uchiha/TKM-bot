@@ -36,6 +36,58 @@ Thank you for using TKM-bot
 
 **• Koyeb and Render Deploy now available**
 
+### Termux Setup
+```
+termux-setup-storage
+```
+```
+apt update
+```
+```
+apt upgrade
+```
+```
+pkg update && pkg upgrade
+```
+```
+pkg install bash
+```
+```
+pkg install libwebp
+```
+```
+pkg install git -y
+```
+```
+pkg install nodejs -y
+```
+```
+pkg install ffmpeg -y 
+```
+```
+pkg install wget
+```
+```
+pkg install imagemagick -y
+```
+```
+git clone https://github.com/Cod3Uchiha/TKM-bot
+```
+```
+cd TKM-bot
+```
+```
+npm i
+```
+```
+npm start
+```
+
+- Command For 24/7
+```
+npm i -g forever && forever index.js && forever save && forever logs
+```
+
 **_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
 
 **_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
