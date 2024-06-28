@@ -18,13 +18,13 @@ TKM bot v²
   <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>
 </p>
 
- ## TKM-bot Deployment Methods
+ **TKM-bot Deployment Methods**
 
-### . GET SESSION ID HERE
+ . GET SESSION ID HERE
 
 <a href='https://cod3uchiha1-bfca01cac304.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
 
-### DEPLOY ON HEROKU
+**DEPLOY ON HEROKU**
 
 1. If you don't have an account in Heroku, create one.
     <br>
@@ -33,13 +33,13 @@ TKM bot v²
     <br>
     <a href='https://dashboard.heroku.com/new?template=https://github.com/Cod3Uchiha/TKM-bot' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
-### DEPLOY ON RENDER
+**DEPLOY ON RENDER**
 
 1. If you don't have an account in RENDER, create one and deploy.
     <br>
     <a href='https://dashboard.render.com/select-repo?type=web' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
 
-**• Koyeb and Render Deploy now available**
+**•Koyeb and Render Deploy now available**
 
 _Termux Setup not recommended_
 
