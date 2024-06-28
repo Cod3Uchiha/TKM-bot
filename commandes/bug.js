@@ -32,6 +32,9 @@ const timewisher = (time) => {
   } 
 };
 
+// --cmds--
+
+// bug menu
 zokou(
   {
     nomCom: 'bugmenu',
@@ -86,8 +89,8 @@ docugcbug <grouplink>${mono}`;
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
             AbhinailUrl: tumbUrl,
-            Abhinail: fs.readFileSync(tumbUrl),
-            image: fs.readFileSync(tumbUrl),
+            Abhinail: {url: tumbUrl},
+            image: {url: tumbUrl},
             previewType: 'PHOTO',
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
@@ -98,5 +101,18 @@ docugcbug <grouplink>${mono}`;
     }
     break;
   }
+  }
+  );
+
+// amountbug
+zokou(
+  {
+    nomCom: 'amountbug',
+    categorie: 'dev',
+    reaction: '😈'
+  },
+  
+  async (dest, zk, commandOptions) => {
+    
   }
   );
