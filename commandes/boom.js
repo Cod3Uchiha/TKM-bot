@@ -6,7 +6,7 @@ const conf = require("../set");
 zokou(
   {
     nomCom: 'boom',
-    categorie: 'Test-cmd',
+    categorie: 'Mods',
     reaction: '😈',
   }, 
 
