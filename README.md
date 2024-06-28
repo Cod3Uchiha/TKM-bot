@@ -19,9 +19,22 @@ TKM bot v²
 </p>
 
 
-**_GET • [SESSION ID](https://cod3uchiha1-bfca01cac304.herokuapp.com/) • Use this for pairing,tkm bot**
+### . GET SESSION ID HERE
+
+<a href='https://cod3uchiha1-bfca01cac304.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
+
 
 Thank you for using TKM-bot
+
+### DEPLOY ON HEROKU
+
+1. If you don't have an account in Heroku, create one.
+    <br>
+    <a href='https://signup.heroku.com/' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-Create-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+2. Now deploy.
+    <br>
+    <a href='https://dashboard.heroku.com/new?template=https://github.com/Cod3Uchiha/TKM-bot' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+
 
 **_NOW • [DEPLOY](https://dashboard.heroku.com/new?button-url=https://github.com/Cod3Uchiha/TKM-bot&template=https://github.com/Cod3Uchiha/TKM-bot) • TKM bot ON HEROKU_**
 
@@ -31,8 +44,6 @@ Thank you for using TKM-bot
 ### Termux Setup not recommended
 
 **_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
-
-**_CREATE HEROKU ACCOUNT • [Get started on Heroku today](https://www.heroku.com)_**
 
 **DEVELOPERS**
 
