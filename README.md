@@ -36,57 +36,7 @@ Thank you for using TKM-bot
 
 **• Koyeb and Render Deploy now available**
 
-### Termux Setup
-```
-termux-setup-storage
-```
-```
-apt update
-```
-```
-apt upgrade
-```
-```
-pkg update && pkg upgrade
-```
-```
-pkg install bash
-```
-```
-pkg install libwebp
-```
-```
-pkg install git -y
-```
-```
-pkg install nodejs -y
-```
-```
-pkg install ffmpeg -y 
-```
-```
-pkg install wget
-```
-```
-pkg install imagemagick -y
-```
-```
-git clone https://github.com/Cod3Uchiha/TKM-bot
-```
-```
-cd TKM-bot
-```
-```
-npm i
-```
-```
-npm start
-```
-
-- Command For 24/7
-```
-npm i -g forever && forever index.js && forever save && forever logs
-```
+### Termux Setup not recommended
 
 **_FOLLOW • [WHATSAPP CHANNEL](https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g) •_**
 
@@ -97,34 +47,12 @@ npm i -g forever && forever index.js && forever save && forever logs
 
 **DEVELOPER**
 
-<p align="center">
-<a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" height="400" alt="Cod3Uchiha"/></a>
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-  
-**=> • [Cod3Uchiha] • (https://github.com/Cod3Uchiha) • <=**
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
----
-  
-**Thanks to those of you who are using the bot**
-
-**Thanks for supporting the repo**
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
----
-
-# Cod3Uchiha
+<h1>Developer 🦋</h1>
+    <b><table><tr><th>Cod3Uchiha</th></tr><tr><td><a href="https://github.com/Zenoixnoize"><img src="https://telegra.ph/file/701702e9a949b18b6c59d.jpg" width="180"</td></tr></b>
 
 ---------
 
-## Repo Stats 🔭
+<h1>Developer 🦋</h1>
+    <b><table><tr><th>Danny</th></tr><tr><td><a href="https://github.com/Zenoixnoize"><img src="https://telegra.ph/file/701702e9a949b18b6c59d.jpg" width="180"</td></tr></b>
 
-![github card](https://github-readme-stats.vercel.app/api/pin/?username=Cod3Uchiha&repo=TKM-bot&theme=chartreuse-dark)
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
----------
-
-## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" alt="Github" width="44" height="44"> Github Stats
-
-![github stats](https://github-readme-stats.vercel.app/api?username=Cod3Uchiha&show_icons=true&theme=chartreuse-dark)
-![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=Cod3Uchiha&layout=compact&theme=chartreuse-dark)
-
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 ---------
