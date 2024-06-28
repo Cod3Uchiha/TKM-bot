@@ -1,4 +1,6 @@
-**TKM bot v²**
+<p align="center">
+**TKM bot v²
+</p>
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +TKM-bot;MULTI+DEVICE+WHATSAPP+BOT" alt="Typing SVG" /></a>
   </p>
@@ -41,7 +43,7 @@ Thank you for using TKM-bot
 
 ---
 
-**DEVELOPER**
+**DEVELOPERS**
 
 <table>
   <tr>
@@ -53,3 +55,16 @@ Thank you for using TKM-bot
     <td><a href="https://github.com/Cod3Uchiha"><img src="https://telegra.ph/file/7d1d362a15f946d427db1.jpg" width="180"</td>
   </tr>
 </table>
+
+---
+
+**contributors**
+
+```
+Lazak28•fixed Heroku ban
+```
+```
+Beltahmd•fixed sleeping problem
+```
+
+
