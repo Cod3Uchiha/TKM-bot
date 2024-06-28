@@ -11,7 +11,7 @@ const { bugtext5 } = require('../framework/bug/bugtext5')
 
 
 const timewisher = (time) => {
-  else if(time < "23:59:00"){
+  if(time < "23:59:00"){
     return `Good Night 🌆`
   }
   else if(time < "19:00:00"){
