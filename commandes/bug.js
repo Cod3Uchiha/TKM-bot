@@ -1,4 +1,5 @@
 const { zokou } = require('../framework/zokou');
+const { delay } = require("../bdd/utils")
 const moment = require('moment-timezone');
 const conf = require('../set.js');
 const fs = require('fs');
