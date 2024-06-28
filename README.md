@@ -47,12 +47,13 @@ Thank you for using TKM-bot
 
 **DEVELOPER**
 
-<h1>Developer 🦋</h1>
-    <b><table><tr><th>Cod3Uchiha</th></tr><tr><td><a href="https://github.com/Zenoixnoize"><img src="https://telegra.ph/file/701702e9a949b18b6c59d.jpg" width="180"</td></tr></b>
-
----------
-
-<h1>Developer 🦋</h1>
-    <b><table><tr><th>Danny</th></tr><tr><td><a href="https://github.com/Zenoixnoize"><img src="https://telegra.ph/file/701702e9a949b18b6c59d.jpg" width="180"</td></tr></b>
-
----------
+<table>
+  <tr>
+    <td>Danny</td>
+    <td>Cod3Uchiha</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/DannyAkintunde"><img src="https://avatars.githubusercontent.com/u/142972494?v=4" width="180"</td>
+    <td><a href="https://github.com/Cod3Uchiha"><img src="https://avatars.githubusercontent.com/u/142972494?v=4" width="180"</td>
+  </tr>
+</table>
