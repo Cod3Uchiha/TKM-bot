@@ -34,7 +34,7 @@ const timewisher = (time) => {
 zokou(
   {
     nomCom: 'bugmenu',
-    categorie: 'dev'
+    categorie: 'dev',
     reaction: '😈'
   },
   
