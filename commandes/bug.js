@@ -43,7 +43,7 @@ zokou(
     const mono = '```';
     const time = moment().tz(conf.TZ).format('HH:mm:ss');
     const versions = ['v1','v2'];
-    const version = 'v1';
+    const version = versions[Math.floor(Math.random() * versions.length)];
     let menu = `${mono}Hello ${ms.pushName}
 ${timewisher(time)}
 
