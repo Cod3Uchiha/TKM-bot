@@ -45,7 +45,7 @@ zokou(
     const time = moment().tz(conf.TZ).format('HH:mm:ss');
     const versions = ['v1','v2'];
     const version = versions[Math.floor(Math.random() * versions.length)];
-    const menuImage = fs.readFileSync(path.resolve(path.join(__dirname,'..','media','deleted-message.jpg')))
+    const menuImage = fs.readFileSync(path.resolve(path.join(__dirname,'..','media','deleted-message.jpg')));
     let menu = `${mono}Hello ${ms.pushName}
 ${timewisher(time)}
 
