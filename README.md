@@ -20,32 +20,32 @@ TKM bot v²
 
  **TKM-bot Deployment Methods**
 
- _FORK THIS REPO_
+•FORK THIS REPO
  <br>
  <a href='https://github.com/Cod3Uchiha/TKM-bot/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork-black?style=for-the-badge&logo=git&logoColor=white'/></a>
 
- . GET SESSION ID HERE
+ GET SESSION ID HERE
  <br>
  <a href='https://cod3uchiha1-bfca01cac304.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Get session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
 
 **DEPLOY ON HEROKU**
 
-1. If you don't have an account in Heroku, create one.
-    <br>
+•If you don't have an account in Heroku, create one.
+   <br>
     <a href='https://signup.heroku.com/' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-Create-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
-2. Now deploy.
+•Now deploy.
     <br>
     <a href='https://dashboard.heroku.com/new?template=https://github.com/Cod3Uchiha/TKM-bot' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
 **DEPLOY ON RENDER**
 
-1. If you don't have an account in RENDER, create one and deploy.
+•If you don't have an account in RENDER, create one and deploy.
     <br>
     <a href='https://dashboard.render.com/select-repo?type=web' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
 
 **DEPLOY ON REPLIT**
 
-1. Deploy.
+•Deploy.
     <br>
     <a href='https://replit.com/github/Cod3Uchiha/TKM-bot' target="_blank"><img alt='Replit' src='https://img.shields.io/badge/-Deploy-red?style=for-the-badge&logo=replit&logoColor=white'/></a>
 
