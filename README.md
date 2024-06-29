@@ -33,6 +33,7 @@ TKM bot v²
 •If you don't have an account in Heroku, create one.
    <br>
     <a href='https://signup.heroku.com/' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-Create-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+
 •Now deploy.
     <br>
     <a href='https://dashboard.heroku.com/new?template=https://github.com/Cod3Uchiha/TKM-bot' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
