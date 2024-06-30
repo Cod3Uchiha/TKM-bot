@@ -226,7 +226,7 @@ zokou(
       return await repondre(mess.prem);
     if (!arg[0] || !arg[1])
       return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER}`);
-      await loading();
+      await loading(dest, zk);
     const amount = parseInt(arg[0]);
     if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
       return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
