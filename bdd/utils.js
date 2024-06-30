@@ -16,7 +16,7 @@ var lod = [
 let { key } = await zk.sendMessage(dest, {text: 'Loading Please Wait'})
 
 for (let i = 0; i < lod.length; i++) {
-await XeonBotInc.sendMessage(dest, {text: lod[i], edit: key });
+await zk.sendMessage(dest, {text: lod[i], edit: key });
 }
 }
 
