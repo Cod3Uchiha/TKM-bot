@@ -20,8 +20,12 @@ await zk.sendMessage(dest, {text: lod[i], edit: key });
 }
 }
 
+function react(dest, zk, msg, reaction){
+  zk.sendMessage(dest, {react: {text : reaction, key: msg.key}});
+}
 
 module.exports = {
-  delay: delay,
-  loading: loading
+  delay,
+  loading,
+  react
 }
