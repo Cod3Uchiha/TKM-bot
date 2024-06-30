@@ -65,6 +65,7 @@ ${timewisher(time)}
 
 ≡𝙱𝚄𝙶 𝙼𝙴𝙽𝚄
 docbug
+loccrash
 amountbug <amount>
 pmbug <number>
 delaybug <number>
