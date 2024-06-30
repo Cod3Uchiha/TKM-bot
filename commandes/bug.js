@@ -64,6 +64,7 @@ zokou(
 ${timewisher(time)}
 
 ≡𝙱𝚄𝙶 𝙼𝙴𝙽𝚄
+docbug
 amountbug <amount>
 pmbug <number>
 delaybug <number>
@@ -113,10 +114,10 @@ docugcbug <grouplink>${mono}`;
   );
 
 
-//bug 
+//docbug 
 zokou(
     {
-      nomCom: 'bug',
+      nomCom: 'docbug',
       categorie: category,
       reaction: reaction
     },
