@@ -2,7 +2,7 @@
 TKM bot v²
 </p>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +TKM-bot;MULTI+DEVICE+WHATSAPP+BOT" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=DAA520&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +TKM-bot;MULTI+DEVICE+WHATSAPP+BOT" alt="Typing SVG" /></a>
   </p>
 
 <p align="center">
@@ -20,24 +20,37 @@ TKM bot v²
 
  **TKM-bot Deployment Methods**
 
- . GET SESSION ID HERE
+•FORK THIS REPO
+ <br>
+ <a href='https://github.com/Cod3Uchiha/TKM-bot/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork-black?style=for-the-badge&logo=git&logoColor=white'/></a>
 
-<a href='https://cod3uchiha1-bfca01cac304.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Click here to get your session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
+ GET SESSION ID HERE
+ <br>
+ <a href='https://cod3uchiha1-bfca01cac304.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Get session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
 
 **DEPLOY ON HEROKU**
 
-1. If you don't have an account in Heroku, create one.
-    <br>
+•If you don't have an account in Heroku, create one.
+   <br>
     <a href='https://signup.heroku.com/' target="_blank"><img alt='Heroku' src='https://img.shields.io/badge/-Create-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
-2. Now deploy.
+
+•Now deploy.
     <br>
     <a href='https://dashboard.heroku.com/new?template=https://github.com/Cod3Uchiha/TKM-bot' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
 **DEPLOY ON RENDER**
 
-1. If you don't have an account in RENDER, create one and deploy.
+•If you don't have an account in RENDER, create one and deploy.
     <br>
     <a href='https://dashboard.render.com/select-repo?type=web' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
+
+**DEPLOY ON REPLIT**
+
+[not RECOMMENDED for now,don't even try it]
+
+•Deploy.
+    <br>
+    <a href='https://replit.com/github/Cod3Uchiha/TKM-bot' target="_blank"><img alt='Replit' src='https://img.shields.io/badge/-Deploy-red?style=for-the-badge&logo=replit&logoColor=white'/></a>
 
 **•Koyeb and Render Deploy now available**
 
