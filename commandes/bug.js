@@ -231,7 +231,7 @@ zokou(
     const amount = parseInt(arg[0]);
     if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
       return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-    const victims = arg.slice(1).split('|');
+    const victims = arg.slice(1).join('').split('|');
     for (let i = 0; i < victims.length; i++){
       const victim = victims[i]+'@s.whatsapp.net';
       for (let j = 0; j < amount; j++){
