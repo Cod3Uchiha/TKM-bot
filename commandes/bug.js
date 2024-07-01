@@ -235,8 +235,8 @@ zokou(
       const amount = parseInt(arg[0]);
       if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
         return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-      if (arg[1] === '|') { 
-        const victims = arg.slice(2).join('').split(',').filter(x => x.trim() !== ''); 
+      if (arg[1].includes('|')) { 
+        const victims = arg.slice(1).join('').split(',').filter(x => x.trim() !== '');
       } else { 
         return await repondre("Invalid format"); 
       }
