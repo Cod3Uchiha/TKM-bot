@@ -245,8 +245,8 @@ zokou(
         }), {userJid: dest, quoted: ms});
         zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
         await delay(3000);
-        await repondre(`*Successfully sent as many Bugs as ${amount} To ${victim}*`)
       }
+      await repondre(`*Successfully sent as many Bugs as ${amount} To ${victim}*`);
       await delay(5000);
     }
     await repondre(`*Successfully sent as many Bugs as ${amount} To ${victims.join(',')} Please pause for 5 minutes*`);
