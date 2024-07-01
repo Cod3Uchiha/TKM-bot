@@ -232,13 +232,14 @@ zokou(
       const amount = 30;
       const victims = [arg[0]];
     } else if (arg.length > 1){
-      const amount = parseInt(arg[0]);
+      const text = arg.join('');
+      if (text.includes('|')){
+      const amount = parseInt(text.split('|')[0]);
       if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
         return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-      if (arg[1].includes('|')) { 
-        const victims = arg.slice(1).join('').split(',').filter(x => x.trim() !== '');
-      } else { 
-        return await repondre("Invalid format"); 
+      const victims = text.split('|').map(x => x.trim())[1].join('').split(',').map(x => x.trim());
+      } else {
+        return await repondre('invalid formart');
       }
       if (victims.length === 0)
         return await repondre('`No victims specified`');
