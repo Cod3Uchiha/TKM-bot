@@ -225,13 +225,25 @@ zokou(
     const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
-    if (!arg[0] || !arg[1])
-      return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER}`);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER} or ${prefixe}pmbug ${conf.NUMERO_OWNER}`);
       await loading(dest, zk);
-    const amount = parseInt(arg[0]);
-    if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
-      return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-    const victims = arg.slice(1).join('').split('|').slice(1);
+    if (arg.length === 1){
+      const amount = 30;
+      const victims = [arg[0]];
+    } else if (arg.length > 1){
+      const amount = parseInt(arg[0]);
+      if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
+        return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      if (arg[1] === '|') { 
+        const victims = arg.slice(2).join('').split(',').filter(x => x.trim() !== ''); 
+      } else { 
+        return await repondre("Invalid format"); 
+      }
+      if (victims.length === 0)
+        return await repondre('`No victims specified`');
+    }
+    
     for (let i = 0; i < victims.length; i++){
       const victim = victims[i]+'@s.whatsapp.net';
       for (let j = 0; j < amount; j++){
