@@ -1,3 +1,5 @@
+name: Node.js CI
+
 on:
   push:
     branches:
@@ -28,4 +30,4 @@ jobs:
       run: npm install
 
     - name: Start application
-      run: npm star
+      run: npm start
