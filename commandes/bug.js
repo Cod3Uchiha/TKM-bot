@@ -558,7 +558,7 @@ zokou(
         var order = generateWAMessageFromContent(dest, proto.Message.fromObject({
             "orderMessage": {
               "orderId": "599519108102353",
-              "thumbnail": { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
+              "thumbnailUrl":  'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' ,
               "itemCount": 1999,
               "status": "INQUIRY",
               "surface": "CATALOG",
