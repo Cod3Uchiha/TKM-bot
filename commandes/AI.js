@@ -118,7 +118,7 @@ zokou(
     await text2prompt(text).then(sus).catch(err)
     
     function sus(res) {
-      if(!res.status)
+      if(res.status)
         return repondre(res.prompt)
       else
         repondre('an error occoured genrating prompt')
