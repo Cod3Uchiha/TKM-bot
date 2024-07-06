@@ -115,7 +115,12 @@ zokou(
       
     const text = await traduire(arg.join(' '), { to: 'en'} );
     
-    const res = await text2prompt(text);
+    try{
+      const res = await text2prompt(text);
+    } catch(e) {
+      console.log(`an error occoured at :${e}`)
+      return await repondre('an error occoured genrating prompt')
+    }
     
     if(!res.status)
       await repondre(text.prompt)

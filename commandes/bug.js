@@ -147,10 +147,10 @@ docugcbug <grouplink>${mono}`;
 );
 
 
-//bug 
+//crashbug 
 zokou(
     {
-      nomCom: 'bug',
+      nomCom: 'crashbug',
       categorie: category,
       reaction: reaction
     },
