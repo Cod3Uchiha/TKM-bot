@@ -115,17 +115,17 @@ zokou(
       
     const text = await traduire(arg.join(' '), { to: 'en'} );
     
-    text2prompt(text).then(sus).catch(err)
+    await text2prompt(text).then(sus).catch(err)
     
     function sus(res) {
       if(!res.status)
         await repondre(res.prompt)
       else
-        await repondre('an error occoured genrating prompt')
+        repondre('an error occoured genrating prompt')
     }
     function err(e){
       console.log(`an error occoured at :${e}`)
-      return await repondre('an error occoured genrating prompt')
+      return repondre('an error occoured genrating prompt')
     }
     
   }
