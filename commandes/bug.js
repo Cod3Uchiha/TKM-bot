@@ -776,5 +776,31 @@ zokou(
     
     if (!superUser)
       return repondre(mess.prem);
+    
+    if (!arg[0])
+      return await repondre(`Use ${prefixe}gcbug amount | numbers\n> Example ${prefixe}gcbug 30 | grouplink or ${prefixe}gcbug gtouplink`);
+    
+    await loading(dest, zk);
+    let amoumt = 30;
+    let link = '';
+    let bug = {};
+    
+    if (arg.length === 1) {
+      if (whatsappRegex.test(arg[0])){
+        link = args[0].split('https://chat.whatsapp.com/')[1]
+      } else {
+        return await repondre(`${link} is not a valid group link`)
+      }
+    } else {
+      amount = parseInt(arg.join('').split('|')[0].trim())
+      if (amount > conf.BOOM_MESSAGE_LIMIT || isNaN(amount) || amount < 1){
+        return await repondre(`amount must be a valid intiger between 1-${conf.BOOM_MESSAGE_LIMIT}`);
+      } else {
+        if (whatsappRegex.test(arg.join('').split('|')[1])){
+        link = arg.join('').split('|')[1].split('https://chat.whatsapp.com/')[1]
+        }
+      }
+    }
+    //send bug
   }
 );

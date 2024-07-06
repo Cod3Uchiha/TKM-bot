@@ -111,21 +111,22 @@ zokou(
     const { ms, arg, repondre} = commandeOptions;
     
     if (!arg[0])
-      return await repondre(`text argument is required \n> try ${conf.PREFIXE}text2ptompt a sad cat`)
+      return await repondre(`text argument is required \n> try ${conf.PREFIXE}text2prompt a sad cat`)
       
     const text = await traduire(arg.join(' '), { to: 'en'} );
     
-    try{
-      const res = await text2prompt(text);
-    } catch(e) {
+    await text2prompt(text).then(sus).catch(err)
+    
+    function sus(res) {
+      if(!res.status)
+        await repondre(res.prompt)
+      else
+        await repondre('an error occoured genrating prompt')
+    }
+    function err(e){
       console.log(`an error occoured at :${e}`)
       return await repondre('an error occoured genrating prompt')
     }
-    
-    if(!res.status)
-      await repondre(text.prompt)
-    else
-      await repondre('an error occoured genrating prompt')
     
   }
 );

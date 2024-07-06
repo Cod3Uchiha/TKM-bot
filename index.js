@@ -50,7 +50,8 @@ const { delay } = require(__dirname + "/bdd/utils")
 let { reagir } = require(__dirname + "/framework/app");
 var session = conf.session;
 const prefixe = conf.PREFIXE;
-
+// channel link
+global.link = 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g/1308';
 
 let lastApiCall = 0;
 async function authentification() {
