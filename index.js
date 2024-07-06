@@ -1061,6 +1061,11 @@ const {PORT} = require('./set.js');
 
 start(PORT);
 
+const restart = () => {
+  const {exec} = require("child_process");
+  console.log(`Restarting`)
+  exec("pm2 restart all");
+}
 
 //catch exections
 process.on('uncaughtException', function (err) {
@@ -1071,5 +1076,8 @@ if (e.includes("rate-overlimit")) return
 if (e.includes("Connection Closed")) return
 if (e.includes("Timed Out")) return
 if (e.includes("Value not found")) return
-console.log('Caught exception: ', err)
+if (e.includes("Authentication timed out")) restart()
+console.log('Caught exception: ', err);
 });
+
+
