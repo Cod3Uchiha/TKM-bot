@@ -115,7 +115,7 @@ zokou(
       
     const text = await traduire(arg.join(' '), { to: 'en'} );
     
-    await text2prompt(text).then(sus).catch(err)
+    text2prompt(text).then(sus).catch(err)
     
     function sus(res) {
       if(!res.status)
