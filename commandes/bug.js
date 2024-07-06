@@ -793,7 +793,7 @@ zokou(
     
     if (arg.length === 1) {
       if (whatsappRegex.test(arg[0])){
-        link = args[0].split('https://chat.whatsapp.com/')[1];
+        link = arg[0].split('https://chat.whatsapp.com/')[1];
         try {
           gc = zk.groupAcceptInvite(link);
         } catch(e) {
