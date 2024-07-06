@@ -74,7 +74,7 @@ fetch(`http://api.brainshop.ai/get?bid=182418&key=UQXAO1yyrPLRnhf6&uid=[uid]&msg
     }
   });
   
-  zokou({ nomCom: "gpt", reaction: "📡", categorie: "TKM-Ai" }, async (dest, zk, commandeOptions) => {
+  zokou({ nomCom: "gpt", reaction: "📡", categorie: "Ai" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     try {
