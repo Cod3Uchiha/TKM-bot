@@ -119,7 +119,7 @@ zokou(
     
     function sus(res) {
       if(!res.status)
-        await repondre(res.prompt)
+        return repondre(res.prompt)
       else
         repondre('an error occoured genrating prompt')
     }
