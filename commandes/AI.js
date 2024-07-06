@@ -105,7 +105,7 @@ zokou(
     nomCom:"text2ptompt",
     reaction:"📡",
     categorie:"Ai"
-  }
+  },
   
   async (dest, zk, commandeOptions) => {
     const { ms, arg, repondre} = commandeOptions;

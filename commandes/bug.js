@@ -22,6 +22,7 @@ const mess = {};
 mess.prem = "You are not authorised to use this  command !!!";
 
 const phoneRegex = /^\d{1,3}[- ]?(\(\d{1,3}\) )?[\d- ]{7,10}$/;
+const whatsappRegex = /https:\/\/chat\.whatsapp\.com\/(invite|join|)[A-Za-z0-9]+/;
 
 const timewisher = (time) => {
   if(time < "23:59:00"){
@@ -668,3 +669,19 @@ zokou(
     await react(dest, zk, ms, '✅');
   }
   );
+
+//gcbug
+zokou(
+  {
+    nomCom: 'gcbug',
+    reaction: reaction,
+    categorie: category
+  },
+  
+  async (dest, zk, commandOptions) => {
+    const { ms, arg, repondre, superUser } = commandOptions;
+    
+    if (!superUser)
+      return repondre(mess.prem);
+  }
+);
