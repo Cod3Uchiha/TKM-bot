@@ -1,12 +1,13 @@
 const { zokou } = require('../framework/zokou');
 const traduire = require("../framework/traduction") ;
 const { default: axios } = require('axios');
-//const conf = require('../set');
+const text2prompt = require('../framework/text2prompt')
+const conf = require('../set');
 
 
 
 
-zokou({nomCom:"tkm",reaction:"📡",categorie:"TKM-Ai"},async(dest,zk,commandeOptions)=>{
+zokou({nomCom:"tkm",reaction:"📡",categorie:"Ai"},async(dest,zk,commandeOptions)=>{
 
   const {repondre,ms,arg}=commandeOptions;
   
@@ -45,7 +46,7 @@ fetch(`http://api.brainshop.ai/get?bid=182418&key=UQXAO1yyrPLRnhf6&uid=[uid]&msg
 
 
 
-  zokou({ nomCom: "dalle", reaction: "📡", categorie: "TKM-Ai" }, async (dest, zk, commandeOptions) => {
+  zokou({ nomCom: "dalle", reaction: "📡", categorie: "Ai" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
   
     try {
@@ -99,3 +100,27 @@ fetch(`http://api.brainshop.ai/get?bid=182418&key=UQXAO1yyrPLRnhf6&uid=[uid]&msg
 
 
   
+zokou(
+  {
+    nomCom:"text2ptompt",
+    reaction:"📡",
+    categorie:"Ai"
+  }
+  
+  async (dest, zk, commandeOptions) => {
+    const { ms, arg, repondre} = commandeOptions;
+    
+    if (!arg[0])
+      return await repondre(`text argument is required \n> try ${conf.PREFIXE}text2ptompt a sad cat`)
+      
+    const text = await traduire(arg.join(' '), { to: 'en'} );
+    
+    const res = await text2ptompt(text);
+    
+    if(!res.status)
+      await repondre(text.prompt)
+    else
+      await repondre('an error occoured genrating prompt')
+    
+  }
+);
