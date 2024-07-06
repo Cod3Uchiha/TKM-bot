@@ -102,7 +102,7 @@ fetch(`http://api.brainshop.ai/get?bid=182418&key=UQXAO1yyrPLRnhf6&uid=[uid]&msg
   
 zokou(
   {
-    nomCom:"text2ptompt",
+    nomCom:"text2prompt",
     reaction:"📡",
     categorie:"Ai"
   },
@@ -115,7 +115,7 @@ zokou(
       
     const text = await traduire(arg.join(' '), { to: 'en'} );
     
-    const res = await text2ptompt(text);
+    const res = await text2prompt(text);
     
     if(!res.status)
       await repondre(text.prompt)

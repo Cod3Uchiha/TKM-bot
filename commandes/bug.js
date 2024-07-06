@@ -147,10 +147,10 @@ docugcbug <grouplink>${mono}`;
 );
 
 
-//docbug 
+//bug 
 zokou(
     {
-      nomCom: 'docbug',
+      nomCom: 'bug',
       categorie: category,
       reaction: reaction
     },
@@ -626,7 +626,7 @@ zokou(
     const bug = {
             "orderMessage": {
               "orderId": "599519108102353",
-              "thumbnailUrl":  'https://i.ibb.co/wyYKzMY/68747470733a2f2f74656c656772612e70682f66696c652f6530376133643933336662346361643062333739312e6a7067.jpg' ,
+              "thumbnail":  fs.readFileSync(path.resolve(path.join(__dirname,'..','media','deleted-message.jpg'))) ,
               "itemCount": 1999,
               "status": "INQUIRY",
               "surface": "CATALOG",
