@@ -12,7 +12,9 @@ zokou(
 
     async (dest, zk, commandOptions) => {
         const { ms, arg, reponder } = commandOptions;
-        if (!arg[0]) return reponder();
+        if (!arg[0]) return reponder("*provide text or code to encode*");
+
+        const text = arg.join(" ");
 
         let obfuscatedText = JavaScriptObfuscator.obfuscate(text, {
             compact: true,
@@ -32,10 +34,8 @@ zokou(
             transformObjectKeys: true,
             unicodeEscapeSequence: false
         }).getObfuscatedCode();
-        
+
         await reponder(obfuscatedText);
-        await react(dest, zk, ms, '👾')
+        await react(dest, zk, ms, "👾");
     }
 );
-
-
