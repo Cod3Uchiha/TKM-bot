@@ -226,15 +226,15 @@ zokou(
     }
 );
 
-
+//crash
 zokou(
   {
     nomCom: 'crash',
-    categorie: categorie,
+    categorie: category,
     reaction: reaction
   },
 
-  async (dist, zk, commandOptions) => {
+  async (dest, zk, commandOptions) => {
     const {
       ms, arg, repondre, superUser
     } = commandOptions;
