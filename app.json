@@ -35,7 +35,7 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"TKM bot",
+      "value":"dollarhunter bot",
       "required":false
 
     } ,
@@ -60,7 +60,7 @@
     },
   "HEROKU_APP_NAME": {
     "description": "insert your heroku APP NAME (the name you wrote at the beginning)",
-     "value":"",
+     "value":"TKM-bot",
 	"required" :true
     }  
 	  ,
