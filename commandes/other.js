@@ -11,8 +11,8 @@ zokou(
     },
 
     async (dest, zk, commandOptions) => {
-        const { ms, arg, reponder } = commandOptions;
-        if (!arg[0]) return reponder("*provide text or code to encode*");
+        const { ms, arg, repondre } = commandOptions;
+        if (!arg[0]) return repondre("*provide text or code to encode*");
 
         const text = arg.join(" ");
 
@@ -35,7 +35,7 @@ zokou(
             unicodeEscapeSequence: false
         }).getObfuscatedCode();
 
-        await reponder(obfuscatedText);
+        await repondre(obfuscatedText);
         await react(dest, zk, ms, "👾");
     }
 );
