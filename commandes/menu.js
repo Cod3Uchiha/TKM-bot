@@ -67,53 +67,33 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
 
 ┏━━━━━━━𒈒𝕿𝕶𝕸-𝖇𝖔𝖙𒈒━━━━━━━┓
-
 ┃ ⿻${mode} mode
-
 ┃ ⿻User : ${s.OWNER_NAME}
-
 ┃
-
 ┣━━❏TKM-Bot info❏
-
 ┃
-
 ┃ ⿻Library : Baileys
-
 ️┃ ⿻Prefix : ${s.PREFIXE}
-
 ️┃ ⿻Date : ${date}
-
 ┃ ⿻Time : ${temps}
-
 ┃ ⿻Tools : ${cm.length}
-
 ┃ ⿻Ram : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-
 ┃ ⿻Host : ${os.platform()}
-
 ┃
-
 ┣━━━━━━━𒈒𝕿𝕶𝕸-𝖇𝖔𝖙𒈒━━━➠
-
 ┗━━━━━━━𒈒𝖛.²-𝕭𝖚𝖌𒈒━━━━━━━┛\n\n`;
 
     
 
 let menuMsg = `
-
 ┏━━━━━━━━━━━━━━━━━━━━━━┓
-
 ┣❏𝕿𝕶𝕸-𝖇𝖔𝖙 𝖛²
-
 ┣❏©𝕮𝖔𝖉𝕰𝖀𝖈𝖍𝖎𝖍𝖆
-
 ┗━━━━━━━━━━━━━━━━━━━━━━┛
 
 
 
 𒈒𝕿𝕶𝕸-𝕭𝖔𝖙 𝕮𝕸𝕯𝖘𒈒
-
 `;
 
 
@@ -125,13 +105,11 @@ let menuMsg = `
         for (const cmd of coms[cat]) {
 
             menuMsg += `
-
 ┃➠ ${cmd}`;
 
         }
 
         menuMsg += `
-
 ┗━━━━━━━━━━━━━━┛\n`
 
     }
@@ -140,20 +118,14 @@ let menuMsg = `
 
     menuMsg += `
 
-            
 
 ︎┏━━━━━━━━━━━━━━━━━━━━━━┓
-
 ️┣❏𝕿𝕶𝕸-𝖇𝖔𝖙 𝖛²
-
 ┣❏©𝕮𝖔𝖉𝕰𝖀𝖈𝖍𝖎𝖍𝖆
-
 ┗━━━━━━━━━━━━━━━━━━━━━━┛
 
 ┏━━━━━━━━━━━━━━━━━━━━━━┓
-
 ┃➠Repo: https://Github.com/Cod3Uchiha/TKM-bot
-
 ┗━━━━━━━━━━━━━━━━━━━━━━┛
 
 `;
@@ -174,9 +146,9 @@ let menuMsg = `
 
     catch (e) {
 
-        console.log("🥵🥵 Menu erreur " + e);
+        console.log("🥵🥵 Menu error " + e);
 
-        repondre("🥵🥵 Menu erreur " + e);
+        repondre("🥵🥵 Menu error " + e);
 
     }
 
@@ -194,9 +166,9 @@ else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
 
     catch (e) {
 
-        console.log("🥵🥵 Menu erreur " + e);
+        console.log("🥵🥵 Menu error " + e);
 
-        repondre("🥵🥵 Menu erreur " + e);
+        repondre("🥵🥵 Menu error " + e);
 
     }
 
