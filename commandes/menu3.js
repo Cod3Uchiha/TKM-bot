@@ -67,7 +67,7 @@ zokou({ nomCom: "menu3", categorie: "Menu" }, async (dest, zk, commandeOptions) 
             menuMsg += "\t  ║ " + cmd + "" + " \n";
         }
     }
-    var link = "https://wallpapercave.com/uwp/uwp3860299.jpeg";
+    var link = "https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg";
     try {
         zk.sendMessage(dest, { image: { url: link }, caption: menuMsg, footer: "©TKM INC" }, { quoted: ms });
     }
