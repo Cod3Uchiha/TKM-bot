@@ -35,7 +35,7 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"TKM bot",
+      "value":"dollarhunter bot",
       "required":false
 
     } ,
@@ -60,14 +60,14 @@
     },
   "HEROKU_APP_NAME": {
     "description": "insert your heroku APP NAME (the name you wrote at the beginning)",
-     "value":"",
+     "value":"TKM-bot",
 	"required" :true
     }  
 	  ,
     "SESSION_ID":
     {
       "description":"put your session ID, the code you received after pairing code",   
-      "value":"",
+      "value":"eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiU05OYXZPK3JqaFMvQ1podmVFM2p4NW5zR3I5M1NmdFBBQVdXUTlDd1lHOD0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoib1ZvbmxWSGZaQ1ZRTVlZMktXMGNsYzJ2Ti8zeUROWmtBUCs2RTlIV3pDcz0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJvRVhCKy85aWlKc3o4RTBDNWIvRVBmSmkvSE91SjJNUEVyUDQ5enpHUTNvPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJOL1ppWElOZ3ArVEhSLzBSYVVtNDdrZ0k2M0NtM2h2OEFDZkQrYm9vcDBnPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImtNTHVJbjVmS1hEVEJBRlJjK2svZW1oMzZveXFkQ1lWOHZEOE9IVTI0V1E9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IjJpUVpWRXEvN0ZwTTZPNFAvZzBoYjNRQ0l2eHNiMU1hVThTLzNHRmY2WDg9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoib0c2Q2hUVzgyYWF1WnFVVjFSNWlIMEVJWWVvUEI3b3htQnlqdjErNGwxcz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiZFc5R1ZGbmI3SWxRb0ViUkQ5cE9IWW52NC9PN0YyUW96ZVFJL0tqU3ExMD0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IklXYVN4ckxnMU1GYUZHVlp5eEdldm9MRkpHT25OcGw1Z0FMQU1iZElMU0RqMU5wNWZMQ3dja3QzOTNRd0xOTjg0NUZVdGp4dHYyQWpvYlRPaXVXRWdnPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MTg5LCJhZHZTZWNyZXRLZXkiOiJoYjhTSWdhYzlVZXlKa0JkYi85QnFzQS91Z1FudlNMbVFwdmNKczAwbTdZPSIsInByb2Nlc3NlZEhpc3RvcnlNZXNzYWdlcyI6W10sIm5leHRQcmVLZXlJZCI6MzEsImZpcnN0VW51cGxvYWRlZFByZUtleUlkIjozMSwiYWNjb3VudFN5bmNDb3VudGVyIjowLCJhY2NvdW50U2V0dGluZ3MiOnsidW5hcmNoaXZlQ2hhdHMiOmZhbHNlfSwiZGV2aWNlSWQiOiJjT1NTZEZlR1FIR2VlQjItV01ueFlnIiwicGhvbmVJZCI6ImQyYjQ3ZDE1LTRiYTItNDM1Yy04MzYwLTE3OGIyN2JmZjg5NiIsImlkZW50aXR5SWQiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJmYVhUb2hSZjl3VjUzWDV4am5menZGbjhyTVE9In0sInJlZ2lzdGVyZWQiOmZhbHNlLCJiYWNrdXBUb2tlbiI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IlF5ckNmM3o0d2ZPaGorQzJDcHRYUGF0VzFPcz0ifSwicmVnaXN0cmF0aW9uIjp7fSwiYWNjb3VudCI6eyJkZXRhaWxzIjoiQ05XSDF1OEdFTk9yc2JRR0dBTWdBQ2dBIiwiYWNjb3VudFNpZ25hdHVyZUtleSI6IlBManEvZGZCN3FrMmFQSE9PQTBYUFZaQjFkQXFWUkQ2ZXpQYUVzOXJOeFE9IiwiYWNjb3VudFNpZ25hdHVyZSI6IldBc2tyVkF4OWgyNHRCd1ZtckZiNUl6K0JnUXdnRDRCOWVTYkZ2QXRyWVFJSGJFc3NKS3ZsRyt4Q3RsRjZubVFlcnVxbkdTWFRvd0ZRUUlCYlEwd0NnPT0iLCJkZXZpY2VTaWduYXR1cmUiOiJuYjB6U0hUNmJhWDI3YmtjSktmM2dxK1Biam9IZDZXcE50VldTL3RzdUFnWEQ1UjdQMkZuOUM0Y0g5RUtaVnB4R2F4ZzVnWG1TUStWYmM0ck4xVTJpdz09In0sIm1lIjp7ImlkIjoiMjM0NzA0NDA2MDEwMjo0MkBzLndoYXRzYXBwLm5ldCIsIm5hbWUiOiJEb2xsYXJodW50ZXIiLCJsaWQiOiIyMTEzODU1Mzk2NzQzNjA6NDJAbGlkIn0sInNpZ25hbElkZW50aXRpZXMiOlt7ImlkZW50aWZpZXIiOnsibmFtZSI6IjIzNDcwNDQwNjAxMDI6NDJAcy53aGF0c2FwcC5uZXQiLCJkZXZpY2VJZCI6MH0sImlkZW50aWZpZXJLZXkiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJCVHk0NnYzWHdlNnBObWp4empnTkZ6MVdRZFhRS2xVUStuc3oyaExQYXpjVSJ9fV0sInBsYXRmb3JtIjoic21iYSIsInJvdXRpbmdJbmZvIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQ0F3SURRPT0ifSwibGFzdEFjY291bnRTeW5jVGltZXN0YW1wIjoxNzIwNDczMDU2LCJsYXN0UHJvcEhhc2giOiIxbE9TRUkifQ==",
       "required":true
       
     },
@@ -76,14 +76,14 @@
     
     "desc": "Your Name",
     "required": false,
-    "value": "Cod3Uchiha"
+    "value": "dollarhunter"
   },
     "NUMERO_OWNER":
   {
     
     "desc": "Your number , dont put '+' and put you area code(exemple of togo '228')",
     "required":false,
-    "value": "263775571820,263785028126"
+    "value": "2347044060102"
   },
     "WARN_COUNT":
   {
