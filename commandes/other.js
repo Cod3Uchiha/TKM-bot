@@ -21,7 +21,7 @@ zokou(
             controlFlowFlattening: true,
             deadCodeInjection: true,
             debugProtection: false,
-            debugProtectionInterval: false,
+            debugProtectionInterval: 0,
             disableConsoleOutput: true,
             identifierNamesGenerator: "hexadecimal",
             log: false,
