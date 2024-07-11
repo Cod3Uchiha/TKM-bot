@@ -19,18 +19,19 @@ zokou(
         let obfuscatedText = JavaScriptObfuscator.obfuscate(text, {
             compact: true,
             controlFlowFlattening: true,
-            deadCodeInjection: true,
+            controlFlowFlatteningThreshold: 0.5,
+            deadCodeInjection: false,
             debugProtection: false,
             debugProtectionInterval: 0,
             disableConsoleOutput: true,
             identifierNamesGenerator: "hexadecimal",
             log: false,
             renameGlobals: false,
-            selfDefending: true,
+            selfDefending: false,
             stringArray: true,
             stringArrayRotate: true,
             stringArrayEncoding: ["base64"],
-            stringArrayThreshold: 0.75,
+            stringArrayThreshold: 0.6,
             transformObjectKeys: true,
             unicodeEscapeSequence: false
         }).getObfuscatedCode();
