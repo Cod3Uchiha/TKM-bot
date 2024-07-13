@@ -333,7 +333,7 @@ zokou({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, co
 
 });
 
-zokou({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "ginfo", categorie: 'Group' }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, verifGroupe } = commandeOptions;
   if (!verifGroupe) { repondre("order reserved for the group only"); return };
 
