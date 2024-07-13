@@ -1036,7 +1036,7 @@ setTimeout(() => {
 
 
             }, {
-              timezone: "Africa/Harare"
+              timezone: conf.TZ
             });
           }
 
@@ -1111,24 +1111,23 @@ setTimeout(() => {
           await activateCrons();
 
           if ((conf.DP).toLowerCase() === 'yes') {
-            let cmsg = `╔───⬡
-            ┃ ┃⬡TKM bot⬡┃
-            ┃    Prefix : [ ${prefixe} ]
-            ┃    Mode :${md}
-            ┃    Total Commandes : ${evt.cm.length}︎
-            ╚─────────────────···▸▸
+            let cmsg = `
+╔───⬡
+┃ ┃⬡TKM bot⬡┃
+┃    Prefix : [ ${prefixe} ]
+┃    Mode :${md}
+┃    Total Commandes : ${evt.cm.length}︎
+╚─────────────────···▸▸
 
-            ╔───⬡
-
-
-            report any. problems to the devs:)
-            Thanks for supporting
-            this project
-            property of Cod3Uchiha
-            property of Takudzwa Mlambo
-            © Cod3Uchiha
-            © Takudzwa Mlambo
-            ╚─────────────────···▸▸`;
+╔───⬡
+ report any. problems to the devs:)
+ Thanks for supporting
+ this project
+ property of Cod3Uchiha
+ property of Takudzwa Mlambo
+ © Cod3Uchiha
+ © Takudzwa Mlambo
+╚─────────────────···▸▸`;
             await zk.sendMessage(zk.user.id, {
               text: cmsg
             });

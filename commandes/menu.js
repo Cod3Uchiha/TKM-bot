@@ -67,7 +67,7 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
 
 ┏━━━━━━━𒈒𝕿𝕶𝕸-𝖇𝖔𝖙𒈒━━━━━━━┓
-┃ ⿻${mode} mode
+┃ ⿻Mode: ${mode}
 ┃ ⿻User : ${s.OWNER_NAME}
 ┃
 ┣━━❏TKM-Bot info❏
