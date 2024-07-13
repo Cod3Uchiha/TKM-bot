@@ -17,23 +17,32 @@ zokou(
         const text = arg.join(" ");
 
         let obfuscatedText = JavaScriptObfuscator.obfuscate(text, {
-            compact: true,
-            controlFlowFlattening: true,
-            controlFlowFlatteningThreshold: 0.4,
-            deadCodeInjection: false,
-            disableConsoleOutput: true,
-            identifierNamesGenerator: "hexadecimal",
-            log: false,
-            renameGlobals: false,
-            simplify: true,
-            selfDefending: false,
-            stringArray: true,
-            stringArrayRotate: true,
-            stringArrayEncoding: ["base64"],
-            stringArrayThreshold: 0.6,
-            transformObjectKeys: true,
-            unicodeEscapeSequence: false
-        }).getObfuscatedCode();
+    compact: true,
+    controlFlowFlattening: false,
+    deadCodeInjection: false,
+    debugProtection: false,
+    debugProtectionInterval: 0,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    numbersToExpressions: false,
+    renameGlobals: false,
+    selfDefending: true,
+    simplify: true,
+    splitStrings: false,
+    stringArray: true,
+    stringArrayCallsTransform: false,
+    stringArrayEncoding: [],
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 1,
+    stringArrayWrappersChainedCalls: true,
+    stringArrayWrappersParametersMaxCount: 2,
+    stringArrayWrappersType: 'variable',
+    stringArrayThreshold: 0.75,
+    unicodeEscapeSequence: false
+}).getObfuscatedCode();
 
         await repondre(obfuscatedText);
         await react(dest, zk, ms, "👾");
