@@ -88,7 +88,7 @@ let {
 var session = conf.session;
 const prefixe = conf.PREFIXE;
 // channel link
-global.link = 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g/1308';
+global.link = 'https://whatsapp.com/channel/0029VaKjSra9WtC0kuJqvl0g';
 
 let lastApiCall = 0;
 async function authentification() {
