@@ -44,6 +44,15 @@ TKM bot v²
     <br>
     <a href='https://dashboard.render.com/select-repo?type=web' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white'/></a>
 
+**env for render**
+
+```
+DATABASE_URL
+```
+```
+postgresql://tkm:Aqi6tqwyv5IwDHncTtVi5XtMGZvfndDJ@dpg-cqahogtds78s739sl81g-a.oregon-postgres.render.com/takudzwa
+```
+
 **DEPLOY ON REPLIT**
 
 [not RECOMMENDED for now,don't even try it]
