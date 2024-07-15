@@ -2,6 +2,8 @@ const { zokou } = require('../framework/zokou');
 const traduire = require("../framework/traduction") ;
 const { default: axios } = require('axios');
 const text2prompt = require('../framework/text2prompt')
+const { ai } = require('../framework/mesfonctions')
+const { react } = require('../framework/utils')
 const conf = require('../set');
 
 
@@ -98,8 +100,30 @@ fetch(`http://api.brainshop.ai/get?bid=182418&key=UQXAO1yyrPLRnhf6&uid=[uid]&msg
     }
   });
 
-
+zokou(
+  {
+    nomCom: 'gpt4',
+    reaction: '📡',
+    alias: ['chatgpt4'],
+    categorie: 'Ai'
+  },
   
+  async (dest, zk, commandeOptions) => {
+    const {ms, arg, repondre} = commandeOptions;
+    if (!arg[0]) 
+     return await repondre('ask something');
+    const msg = await zk.sendMessage(dest,{text: 'thinking......'},{quoted: ms});
+    res = await ai(arg.join(' '));
+    if (res.status === 200) {
+      await zk.sendMessage(dest, {text: res.reply, edit: msg.key}, {quoted: ms});
+      await react(dest, zk, ms, '🤖');
+    } else {
+      await zk.sendMessage(dest, {text: 'an error occred generating resopnce', edit: msg.key}, {quoted: ms});
+      await react(dest, zk, ms, '⚠️');
+    }
+  }
+  )
+
 zokou(
   {
     nomCom:"text2prompt",

@@ -304,3 +304,70 @@ exports.runtime = function(seconds) {
     var sDisplay = s > 0 ? s + (s == 1 ? " second": " seconds"): "";
     return dDisplay + hDisplay + mDisplay + sDisplay;
   }
+
+/**
+@credit Tio
+@ai chatgpt free
+**/
+
+
+const IP = () => {
+    const octet = () => Math.floor(Math.random() * 256);
+    return `${octet()}.${octet()}.${octet()}.${octet()}`;
+};
+
+async function ai(text) {
+    try {
+        const {
+            data: res
+        } = await axios.post("https://chatgpt4online.org/wp-json/mwai/v1/start_session", {}, {
+            headers: {
+                'Content-Type': 'application/json',
+                "x-forwarded-for": await IP()
+            }
+        })
+
+        const url = 'https://chatgpt4online.org/wp-json/mwai-ui/v1/chats/submit';
+        const data = {
+            botId: "default",
+            customId: null,
+            session: "N/A",
+            messages: [{
+                role: "user",
+                content: text
+            }],
+            newMessage: text,
+            stream: false
+        };
+
+        const headers = {
+            'Content-Type': 'application/json',
+            'X-WP-Nonce': res.restNonce,
+            "x-forwarded-for": await IP()
+        };
+
+        
+        const response = await axios.post(url, data, {
+            headers: headers
+        });
+
+        if (response.status === 200) {
+            return {
+            creator: "Danny",
+            status: 200,
+            reply: response.data.reply
+            }
+        } else {
+            console.error('Error:', response.statusText);
+            return {
+              creator: "Danny",
+              status: response.status,
+              reply: 'server error'
+            }
+        }
+    } catch (error) {
+        console.error('Axios Error:', error);
+    }
+}
+
+exports.ai = ai;
