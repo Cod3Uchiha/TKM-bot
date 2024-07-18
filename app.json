@@ -1,9 +1,9 @@
 {
-  "name":"TKM-bot",
+  "name":"babyfx",
   "description":"Deploy your TKM bot now.Brought to you by the Cod3Uchiha.Make sure you fill all valuables to avoid bot from sleeping. ",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg",
-  "repository":"https://github.com/Cod3Uchiha/TKM-bot",
+  "repository":"",
   "succes_url":"/",
   "stack":"container",
   "env":{
@@ -35,7 +35,7 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"TKM bot",
+      "value":"babyfx",
       "required":false
 
     } ,
@@ -67,7 +67,7 @@
     "SESSION_ID":
     {
       "description":"put your session ID, the code you received after pairing code",   
-      "value":"",
+      "value":"eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibUphTFJmU2oxWGpxeWpaVFB4VjcwYTlLaExVR2xwSmk5ejNkV2JyUFdHaz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiVmtzNEYxTUkyd2dKNmYrMi81VnRlbEtZdXJ6V2pJTlU4aGxFN0R5aVFGWT0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiIrUFc2aEFObjZlNWNTZVNwVG1wcTBlQ1RvNjZpNjBVbHlRang5d2U2RkZzPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiIzWFZremdVWng5SEYyTVpQWEFmNy9TQVBzdVdTcUI2NUpWTjBIbDVyaXdVPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IitJRW1oT2QvWDdlZU9QSnZ0NEtUblVqbmVMNDVacTA5bTZuYVpsWmpqMkE9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImhTU0J2SlFaNFM2U2VoWFd3YXpFRkdQaDVpakpYWXZ5eSt3U2ZmZ1VMVXc9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiUUNSblZvWWJPcDNkc0ltT3BidEh3bmFXUXE1YU1OOFozUVNsbGVWTFdHTT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiTmVSZUdHQjBpNlFkSFlSRDdsbEp0Wkp2OWNPQTZkbXpLN3d4cDIwa3pWZz0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6InNGRWN3ZnVoODFQckk5aVVkUXRuc2NnUiswZlRsU3dkTVdmbzRhbXpZaDBLUVNvY24vNHhwVm0yOUw2Y2JBZFhmd1hYOHd4WWdBMWpOTlhtRUhzSWp3PT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6NzksImFkdlNlY3JldEtleSI6IldQZnZGR005Y012SGxJaWtjLzNPUkNWdXNBNzVua2ZCMW1zNDQxeG1YOXM9IiwicHJvY2Vzc2VkSGlzdG9yeU1lc3NhZ2VzIjpbXSwibmV4dFByZUtleUlkIjozMSwiZmlyc3RVbnVwbG9hZGVkUHJlS2V5SWQiOjMxLCJhY2NvdW50U3luY0NvdW50ZXIiOjAsImFjY291bnRTZXR0aW5ncyI6eyJ1bmFyY2hpdmVDaGF0cyI6ZmFsc2V9LCJkZXZpY2VJZCI6InJfWFpMVl9PUmtLa1Y4ZGE5Um5XdkEiLCJwaG9uZUlkIjoiZDdlNzUxZjctYjJmYi00Mzg0LTgwOTMtZWQzMzA0MDhjMzU3IiwiaWRlbnRpdHlJZCI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IlVOeVE1MVpMKzU4TUZKdXl1RTZmZFRXblZhRT0ifSwicmVnaXN0ZXJlZCI6dHJ1ZSwiYmFja3VwVG9rZW4iOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJHZzdBT2hLVFlXbmNrdkx3MXQ5ZU5jRjlQc2M9In0sInJlZ2lzdHJhdGlvbiI6e30sInBhaXJpbmdDb2RlIjoiSEpYTko1R04iLCJtZSI6eyJpZCI6IjI1Njc1ODE4MzUxOToxM0BzLndoYXRzYXBwLm5ldCJ9LCJhY2NvdW50Ijp7ImRldGFpbHMiOiJDT2VTaDQ0Q0VJWFg0N1FHR0FVZ0FDZ0EiLCJhY2NvdW50U2lnbmF0dXJlS2V5IjoialZpL0h5SWc3ZkZmWVk0UXgrK3ROZDJlU1VDVTJhVU5sQmwwTnYvUi9GMD0iLCJhY2NvdW50U2lnbmF0dXJlIjoiUXA1UTJNNUllbE1DcFgxZENBWnByaDdoVnRNUER2ZXM3VEs5Szgvc3NWTXQ3RmhCUVFqZkZmR3BLdXdnVkVrUW9JMEZ4a0h4NW52aUpUYnU4aGtmREE9PSIsImRldmljZVNpZ25hdHVyZSI6Im1RRGJLOXZFU0RjSy9WaHpxRFMzdVk5Z0haRk53NXlNN3BDazRkQ3FYVVFCUDVuOEZ4dFJzNEluQW5LckJKbnFkVUprakp5Y01zcVFoM003VlNwV2hBPT0ifSwic2lnbmFsSWRlbnRpdGllcyI6W3siaWRlbnRpZmllciI6eyJuYW1lIjoiMjU2NzU4MTgzNTE5OjEzQHMud2hhdHNhcHAubmV0IiwiZGV2aWNlSWQiOjB9LCJpZGVudGlmaWVyS2V5Ijp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQlkxWXZ4OGlJTzN4WDJHT0VNZnZyVFhkbmtsQWxObWxEWlFaZERiLzBmeGQifX1dLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJsYXN0QWNjb3VudFN5bmNUaW1lc3RhbXAiOjE3MjEyOTc4MTEsIm15QXBwU3RhdGVLZXlJZCI6IkFBQUFBRWRKIn0=",
       "required":true
       
     },
@@ -76,14 +76,14 @@
     
     "desc": "Your Name",
     "required": false,
-    "value": "Cod3Uchiha"
+    "value": "babyfx"
   },
     "NUMERO_OWNER":
   {
     
     "desc": "Your number , dont put '+' and put you area code(exemple of togo '228')",
     "required":false,
-    "value": "263775571820,263785028126"
+    "value": "256761396309,256758183519"
   },
     "WARN_COUNT":
   {
