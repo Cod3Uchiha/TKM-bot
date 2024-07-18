@@ -66,7 +66,7 @@ const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
 
-┏❏ ⌜ 𝐓𝐊𝐌-𝐁𝐎𝐓 ⌟  ❐
+┏❏ ⌜ 𝐓𝐊𝐌-𝐁𝐎𝐓 ⌟ ❐
 ┃ ⿻Mode: ${mode}
 ┃ ⿻User : ${s.OWNER_NAME}
 ┃ ⿻Library : Baileys
