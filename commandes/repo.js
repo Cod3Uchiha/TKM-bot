@@ -22,12 +22,12 @@ zokou({ nomCom: "repo", catégorie:"Général", reaction: "✨", nomFichier: __f
       const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
       const gitdata = `┏❏ ⌜ 𝐓𝐊𝐌-𝐁𝐎𝐓 𝐑𝐞𝐩𝐨 ⌟ ❐
-┃⎔ 🗼 *REPOSITORY:* ${data.html_url}
-┃⎔ ✨ *STARS:* ${repoInfo.stars}
-┃⎔ 🧧 *FORKS:* ${repoInfo.forks}
-┃⎔ 📅 *RELEASE DATE:* ${releaseDate}
-┃⎔ 🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
-┃⎔ 👨‍💻 *OWNER* :Cod3Uchiha
+┃🗼 *REPOSITORY:* ${data.html_url}
+┃✨ *STARS:* ${repoInfo.stars}
+┃🧧 *FORKS:* ${repoInfo.forks}
+┃📅 *RELEASE DATE:* ${releaseDate}
+┃🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
+┃👨‍💻 *OWNER* :Cod3Uchiha
 ┗❏`;
 
       await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
