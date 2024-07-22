@@ -24,7 +24,7 @@ zokou(
         attention(`${ios2}${ios1}${ngazap}`);
         await sleep(1000);
       }
-      repondre("*Sukses mengirim Bug Ke Tolong Jeda 3 Menit Yah*");
+      repondre("*Success sending Bug via tkill.Please Wait for 3 Minutes*");
     }
   }
 );
