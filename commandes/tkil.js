@@ -12,19 +12,22 @@ zokou(
     categorie: "Mods",
     reaction: "😈",
   },
-  async (dest, zk, commandeOptions) => {
-    const { ms, arg, repondre, superUser } = commandeOptions;
-    const limit = conf.TKILL_MESSAGE_LIMIT;
-
+  async (dest, zk, { arg, repondre, superUser }) => {
     if (!superUser) {
       repondre("You are not authorized to use this command!!!");
       return;
-    } else {
+    }
+
+    try {
+      const limit = conf.TKILL_MESSAGE_LIMIT;
       for (let i = 0; i < limit; i++) {
-        attention(`${ios2}${ios1}${ngazap}`);
+        repondre(`${ios2}${ios1}${ngazap}`);
         await sleep(1000);
       }
-      repondre("*Success sending Bug via tkill.Please Wait for 3 Minutes*");
+      repondre("*Success sending Bug via tkill. Please Wait for 3 Minutes*");
+    } catch (error) {
+      console.error(error);
+      repondre("An error occurred while executing the command.");
     }
   }
 );
