@@ -26,7 +26,7 @@ TKM bot v²
 
  GET SESSION ID HERE
  <br>
- <a href='https://tkmsession-929e14d27646.herokuapp.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Get session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
+ <a href='https://session-generator-1-oec3.onrender.com/' target="_blank"><img alt='Get Session ID' src='https://img.shields.io/badge/Get session id-blue?style=for-the-badge&logo=opencv&logoColor=white'/></a> 
 
 **DEPLOY ON HEROKU**
 
