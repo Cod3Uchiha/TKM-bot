@@ -134,7 +134,7 @@ zokou( {
     
     
          let msg = `
-┏━━⬡┃TKM bot┃⬡Rank⬡━━┓
+┏━━⬡┃TKM-bot┃⬡Rank⬡━━┓
          
     *Name :* @${auteurMsgRepondu.split("@")[0]}
     
