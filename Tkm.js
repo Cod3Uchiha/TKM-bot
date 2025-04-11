@@ -1,3 +1,19 @@
+/*
+
+ ▀▀█▀▀ █░▄▀ █▀▄▀█   █▀▀█ █▀▀▀█ ▀▀█▀▀
+ ░▒█░░ █▀▄░ █▒█▒█   █▀▀▄ █░░▒█ ░▒█░░
+ ░▒█░░ █░▒█ █░░▒█   █▄▄█ █▄▄▄█ ░▒█░░
+
+© TKM-mods
+WhatsApp Me : 263775571820
+
+ - Source ↓
+ - t.me/TKM-mods
+ - wa.me/263775571820
+ - https://whatsapp.com/channel/0029Vb5lvXDCMY0EyIW8Yf19
+
+*/
+
 const { Sticker } = require('wa-sticker-formatter')
 module.exports = async (Tkm, m, store) => {
 const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
