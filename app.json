@@ -2,7 +2,7 @@
   "name": "TKM-bot",                                           
   "description": "WhatsApp bot.",                                       
   "repository": "https://github.com/Cod3Uchiha/TKM-bot",                                                                     
-  "logo": "https://telegra.ph/file/2ee62b761b4a1524b6c5f.jpg",           
+  "logo": "https://files.catbox.moe/5bzcdl.jpg",           
   "keywords": ["nodejs", "Cod3Uchiha", "multi device"],                                               
   "buildpacks": [                                                     
     {                                                                   
