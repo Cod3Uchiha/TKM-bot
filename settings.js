@@ -1,3 +1,19 @@
+/*
+
+ ▀▀█▀▀ █░▄▀ █▀▄▀█   █▀▀█ █▀▀▀█ ▀▀█▀▀
+ ░▒█░░ █▀▄░ █▒█▒█   █▀▀▄ █░░▒█ ░▒█░░
+ ░▒█░░ █░▒█ █░░▒█   █▄▄█ █▄▄▄█ ░▒█░░
+
+© TKM-mods
+WhatsApp Me : 263775571820
+
+ - Source ↓
+ - t.me/TKM-mods
+ - wa.me/263775571820
+ - https://whatsapp.com/channel/0029Vb5lvXDCMY0EyIW8Yf19
+
+*/
+
 require("./all/module.js")
 
 //========== Setting Owner ==========//
