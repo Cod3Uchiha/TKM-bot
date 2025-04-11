@@ -1,5 +1,5 @@
 <p align="center">
-TKM bot v²
+TKM bot v³
 </p>
 
 <p align="center">
