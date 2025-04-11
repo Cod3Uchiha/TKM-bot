@@ -1,13 +1,13 @@
 {
   "name": "Lord-TKM",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "WhatsApp Bot 2025",
   "type": "commonjs",
   "scripts": {
     "start": "node main.js"
   },
-  "author": "alfa",
-  "license": "ISC",
+  "author": "Takudzwa-Mlambo",
+  "license": "MIT",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@seaavey/baileys": "^6.6.5",
