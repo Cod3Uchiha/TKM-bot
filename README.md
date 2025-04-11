@@ -2,12 +2,9 @@
 TKM bot v²
 </p>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=DAA520&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +TKM-bot;MULTI+DEVICE+WHATSAPP+BOT" alt="Typing SVG" /></a>
-  </p>
-
 <p align="center">
   <a href="https://github.com/Cod3Uchiha">
-    <img alt="TKM bot logo" height="200" src="https://telegra.ph/file/e07a3d933fb4cad0b3791.jpg">
+    <img alt="TKM bot logo" height="200" src="https://files.catbox.moe/5bzcdl.jpg">
   </a>
 </p>
 
