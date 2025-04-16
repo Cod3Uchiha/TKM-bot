@@ -50,7 +50,7 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
  <br>
  <a href='https://github.com/Cod3Uchiha/TKM-bot/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork-black?style=for-the-badge&logo=git&logoColor=white'/></a>
 
-## Deployment on Pterodactyl Panel
+# Deployment on Pterodactyl Panel
 
 - **Fork the repository**:  
   Click the **Fork** button above or [click here](https://github.com/Cod3Uchiha/TKM-bot/fork)
