@@ -17,20 +17,29 @@ TKM bot v³
 
 ---
 
-▀▀█▀▀ █░▄▀ █▀▄▀█   █▀▀█ █▀▀▀█ ▀▀█▀▀  
-░▒█░░ █▀▄░ █▒█▒█   █▀▀▄ █░░▒█ ░▒█░░  
-░▒█░░ █░▒█ █░░▒█   █▄▄█ █▄▄▄█ ░▒█░░  
+▀▀█▀▀ █░▄▀ █▀▄▀█   █▀▀█ █▀▀▀█ ▀▀█▀▀
+░▒█░░ █▀▄░ █▒█▒█   █▀▀▄ █░░▒█ ░▒█░░
+░▒█░░ █░▒█ █░░▒█   █▄▄█ █▄▄▄█ ░▒█░░
 
-© TKM-mods  
-WhatsApp Me: [wa.me/263775571820](https://wa.me/263775571820)  
+© TKM-mods
+WhatsApp Me : 263775571820
 
-Sources ↓  
-t.me/TKM-mods  
-https://whatsapp.com/channel/0029Vb5lvXDCMY0EyIW8Yf19  
-https://Github.com/Cod3Uchiha/TKM-bot  
+Source ↓
 
-DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK  
+t.me/TKM-mods
+
+wa.me/263775571820
+
+https://whatsapp.com/channel/0029Vb5lvXDCMY0EyIW8Yf19
+
+https://Github.com/Cod3Uchiha/TKM-bot
+
+
+DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
+
 > Dreamboy
+
+
 
 ☆┌─┐  ─┐☆
 　│▒│ /▒/
@@ -41,6 +50,7 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 │▒┌──┘▒▒▒│◯
 └┐▒▒▒▒▒▒┌┘
 ◯└┐▒▒▒▒┌
+
 
 ---
 
