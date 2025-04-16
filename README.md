@@ -15,8 +15,38 @@ TKM bot v³
   <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>
 </p>
 
+---
 
-•FORK THIS REPO
+▀▀█▀▀ █░▄▀ █▀▄▀█   █▀▀█ █▀▀▀█ ▀▀█▀▀  
+░▒█░░ █▀▄░ █▒█▒█   █▀▀▄ █░░▒█ ░▒█░░  
+░▒█░░ █░▒█ █░░▒█   █▄▄█ █▄▄▄█ ░▒█░░
+
+© TKM-mods  
+WhatsApp Me : 263775571820
+
+- Source ↓  
+- t.me/TKM-mods  
+- wa.me/263775571820  
+- https://whatsapp.com/channel/0029Vb5lvXDCMY0EyIW8Yf19  
+- https://Github.com/Cod3Uchiha/TKM-bot
+
+DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
+
+> Dreamboy
+
+☆┌─┐  ─┐☆  
+　│▒│ /▒/  
+　│▒│/▒/  
+　│▒ /▒/─┬─┐◯  
+　│▒│▒|▒│▒│  
+┌┴─┴─┐-┘─┘  
+│▒┌──┘▒▒▒│◯  
+└┐▒▒▒▒▒▒┌┘  
+◯└┐▒▒▒▒┌
+
+---
+
+•FORK THIS REPO  
  <br>
  <a href='https://github.com/Cod3Uchiha/TKM-bot/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork-black?style=for-the-badge&logo=git&logoColor=white'/></a>
 
