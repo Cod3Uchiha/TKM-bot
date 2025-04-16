@@ -38,6 +38,7 @@ const args = body.trim().split(/ +/).slice(1)
 var crypto = require("crypto")
 const JsConfuser = require('js-confuser');
 const jsobfus = require('javascript-obfuscator');
+const yts = require('yt-search');
 const moment = require('moment-timezone');
 const time = moment().format("HH:mm:ss DD/MM");
 let { randomBytes } = require("crypto")
