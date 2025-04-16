@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
-    "@seaavey/baileys": "^6.6.5",
+    "@seaavey/baileys": "^6.6.6",
     "api-dylux": "^1.8.4",
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.24.0",
