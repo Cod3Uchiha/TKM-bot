@@ -15,7 +15,7 @@ TKM bot v³
   <a href="https://github.com/Cod3Uchiha/TKM-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Cod3Uchiha/TKM-bot?label=Watching&style=social"></a>  
 </p>  
 
----
+--
 
 ▀▀█▀▀ █░▄▀ █▀▄▀█   █▀▀█ █▀▀▀█ ▀▀█▀▀  
 ░▒█░░ █▀▄░ █▒█▒█   █▀▀▄ █░░▒█ ░▒█░░  
@@ -34,14 +34,14 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 
 > Dreamboy
 
-☆┌─┐  ─┐☆
-　│▒│ /▒/
-　│▒│/▒/
-　│▒ /▒/─┬─┐◯
-　│▒│▒|▒│▒│
-┌┴─┴─┐-┘─┘
-│▒┌──┘▒▒▒│◯
-└┐▒▒▒▒▒▒┌┘
+☆┌─┐  ─┐☆  
+　│▒│ /▒/  
+　│▒│/▒/  
+　│▒ /▒/─┬─┐◯  
+　│▒│▒|▒│▒│  
+┌┴─┴─┐-┘─┘  
+│▒┌──┘▒▒▒│◯  
+└┐▒▒▒▒▒▒┌┘  
 ◯└┐▒▒▒▒┌
 
 ---
