@@ -52,20 +52,21 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 
 ## Deployment on Pterodactyl Panel
 
-### Step 1: Fork the repository
-- Click the Fork button above or use the link provided
+- **Fork the repository**:  
+  Click the **Fork** button above or [click here](https://github.com/Cod3Uchiha/TKM-bot/fork)
 
-### Step 2: Prepare your credentials
-- Generate your WhatsApp creds JSON file
-- Edit the settings.js
-- Upload your creds JSON file to the `session` folder
+- **Prepare your credentials**:  
+  - Generate your **WhatsApp creds JSON** file  
+  - Edit the `set.js` file with your custom settings  
+  - Upload your creds JSON file to the `session` folder
 
-### Step 3: Deploy on panel
-- Download the bot source code from your forked repository
-- Open your Pterodactyl panel
-- Upload the files to your panel
-- Unzip the files on your panel
+- **Deploy on the panel**:  
+  - Download the bot source code from your forked repository  
+  - Open your **Pterodactyl panel**  
+  - Upload the files to your server  
+  - Unzip the files from the panel’s file manager
 
-### Step 4: Configure and start
-- Make sure your startup file is set to `main.js`
-- Start the server and your bot will deploy
+- **Configure and start**:  
+  - Set the **startup file** to `main.js`  
+  - Click **Start**  
+  - Your bot should now be live and running!
