@@ -531,6 +531,35 @@ break
 //My adittions
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
+case 'play': case 'ytplay': case 'yts': case 'ytsearch': case 'youtubesearch': {
+    if (!text) return m.reply(`Example: ${prefix + command} dj komang`)
+    m.reply(msg.wait)
+    try {
+        const res = await yts.search(text);
+        const higay = pickRandom(res.all)
+        const fuckshit = `*📍Title:* ${higay.title || 'Not available'}\n*✏Description:* ${higay.description || 'Not available'}\n*🌟Channel:* ${higay.author?.name || 'Not available'}\n*⏳Duration:* ${higay.seconds || 'Not available'} seconds (${higay.timestamp || 'Not available'})\n*🔎Source:* ${higay.url || 'Not available'}\n\n_note: if you want to download_\n_choose ${prefix}ytmp3 video_url or ${prefix}ytmp4 video_url_`;
+        await m.reply({ image: { url: higay.thumbnail }, caption: fuckshit })
+    } catch (e) {
+        try {
+            const nvl = new NvlGroup();
+            let anu = await nvl.search(text);
+            let higay = pickRandom(anu.videos)
+            let fuckshit = `*📍Title:* ${higay.title || 'Not available'}\n*✏Uploaded At:* ${higay.uploaded || 'Not available'}\n*🌟Channel:* ${higay.author || 'Not available'}\n*⏳Duration:* ${higay.duration || 'Not available'}\n*🔎Source:* ${higay.url || 'Not available'}\n\n_note: if you want to download_\n_choose ${prefix}ytmp3 video_url or ${prefix}ytmp4 video_url_`;
+            await m.reply({ image: { url: higay.thumbnail }, caption: fuckshit })
+        } catch (e) {
+            try {
+                const res = await fetchApi('/search/youtube', { query: text });
+                const higay = pickRandom(res.data)
+                const fuckshit = `*📍Title:* ${higay.title || 'Not available'}\n*✏Description:* ${higay.description || 'Not available'}\n*🌟Channel:* ${higay.channelTitle || 'Not available'}\n*⏳Duration:* ${higay.duration || 'Not available'}\n*🔎Source:* https://youtu.be/${higay.id || 'Not available'}\n\n_note: if you want to download_\n_choose ${prefix}ytmp3 video_url or ${prefix}ytmp4 video_url_`;
+                await m.reply({ image: { url: higay.thumbMedium }, caption: fuckshit })
+            } catch (e) {
+                m.reply('Post not available!')
+            }
+        }
+    }
+}
+break		
+
 //song
 case "song": case "songdown":
 case "downsong": {
