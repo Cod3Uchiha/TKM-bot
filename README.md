@@ -30,7 +30,7 @@ WhatsApp Me : 263775571820
 - https://whatsapp.com/channel/0029Vb5lvXDCMY0EyIW8Yf19  
 - https://Github.com/Cod3Uchiha/TKM-bot
 
-DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
+DEPLOY, USE AS BASE, CLONE, GIVE CREDIT
 
 > Dreamboy
 
