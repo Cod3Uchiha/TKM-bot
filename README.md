@@ -1,3 +1,5 @@
+**DO NOT DEPLOY THIS SC IT'S BEING UPDATED**
+
 <p align="center">  
 TKM bot v³  
 </p>  
