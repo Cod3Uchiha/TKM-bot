@@ -1,1 +1,0 @@
-isi teks jpm loh
