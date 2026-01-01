@@ -1,4 +1,4 @@
-**DO NOT DEPLOY THIS SC IT'S BEING UPDATED**
+**DO NOT DEPLOY THIS SC IT'S no longer supported**
 
 <p align="center">  
 TKM bot v³  
