@@ -33,19 +33,6 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 require("./all/global")
 const func = require("./all/place")
 const readline = require("readline")
-let checkFileIntegrity = async () => true
-try {
-  ({ checkFileIntegrity } = require('tkm-integrity-checker'))
-} catch {
-  console.log('tkm-integrity-checker not found, skipping integrity checks')
-}
-checkFileIntegrity()
-  .then(() => {
-    console.log('Integrity check passed. Starting TKM Bot...')
-  })
-  .catch(err => {
-    console.log(`Integrity check warning: ${err.message}`)
-  })
 const welcome = JSON.parse(fs.readFileSync("./all/database/welcome.json"))
 const { sleep } = require("./all/myfunc.js")  
 const usePairingCode = true
