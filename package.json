@@ -2,12 +2,12 @@
   "name": "TKM-bot",
   "version": "3.1.0",
   "description": "Bot WhatsApp Using Lib Baileys Multi Device",
-  "main": "start.js",
+  "main": "main.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node start.js",
+    "start": "node main.js",
     "dev": "nodemon index.js",
-    "debug": "DEBUG=* node start.js"
+    "debug": "DEBUG=* node main.js"
   },
   "keywords": [
     "tkm-bot",
