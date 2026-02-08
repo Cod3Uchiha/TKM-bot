@@ -90,5 +90,8 @@
   "bugs": {
     "url": "https://github.com/Cod3Uchiha/TKM-bot/issues"
   },
-  "homepage": "https://github.com/Cod3Uchiha/TKM-bot#readme"
+  "homepage": "https://github.com/Cod3Uchiha/TKM-bot#readme",
+  "overrides": {
+    "baileys": "^6.7.18"
+  }
 }

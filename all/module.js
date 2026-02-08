@@ -1,15 +1,33 @@
 const fs = require('fs')
 const path = require('path')
-const chalk = require('chalk')
-const pino = require('pino')
 const util = require('util')
 const axios = require('axios')
 const moment = require('moment-timezone')
 const Jimp = require('jimp')
 const PhoneNumber = require('awesome-phonenumber')
 const { Boom } = require('@hapi/boom')
+
+let chalk
+try {
+  chalk = require('chalk')
+} catch {
+  chalk = new Proxy({}, { get: () => (txt) => txt })
+  chalk.white = (txt) => txt
+}
+
+const baileys = require('baileys')
+const makeWASocket = baileys.default || baileys.makeWASocket || baileys
+const makeInMemoryStore = typeof baileys.makeInMemoryStore === 'function'
+  ? baileys.makeInMemoryStore
+  : () => ({ bind: () => {}, loadMessage: async () => undefined })
+const useMultiFileAuthState = typeof baileys.useMultiFileAuthState === 'function'
+  ? baileys.useMultiFileAuthState
+  : async () => ({ state: { creds: {} }, saveCreds: async () => {} })
+const fetchLatestBaileysVersion = typeof baileys.fetchLatestBaileysVersion === 'function'
+  ? baileys.fetchLatestBaileysVersion
+  : async () => ({ version: [2, 3000, 1017531287], isLatest: true })
+
 const {
-  default: makeWASocket,
   BufferJSON,
   WA_DEFAULT_EPHEMERAL,
   generateWAMessageFromContent,
@@ -20,17 +38,14 @@ const {
   downloadContentFromMessage,
   areJidsSameUser,
   getContentType,
-  useMultiFileAuthState,
-  makeInMemoryStore,
-  fetchLatestBaileysVersion,
   DisconnectReason,
   jidDecode,
-} = require('baileys')
+} = baileys
 
 global.fs = fs
 global.path = path
 global.chalk = chalk
-global.pino = pino
+global.pino = require('pino')
 global.util = util
 global.axios = axios
 global.moment = moment
