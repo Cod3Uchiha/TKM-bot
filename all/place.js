@@ -2,7 +2,7 @@ const {
   default: makeWASocket,
   getContentType,
   jidDecode,
-} = require('baileys')
+} = require('@whiskeysockets/baileys')
 
 const decodeJid = (jid = '') => {
   if (!jid) return jid

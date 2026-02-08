@@ -15,7 +15,7 @@ try {
   chalk.white = (txt) => txt
 }
 
-const baileys = require('baileys')
+const baileys = require('@whiskeysockets/baileys')
 const makeWASocket = baileys.default || baileys.makeWASocket || baileys
 const makeInMemoryStore = typeof baileys.makeInMemoryStore === 'function'
   ? baileys.makeInMemoryStore
