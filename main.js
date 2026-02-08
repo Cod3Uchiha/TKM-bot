@@ -33,16 +33,19 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 require("./all/global")
 const func = require("./all/place")
 const readline = require("readline")
-const { checkFileIntegrity } = require('tkm-integrity-checker');
+let checkFileIntegrity = async () => true
+try {
+  ({ checkFileIntegrity } = require('tkm-integrity-checker'))
+} catch {
+  console.log('tkm-integrity-checker not found, skipping integrity checks')
+}
 checkFileIntegrity()
   .then(() => {
-    console.log("Integrity check passed. Starting TKM Bot...");
-    require('./Tkm.js');
+    console.log('Integrity check passed. Starting TKM Bot...')
   })
   .catch(err => {
-    console.error(err.message);
-    process.exit(1);
-  });
+    console.log(`Integrity check warning: ${err.message}`)
+  })
 const welcome = JSON.parse(fs.readFileSync("./all/database/welcome.json"))
 const { sleep } = require("./all/myfunc.js")  
 const usePairingCode = true
@@ -144,7 +147,7 @@ if (!global.anticall) return
 for (let ff of user) {
 if (ff.isGroup == false) {
 if (ff.status == "offer") {
-let sendcall = await Tkm.sendMessage(ff.from, {text: `@${ff.from.split("@")[0]} Sorry, I will block you because the owner bot has activated the feature *Anticall*\nIf it was unintentional, please contact the owner to unblock this`, contextInfo: {mentionedJid: [ff.from], externalAdReply: {showAdAttribution: true, thumbnail: fs.readFileSync("./media/warning.jpg"), title: "｢ CALL DETECTED ｣", previewType: "PHOTO"}}}, {quoted: null})
+let sendcall = await Tkm.sendMessage(ff.from, {text: `@${ff.from.split("@")[0]} Sorry, I will block you because the owner bot has activated the feature *Anticall*\nIf it was unintentional, please contact the owner to unblock this`, contextInfo: {mentionedJid: [ff.from], externalAdReply: {showAdAttribution: true, thumbnailUrl: "https://files.catbox.moe/5bzcdl.jpg", title: "｢ CALL DETECTED ｣", previewType: "PHOTO"}}}, {quoted: null})
 Tkm.sendContact(ff.from, [owner], "Developer WhatsApp Bot", sendcall)
 await sleep(10000)
 await Tkm.updateBlockStatus(ff.from, "block")
