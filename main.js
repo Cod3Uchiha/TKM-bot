@@ -33,6 +33,9 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 require("./all/global")
 const func = require("./all/place")
 const readline = require("readline")
+const path = require("path")
+const sessionPath = path.join(__dirname, "session")
+if (!fs.existsSync(sessionPath)) fs.mkdirSync(sessionPath, { recursive: true })
 const welcome = JSON.parse(fs.readFileSync("./all/database/welcome.json"))
 const { sleep } = require("./all/myfunc.js")  
 const usePairingCode = true
@@ -47,7 +50,7 @@ rl.question(text, resolve)
 
 async function startSesi() {
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
-const { state, saveCreds } = await useMultiFileAuthState(`./session`)
+const { state, saveCreds } = await useMultiFileAuthState(sessionPath)
 const { version, isLatest } = await fetchLatestBaileysVersion()
 
 const connectionOptions = {
