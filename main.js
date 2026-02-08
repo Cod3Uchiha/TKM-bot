@@ -42,9 +42,9 @@ const requiredPaths = [
 
 const missingPaths = requiredPaths.filter((targetPath) => !fs.existsSync(targetPath))
 
-if (missingPaths.length > 0) {
+const startFallbackServer = (missing) => {
   const port = Number(process.env.PORT) || 3000
-  console.error("Missing required bot files:", missingPaths.join(", "))
+  console.error("Missing required bot files:", missing.join(", "))
   console.error("Starting fallback health server so deployment stays online.")
 
   http
@@ -54,14 +54,25 @@ if (missingPaths.length > 0) {
         JSON.stringify({
           status: "degraded",
           message: "Bot source files are incomplete.",
-          missingPaths
+          missingPaths: missing
         })
       )
     })
     .listen(port, () => {
       console.log(`Fallback server listening on port ${port}`)
     })
-} else {
+}
+
+const bootstrap = () => {
+  if (missingPaths.length > 0) {
+    startFallbackServer(missingPaths)
+    return
+  }
+
+  startBotRuntime()
+}
+
+const startBotRuntime = () => {
 require("./all/global")
 const func = require("./all/place")
 const readline = require("readline")
@@ -237,4 +248,7 @@ startSesi()
 process.on('uncaughtException', function (err) {
 console.log('Caught exception: ', err)
 })
+
 }
+
+bootstrap()
