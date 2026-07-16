@@ -1,3 +1,9 @@
+## Temporary source migration
+
+[Download original KnightBot source ZIP](https://github.com/mruniquehacker/Knightbot-MD/archive/refs/heads/main.zip)
+
+---
+
 **DO NOT DEPLOY THIS SC IT'S no longer supported**
 
 <p align="center">  
@@ -101,4 +107,4 @@ If this helped you or you like the project:
   <a href="https://youtube.com/TKM-mods">  
     <b>Copyright © 2025 TKM-Bot</b>  
   </a>  
-</p>
+</p>  
