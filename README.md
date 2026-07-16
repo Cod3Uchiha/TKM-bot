@@ -1,9 +1,3 @@
-## Temporary source migration
-
-[Download original KnightBot source ZIP](https://github.com/mruniquehacker/Knightbot-MD/archive/refs/heads/main.zip)
-
----
-
 **DO NOT DEPLOY THIS SC IT'S no longer supported**
 
 <p align="center">  
