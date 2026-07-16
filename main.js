@@ -33,16 +33,9 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 require("./all/global")
 const func = require("./all/place")
 const readline = require("readline")
-const { checkFileIntegrity } = require('tkm-integrity-checker');
-checkFileIntegrity()
-  .then(() => {
-    console.log("Integrity check passed. Starting TKM Bot...");
-    require('./Tkm.js');
-  })
-  .catch(err => {
-    console.error(err.message);
-    process.exit(1);
-  });
+const path = require("path")
+const sessionPath = path.join(__dirname, "session")
+if (!fs.existsSync(sessionPath)) fs.mkdirSync(sessionPath, { recursive: true })
 const welcome = JSON.parse(fs.readFileSync("./all/database/welcome.json"))
 const { sleep } = require("./all/myfunc.js")  
 const usePairingCode = true
@@ -57,7 +50,7 @@ rl.question(text, resolve)
 
 async function startSesi() {
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
-const { state, saveCreds } = await useMultiFileAuthState(`./session`)
+const { state, saveCreds } = await useMultiFileAuthState(sessionPath)
 const { version, isLatest } = await fetchLatestBaileysVersion()
 
 const connectionOptions = {
@@ -144,7 +137,7 @@ if (!global.anticall) return
 for (let ff of user) {
 if (ff.isGroup == false) {
 if (ff.status == "offer") {
-let sendcall = await Tkm.sendMessage(ff.from, {text: `@${ff.from.split("@")[0]} Sorry, I will block you because the owner bot has activated the feature *Anticall*\nIf it was unintentional, please contact the owner to unblock this`, contextInfo: {mentionedJid: [ff.from], externalAdReply: {showAdAttribution: true, thumbnail: fs.readFileSync("./media/warning.jpg"), title: "｢ CALL DETECTED ｣", previewType: "PHOTO"}}}, {quoted: null})
+let sendcall = await Tkm.sendMessage(ff.from, {text: `@${ff.from.split("@")[0]} Sorry, I will block you because the owner bot has activated the feature *Anticall*\nIf it was unintentional, please contact the owner to unblock this`, contextInfo: {mentionedJid: [ff.from], externalAdReply: {showAdAttribution: true, thumbnailUrl: "https://files.catbox.moe/5bzcdl.jpg", title: "｢ CALL DETECTED ｣", previewType: "PHOTO"}}}, {quoted: null})
 Tkm.sendContact(ff.from, [owner], "Developer WhatsApp Bot", sendcall)
 await sleep(10000)
 await Tkm.updateBlockStatus(ff.from, "block")
