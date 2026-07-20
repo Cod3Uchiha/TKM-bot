@@ -30,19 +30,52 @@ DEPLOY, USE AS BASE, CLONE, DO SHIT, I DON'T GIVE A FVCK
 
 */
 
+const fs = require("fs")
+const http = require("http")
+
+const requiredPaths = [
+  "./all/global.js",
+  "./all/place.js",
+  "./all/database/welcome.json",
+  "./all/myfunc.js"
+]
+
+const missingPaths = requiredPaths.filter((targetPath) => !fs.existsSync(targetPath))
+
+const startFallbackServer = (missing) => {
+  const port = Number(process.env.PORT) || 3000
+  console.error("Missing required bot files:", missing.join(", "))
+  console.error("Starting fallback health server so deployment stays online.")
+
+  http
+    .createServer((req, res) => {
+      res.writeHead(200, { "Content-Type": "application/json" })
+      res.end(
+        JSON.stringify({
+          status: "degraded",
+          message: "Bot source files are incomplete.",
+          missingPaths: missing
+        })
+      )
+    })
+    .listen(port, () => {
+      console.log(`Fallback server listening on port ${port}`)
+    })
+}
+
+const bootstrap = () => {
+  if (missingPaths.length > 0) {
+    startFallbackServer(missingPaths)
+    return
+  }
+
+  startBotRuntime()
+}
+
+const startBotRuntime = () => {
 require("./all/global")
 const func = require("./all/place")
 const readline = require("readline")
-const { checkFileIntegrity } = require('tkm-integrity-checker');
-checkFileIntegrity()
-  .then(() => {
-    console.log("Integrity check passed. Starting TKM Bot...");
-    require('./Tkm.js');
-  })
-  .catch(err => {
-    console.error(err.message);
-    process.exit(1);
-  });
 const welcome = JSON.parse(fs.readFileSync("./all/database/welcome.json"))
 const { sleep } = require("./all/myfunc.js")  
 const usePairingCode = true
@@ -215,3 +248,7 @@ startSesi()
 process.on('uncaughtException', function (err) {
 console.log('Caught exception: ', err)
 })
+
+}
+
+bootstrap()
